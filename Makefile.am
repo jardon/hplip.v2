@@ -179,10 +179,10 @@ if !HPLIP_CLASS_DRIVER
 dist_cmd_SCRIPTS = align.py info.py print.py toolbox.py clean.py colorcal.py unload.py testpage.py makeuri.py check.py fab.py levels.py \
 	sendfax.py setup.py makecopies.py probe.py timedate.py firmware.py scan.py systray.py plugin.py linefeedcal.py pqdiag.py \
 	faxsetup.py devicesettings.py printsettings.py query.py pkservice.py wificonfig.py diagnose_plugin.py uninstall.py \
-	upgrade.py config_usb_printer.py diagnose_queues.py logcapture.py doctor.py uiscan.py
+	upgrade.py config_usb_printer.py diagnose_queues.py logcapture.py doctor.py uiscan.py check-plugin.py
 
 homedir = $(hplipdir)
-dist_home_DATA =  check-plugin.py 
+dist_home_DATA =
 dist_home_DATA +=  hplip_clean.sh
 
 # base
