@@ -53,10 +53,16 @@ home_dir = ''
 
 
 def bug(m):
-    log.stderr("ERROR: %s" % m)
+    try:
+        log.stderr("ERROR: %s" % m)
+    except NameError:
+        sys.stderr.write("ERROR: %s\n" % m)
 
 def msg(m):
-    log.stderr("INFO: %s" % m)
+    try:
+        log.stderr("INFO: %s" % msg)
+    except NameError:
+        sys.stderr.write("INFO: %s\n" % msg)
 
 if os.path.exists(config_file):
     config = configparser.ConfigParser()
