@@ -1078,7 +1078,10 @@ const unsigned char HT600x6004level970_open[1024]=
 
 {
 0,  0,  255,    0,
-0,  1,  255,    0,
+// 2001.06.16 mrb: changed the value to 0. With the original "1"
+//                 the printer sometimes prints empty lines...
+//0,	1,	255,	0,
+0,	 0,  255,    0,
 0,  3,  255,    0,
 0,  5,  255,    0,
 0,  7,  255,    0,
