@@ -35,9 +35,12 @@ import dbus
 import dbus.service
 
 if PY3:
-    from gi import _gobject as gobject
+    try:
+        from gi._gobject import MainLoop
+    except:
+        from gi.repository.GLib import MainLoop
 else:
-    import gobject
+    from gobject import MainLoop
 
 import warnings
 # Ignore: .../dbus/connection.py:242: DeprecationWarning: object.__init__() takes no parameters
@@ -207,7 +210,7 @@ if utils.to_bool(sys_conf.get('configure', 'policy-kit')):
             super(BackendService, self).__init__(connection, path)
 
             self.name = dbus.service.BusName(self.SERVICE_NAME, connection)
-            self.loop = gobject.MainLoop()
+            self.loop = MainLoop()
             self.version = 0
             log.set_level("debug")
 
