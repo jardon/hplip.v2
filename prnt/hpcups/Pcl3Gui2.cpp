@@ -30,7 +30,6 @@
 
 #include "CommonDefinitions.h"
 #include "Pcl3Gui2.h"
-#include "ErnieFilter.h"
 #include "Mode10.h"
 #include "Mode9.h"
 #include "PrinterCommands.h"
@@ -38,7 +37,6 @@
 Pcl3Gui2::Pcl3Gui2() : Encapsulator()
 {
     speed_mech_enabled = true;
-    m_run_ernie_filter = true;
     crd_type = eCrd_both;
     strcpy(m_szLanguage, "PCL3GUI");
 }
@@ -59,21 +57,6 @@ DRIVER_ERROR Pcl3Gui2::Configure(Pipeline **pipeline)
     }
 
     width = m_pMA->printable_width;;
-    if (m_run_ernie_filter) {
-	    ErnieFilter    *pErnie;
-
-       // Normal: threshold = (resolution) * (0.0876) - 2
-       int threshold = ((m_pQA->horizontal_resolution * 876) / 10000) - 2;
-
-       pErnie = new ErnieFilter (width, eBGRPixelData, threshold);
-       p = new Pipeline (pErnie);
-       if (head) {
-          head->AddPhase (p);
-       }
-       else {
-           head = p;
-       }
-    }
 
     if (crd_type != eCrd_black_only) {
         Mode10    *pMode10;
