@@ -55,7 +55,10 @@ home_dir = ''
 
 def bug(msg):
     syslog.syslog("hpfax[%d]: error: %s\n" % (pid, msg))
-    log.stderr("ERROR: %s\n" % msg)
+    try:
+        log.stderr("ERROR: %s\n" % msg)
+    except:
+        print >> sys.stderr, ("ERROR: %s\n" % msg)
 
 
 if os.path.exists(config_file):
