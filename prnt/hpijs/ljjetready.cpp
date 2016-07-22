@@ -329,6 +329,17 @@ DRIVER_ERROR HeaderLJJetReady::StartSend ()
     err = thePrinter->Send ((const BYTE *) szScratchStr, strlen (szScratchStr));
     ERRCHECK;
 
+    // Send the Binding command
+    strcpy (szScratchStr, "@PJL SET BINDING=LONGEDGE\015\012");
+#ifdef APDK_AUTODUPLEX
+    if (thePrintContext->QueryDuplexMode () == DUPLEXMODE_TABLET)
+    {
+        strcpy (szScratchStr, "@PJL SET BINDING=SHORTEDGE\015\012");
+    }
+#endif
+    err = thePrinter->Send ((const BYTE *) szScratchStr, strlen (szScratchStr));
+    ERRCHECK;
+
     //Set the resolution to 600
     err = thePrinter->Send ((const BYTE*)ccpPJLSetRes,sizeof(ccpPJLSetRes));
     ERRCHECK;

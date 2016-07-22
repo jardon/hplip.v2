@@ -330,6 +330,19 @@ DRIVER_ERROR HeaderLJColor::StartSend ()
 
     err = thePrinter->Send ((const BYTE *) res, strlen (res));
 
+//  Binding directive
+
+    strcpy (res, "@PJL SET BINDING=LONGEDGE\015\012");
+
+#ifdef APDK_AUTODUPLEX
+    if (thePrintContext->QueryDuplexMode () == DUPLEXMODE_TABLET)
+    {
+        strcpy (res, "@PJL SET BINDING=SHORTEDGE\015\012");
+    }
+#endif
+
+    err = thePrinter->Send ((const BYTE *) res, strlen (res));
+
 
     err = thePrinter->Send ((const BYTE*) EnterLanguage, sizeof (EnterLanguage));
     ERRCHECK;
