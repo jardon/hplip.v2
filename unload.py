@@ -44,6 +44,11 @@ except ImportError:
 
 # Local
 from base.g import *
+from base.sixext import PY3
+if PY3:
+    log.error("This functionality is not spported in python3 environment.")
+    sys.exit(1)
+
 from base import device, utils, tui, module
 from prnt import cups
 
