@@ -289,7 +289,7 @@ try:
         ("", "Coordinates are relative to the upper left corner of the scan area.", "option", False),
         ("", "Units are specified by -t/--units (default is 'mm').", "option", False),
         ("Specify the scan area based on a paper size:", "--size=<paper size name>", "option", False),
-        ("", "where <paper size name> is one of: %s" % ', '.join(list(PAGE_SIZES.keys())), "option", False),
+        ("", "where <paper size name> is one of: %s" % ', '.join(sorted(list(PAGE_SIZES.keys()))), "option", False),
         utils.USAGE_SPACE,
         ("[OPTIONS] ('file' dest)", "", "header", False),
         ("Filename for 'file' destination:", "-o<file> or -f<file> or --file=<file> or --output=<file>", "option", False),
