@@ -205,7 +205,7 @@ class UserSettings(QSettings):
         return ''
 
     def loadDefaults(self):
-        self.cmd_scan = self.__setup(['xsane -V %SANE_URI%', 'kooka', 'xscanimage'])
+        self.cmd_scan = self.__setup(['simple-scan %SANE_URI%', 'xsane -V %SANE_URI%', 'kooka', 'xscanimage'])
         self.cmd_fab = self.__setup(['hp-fab'])
 
 
