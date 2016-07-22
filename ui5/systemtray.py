@@ -576,6 +576,9 @@ class SystemTrayApp(QApplication):
 
         elif reason == QSystemTrayIcon.Trigger:
             #print "single click"
+            self.updateMenu()
+            if not self.menu is None:
+                self.menu.popup(QCursor.pos())
             pass
 
         elif reason == QSystemTrayIcon.MiddleClick:
