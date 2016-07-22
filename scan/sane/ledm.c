@@ -170,11 +170,11 @@ static int set_scan_mode_side_effects(struct ledm_session *ps, enum COLOR_ENTRY 
       case CE_GRAY8:
       case CE_COLOR8:
       default:
-//         ps->compressionList[j] = STR_COMPRESSION_NONE;
-//         ps->compressionMap[j++] = SF_RAW;
+         ps->compressionList[j] = STR_COMPRESSION_NONE;
+         ps->compressionMap[j++] = SF_RAW;
          ps->compressionList[j] = STR_COMPRESSION_JPEG;
          ps->compressionMap[j++] = SF_JPEG;
-         ps->currentCompression = SF_JPEG;
+         ps->currentCompression = SF_RAW;
          ps->option[LEDM_OPTION_JPEG_QUALITY].cap |= SANE_CAP_SOFT_SELECT;   /* enable jpeg quality */
          break;
    }
@@ -679,7 +679,7 @@ SANE_Status ledm_control_option(SANE_Handle handle, SANE_Int option, SANE_Action
          }
          else
          {  /* Set default. */
-            ps->currentCompression = SF_JPEG;
+            ps->currentCompression = SF_RAW;
             stat = SANE_STATUS_GOOD;
          }
          break;
@@ -984,7 +984,9 @@ SANE_Status ledm_start(SANE_Handle handle)
     }
   }
   else
-  ipGetImageTraits(ps->ip_handle, NULL, &ps->image_traits);  /* get valid image traits */
+  {
+    ipGetOutputTraits(ps->ip_handle, &ps->image_traits);  /* get valid image traits */
+  }
 
   stat = SANE_STATUS_GOOD;
 
