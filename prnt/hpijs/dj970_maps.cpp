@@ -127,7 +127,11 @@ uint32_t ulMapGRAY_K_6x6x1[] =
 
 uint32_t ulMapDJ970_KCMY[ 9*9*9 ]=
 {
- 673723135UL,   26007371UL,    9756717UL,   10020638UL,   10022677UL,   10153743UL, 
+// 2003.06.05 rss:  Replaced the first entry so the printer will
+// (hopefully) use only the black pen when he should print real black.
+// Please report as a bug if it doesn't, or something worse happens.
+// 673723135UL,   26007371UL,    9756717UL,   10020638UL,   10022677UL,   10153743UL, 
+       226UL,   26007371UL,    9756717UL,   10020638UL,   10022677UL,   10153743UL, 
   10285066UL,   10416133UL,    9169408UL, 3405886809UL,      59743UL,   23980849UL, 
    9366812UL,   10153744UL,   10285066UL,   10153990UL,   10087424UL,    9169408UL, 
 3858807091UL, 2197868343UL,      60220UL,    4714015UL,    7270155UL,    8646656UL, 
