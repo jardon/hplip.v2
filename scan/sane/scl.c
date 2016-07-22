@@ -37,10 +37,11 @@
 #define DEBUG_DECLARE_ONLY
 #include "sanei_debug.h"
 
-static int SclBufferIsPartialReply( unsigned char * data, int datalen )
+static int SclBufferIsPartialReply( void * dataptr, int datalen )
 {
     int i = 0, value = 0;
-    unsigned char d;  
+    unsigned char * const data = dataptr;
+    unsigned int d;
 
     if( i >= datalen )
     {
