@@ -560,7 +560,7 @@ hpcups_SOURCES = prnt/hpcups/HPCupsFilter.cpp prnt/hpcups/HPCupsFilter.h prnt/hp
 	prnt/hpcups/Mode2.cpp prnt/hpcups/Mode2.h prnt/hpcups/Mode3.cpp prnt/hpcups/Mode3.h \
 	prnt/hpcups/Mode9.cpp prnt/hpcups/Mode9.h prnt/hpcups/Mode10.cpp prnt/hpcups/Mode10.h \
 	prnt/hpcups/ModeDeltaPlus.cpp prnt/hpcups/ModeDeltaPlus.h prnt/hpcups/ModeJbig.cpp prnt/hpcups/ModeJbig.h \
-	prnt/hpcups/ErnieFilter.cpp prnt/hpcups/ErnieFilter.h prnt/hpcups/EncapsulatorFactory.cpp prnt/hpcups/EncapsulatorFactory.h \
+	prnt/hpcups/EncapsulatorFactory.cpp prnt/hpcups/EncapsulatorFactory.h \
 	prnt/hpcups/Encapsulator.cpp prnt/hpcups/Encapsulator.h prnt/hpcups/Pcl3.cpp prnt/hpcups/Pcl3.h \
 	prnt/hpcups/Pcl3Gui.cpp prnt/hpcups/Pcl3Gui.h prnt/hpcups/Pcl3Gui2.cpp prnt/hpcups/Pcl3Gui2.h \
 	prnt/hpcups/LJMono.cpp prnt/hpcups/LJMono.h prnt/hpcups/LJColor.cpp prnt/hpcups/LJColor.h \
