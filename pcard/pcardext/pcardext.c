@@ -20,7 +20,7 @@ pcardext - Python extension for HP photocard services
 Requires:
 Python 2.2+
 
-Author: Don Welch
+Author: Don Welch 
 
 \*****************************************************************************/
 
@@ -38,8 +38,36 @@ typedef int Py_ssize_t;
 
 int verbose=0;
 
+#if PY_MAJOR_VERSION >= 3
+  #define MOD_ERROR_VAL NULL
+  #define MOD_SUCCESS_VAL(val) val
+  #define MOD_INIT(name) PyMODINIT_FUNC PyInit_##name(void)
+  #define PyInt_AS_LONG PyLong_AS_LONG
+  #define MOD_DEF(ob, name, doc, methods) \
+          static struct PyModuleDef moduledef = { \
+            PyModuleDef_HEAD_INIT, name, doc, -1, methods, }; \
+          ob = PyModule_Create(&moduledef);
+
+
+  #define PY_String_Bytes  PyBytes_FromStringAndSize
+  #define PY_AsString_Bytes  PyBytes_AsStringAndSize
+
+#else
+  #define MOD_ERROR_VAL
+  #define MOD_SUCCESS_VAL(val)
+  #define MOD_INIT(name) void init##name(void)
+  #define MOD_DEF(ob, name, doc, methods)         \
+        ob = Py_InitModule3(name, methods, doc);
+
+  #define PY_String_Bytes PyString_FromStringAndSize
+  #define PY_AsString_Bytes PyString_AsStringAndSize
+  
+#endif
+
 PyObject * readsectorFunc = NULL;
 PyObject * writesectorFunc = NULL;
+
+
 
 int ReadSector(int sector, int nsector, void *buf, int size)
 {
@@ -56,9 +84,13 @@ int ReadSector(int sector, int nsector, void *buf, int size)
         if( result )
         {
             Py_ssize_t len = 0;
-            PyString_AsStringAndSize( result, &result_str, &len );
+
+            //PyString_AsStringAndSize( result, &result_str, &len );    
+            //PyBytes_AsStringAndSize( result, &result_str, &len ); 
+            PY_AsString_Bytes( result, &result_str, &len );
             
-            if( len < nsector*FAT_HARDSECT )
+
+	    if( len < nsector*FAT_HARDSECT )
             {
                 goto abort;
             }
@@ -205,7 +237,9 @@ PyObject * pcardext_read( PyObject * self, PyObject * args )
     
     if( FatReadFileExt( name, offset, len, buffer ) == len )
     {
-        return PyString_FromStringAndSize( (char *)buffer, len );
+        // return PyString_FromStringAndSize( (char *)buffer, len );
+        return PY_String_Bytes( (char *)buffer, len );
+        // return PyBytes_FromStringAndSize( (char *)buffer, len );
     }
     else
     {
@@ -233,14 +267,15 @@ static PyMethodDef pcardext_methods[] =
 
 static char pcardext_documentation[] = "Python extension for HP photocard services";
 
-void initpcardext( void )
-{
-    PyObject * mod = Py_InitModule4( "pcardext", pcardext_methods, 
-                                     pcardext_documentation, (PyObject*)NULL, 
-                                     PYTHON_API_VERSION );
-                     
-    if (mod == NULL)
-      return;
+MOD_INIT(pcardext)  {
+
+  PyObject* mod ;
+  MOD_DEF(mod, "pcardext", pcardext_documentation, pcardext_methods);
+  if (mod == NULL)
+    return MOD_ERROR_VAL;
+
+  return MOD_SUCCESS_VAL(mod);
+
 }
 
 
