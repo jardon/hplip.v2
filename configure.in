@@ -620,7 +620,7 @@ fi
 
 if test "$class_driver" = "no" && test "$hpijs_only_build" = "no" && test "$hpcups_only_build" = "no"; then
    AC_CHECK_LIB([cups], [cupsDoFileRequest], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libcups support], 9)])
-   AC_CHECK_HEADERS(cups/cups.h, ,[AC_MSG_ERROR([cannot find cups-devel support], 3)])
+   AC_CHECK_HEADERS(cups/cups.h cups/ppd.h, ,[AC_MSG_ERROR([cannot find cups-devel support], 3)])
    if test "$libusb01_build" = "yes"; then
       AC_CHECK_LIB([usb], [usb_init], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libusb support], 2)])
       AC_CHECK_HEADERS(usb.h, ,[AC_MSG_ERROR([cannot find libusb-devel support], 11)])
