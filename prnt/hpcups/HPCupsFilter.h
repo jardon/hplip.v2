@@ -38,6 +38,8 @@
 #include <cups/ppd.h>
 #include "dbuscomm.h"
 
+#include <cups/ppd.h>
+
 #define		DBITMAPFILEHEADER		14
 #define		DBITMAPINFOHEADER		40
 
