@@ -621,12 +621,14 @@ endif # FAX_BUILD
 endif # HPCUPS ONLY
 endif # HPCUPS_INSTALL
 
+if HPLIP_CLASS_DRIVER
 dat2drvdir = $(hplipdir)
 dat2drv_PROGRAMS = dat2drv
 dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
 if GCC_GE_47
 dat2drv_CXXFLAGS = -std=c++11
 endif
+endif # HPLIP_CLASS_DRIVER
 
 if HPPS_INSTALL
 hppsdir = $(cupsfilterdir)
@@ -637,6 +639,7 @@ hpps_LDADD = -lcups  $(DBUS_LIBS)
 endif #HPPS_INSTALL
 
 
+if HPLIP_CLASS_DRIVER
 #locate driver
 locatedriverdir = $(hplipdir)
 locatedriver_PROGRAMS = locatedriver
@@ -644,7 +647,6 @@ locatedriver_SOURCES = FindPPD.cpp FindPPD.h
 if GCC_GE_47
 locatedriver_CXXFLAGS = -std=c++11
 endif
-if HPLIP_CLASS_DRIVER
 dist_locatedriver_DATA = locatedriver
 endif #HPLIP_CLASS_DRIVER
 
