@@ -173,7 +173,7 @@ class PluginForm2(PluginForm2_base):
         QMessageBox.critical(self,
             self.caption(),
             error_text,
-            QMessageBox.Ok,
+            QMessageBox.Ok |\
             QMessageBox.NoButton,
             QMessageBox.NoButton)
 
@@ -181,7 +181,7 @@ class PluginForm2(PluginForm2_base):
         QMessageBox.information(self,
                              self.caption(),
                              text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 

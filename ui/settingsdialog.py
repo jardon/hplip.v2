@@ -146,7 +146,7 @@ class SettingsDialog(SettingsDialog_base):
 ##            QMessageBox.warning(self,
 ##                                 self.caption(),
 ##                                 self.__tr("<b>One or more email addresses are missing.</b><p>Please enter this information and try again."),
-##                                  QMessageBox.Ok,
+##                                  QMessageBox.Ok |\
 ##                                  QMessageBox.NoButton,
 ##                                  QMessageBox.NoButton)
 ##            return
@@ -163,7 +163,7 @@ class SettingsDialog(SettingsDialog_base):
 ##        QMessageBox.information(self,
 ##                     self.caption(),
 ##                     self.__tr("<p><b>Please check your email for a test message.</b><p>If the message doesn't arrive, please check your settings and try again."),
-##                      QMessageBox.Ok,
+##                      QMessageBox.Ok |\
 ##                      QMessageBox.NoButton,
 ##                      QMessageBox.NoButton)
 
