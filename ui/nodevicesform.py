@@ -67,7 +67,7 @@ class NoDevicesForm(NoDevicesForm_base):
             QMessageBox.critical(self,
                                     self.caption(),
                                     self.__tr("<b>An error occurred.</b><p>Please re-start the Device Manager and try again."),
-                                    QMessageBox.Ok,
+                                    QMessageBox.Ok |\
                                     QMessageBox.NoButton,
                                     QMessageBox.NoButton)
 
