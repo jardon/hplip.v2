@@ -245,7 +245,7 @@ class QueuesDiagnose(QDialog, Ui_Dialog):
                 
                     if QMessageBox.question(self, " ",
                         self.__tr("<b>%s</b><p>Without this, it is not possible to authenticate and validate this tool prior to installation.</p>Do you still want to run Smart Install disabler?" %error_str),
-                        QMessageBox.Yes | QMessageBox.No) == QMessageBox.Yes:
+                                            QMessageBox.Yes | QMessageBox.No, QMessageBox.No) == QMessageBox.Yes:
                         # Disabling without verification.
                         sts, out = utils.run("sh %s"%smart_install_run)
 
