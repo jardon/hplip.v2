@@ -1422,7 +1422,7 @@ class DevMgr4(DevMgr4_base):
             QMessageBox.critical(self,
                 self.caption(),
                 self.__tr("<b>Unable to find an appropriate su/sudo utility to run hp-plugin.</b><p>Install kdesu, gnomesu, or gksu.</p>"),
-                QMessageBox.Ok,
+                QMessageBox.Ok |\
                 QMessageBox.NoButton,
                 QMessageBox.NoButton)
         else:
@@ -2854,7 +2854,7 @@ class DevMgr4(DevMgr4_base):
             x = QMessageBox.critical(self,
            self.caption(),
            self.__tr("<b>Annoying Confirmation: Are you sure you want to remove this device?</b>"),
-            QMessageBox.Yes,
+            QMessageBox.Yes |\
             QMessageBox.No | QMessageBox.Default,
             QMessageBox.NoButton)
             if x == QMessageBox.Yes:
@@ -2949,7 +2949,7 @@ class DevMgr4(DevMgr4_base):
         QMessageBox.critical(self,
             self.caption(),
             error_text,
-            QMessageBox.Ok,
+            QMessageBox.Ok |\
             QMessageBox.NoButton,
             QMessageBox.NoButton)
 
@@ -2958,7 +2958,7 @@ class DevMgr4(DevMgr4_base):
         QMessageBox.warning(self,
             self.caption(),
             msg,
-            QMessageBox.Ok,
+            QMessageBox.Ok |\
             QMessageBox.NoButton,
             QMessageBox.NoButton)
 
@@ -3115,7 +3115,7 @@ class ScrollTestpageView(ScrollView):
             QMessageBox.information(self,
                 self.caption(),
                 self.__tr("<p><b>A test page should be printing on your printer.</b><p>If the page fails to print, please visit http://hplip.sourceforge.net for troubleshooting and support."),
-                QMessageBox.Ok,
+                QMessageBox.Ok |\
                 QMessageBox.NoButton,
                 QMessageBox.NoButton)
 
@@ -3130,7 +3130,7 @@ class ScrollTestpageView(ScrollView):
         QMessageBox.critical(self,
             self.caption(),
             error_text,
-            QMessageBox.Ok,
+            QMessageBox.Ok |\
             QMessageBox.NoButton,
             QMessageBox.NoButton)
 
@@ -3272,7 +3272,7 @@ class ScrollColorCalView(ScrollView):
             QMessageBox.information(self,
                 self.caption(),
                 self.__tr("<p><b>A test page should be printing on your printer.</b><p>If the page fails to print, please visit http://hplip.sourceforge.net for troubleshooting and support."),
-                QMessageBox.Ok,
+                QMessageBox.Ok |\
                 QMessageBox.NoButton,
                 QMessageBox.NoButton)
 
@@ -3287,7 +3287,7 @@ class ScrollColorCalView(ScrollView):
         QMessageBox.critical(self,
             self.caption(),
             error_text,
-            QMessageBox.Ok,
+            QMessageBox.Ok |\
             QMessageBox.NoButton,
             QMessageBox.NoButton)
 

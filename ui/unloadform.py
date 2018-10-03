@@ -135,7 +135,7 @@ class UnloadForm(QMainWindow):
         QMessageBox.critical(self,
                              self.caption(),
                              error_text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 

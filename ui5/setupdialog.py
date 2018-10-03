@@ -888,7 +888,7 @@ class SetupDialog(QDialog, Ui_Dialog):
                                  self.windowTitle(),
                                  warn_text,
                                  QMessageBox.Yes|\
-                                 QMessageBox.No|\
+                                 QMessageBox.No,
                                  QMessageBox.NoButton) == QMessageBox.Yes ):
                 i = 2
                 while True:
@@ -1151,7 +1151,7 @@ class SetupDialog(QDialog, Ui_Dialog):
                     if QMessageBox.critical(self,
                                            self.windowTitle(),
                                            error_text,
-                                           QMessageBox.Retry | QMessageBox.Default,
+                                           QMessageBox.Retry | QMessageBox.Default |\
                                            QMessageBox.Cancel | QMessageBox.Escape,
                                            QMessageBox.NoButton) == QMessageBox.Cancel:
                         break
@@ -1181,7 +1181,7 @@ class SetupDialog(QDialog, Ui_Dialog):
                                 if QMessageBox.critical(self,
                                                        self.windowTitle(),
                                                        error_text,
-                                                       QMessageBox.Retry | QMessageBox.Default,
+                                                       QMessageBox.Retry | QMessageBox.Default |\
                                                        QMessageBox.Cancel | QMessageBox.Escape,
                                                        QMessageBox.NoButton) == QMessageBox.Cancel:
                                     break

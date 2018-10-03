@@ -210,7 +210,7 @@ class FaxSendJobForm(QMainWindow):
         QMessageBox.information(self,
                              self.caption(),
                              self.__tr("<p><b>Fax send completed successfully.</b>"),
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
@@ -219,7 +219,7 @@ class FaxSendJobForm(QMainWindow):
         QMessageBox.critical(self,
                              self.caption(),
                              error_text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
@@ -228,7 +228,7 @@ class FaxSendJobForm(QMainWindow):
         QMessageBox.warning(self,
                              self.caption(),
                              error_text,
-                             QMessageBox.Ok,
+                             QMessageBox.Ok |\
                              QMessageBox.NoButton,
                              QMessageBox.NoButton)
 
