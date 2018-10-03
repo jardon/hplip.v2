@@ -156,7 +156,7 @@ class MakeCopiesForm(QMainWindow):
         QMessageBox.critical(self,
                              self.caption(),
                              error_text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
@@ -164,7 +164,7 @@ class MakeCopiesForm(QMainWindow):
         QMessageBox.warning(self,
                              self.caption(),
                              msg,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
