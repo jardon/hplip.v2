@@ -319,11 +319,11 @@ class DevMgr5(Ui_MainWindow_Derived, Ui_MainWindow, QMainWindow):
         self.PreferencesAction.setIcon(QIcon(load_pixmap('settings', '16x16')))
         self.PreferencesAction.triggered.connect(self.PreferencesAction_activated)
 
-        self.DiagnoseQueueAction.setIcon(QIcon(load_pixmap('warning', '16x16')))
-        self.DiagnoseQueueAction.triggered.connect(self.DiagnoseQueueAction_activated)
+        #self.DiagnoseQueueAction.setIcon(QIcon(load_pixmap('warning', '16x16')))
+        #self.DiagnoseQueueAction.triggered.connect(self.DiagnoseQueueAction_activated)
 
-        self.DiagnoseHPLIPAction.setIcon(QIcon(load_pixmap('troubleshoot', '16x16')))
-        self.DiagnoseHPLIPAction.triggered.connect(self.DiagnoseHPLIP_activated)
+        #self.DiagnoseHPLIPAction.setIcon(QIcon(load_pixmap('troubleshoot', '16x16')))
+        #self.DiagnoseHPLIPAction.triggered.connect(self.DiagnoseHPLIP_activated)
 
         self.ContentsAction.setIcon(QIcon(load_pixmap("help", "16x16")))
         self.ContentsAction.triggered.connect(self.helpContents)
