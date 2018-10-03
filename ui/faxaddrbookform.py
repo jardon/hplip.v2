@@ -228,7 +228,7 @@ class FaxAddrBookGroupsForm(FaxAddrBookGroupsForm_base):
         x = QMessageBox.critical(self,
                                  self.caption(),
                                  self.__tr("<b>Annoying Confirmation: Are you sure you want to delete this group?</b>"),
-                                  QMessageBox.Yes,
+                                  QMessageBox.Yes |\
                                   QMessageBox.No | QMessageBox.Default,
                                   QMessageBox.NoButton)
         if x == QMessageBox.Yes:
@@ -421,7 +421,7 @@ class FaxAddrBookForm(FaxAddrBookForm_base):
         if QMessageBox.critical(self,
              self.caption(),
              self.__tr("<b>Annoying Confirmation: Are you sure you want to delete this address book entry?</b>"),
-              QMessageBox.Yes,
+              QMessageBox.Yes |\
               QMessageBox.No | QMessageBox.Default,
               QMessageBox.NoButton) == QMessageBox.Yes:
             db.delete(self.current.entry['name'])
@@ -451,7 +451,7 @@ class FaxAddrBookForm(FaxAddrBookForm_base):
         QMessageBox.critical(self,
                              self.caption(),
                              QString(error_text),
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 

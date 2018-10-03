@@ -344,7 +344,7 @@ class FABWindow(QMainWindow,  Ui_MainWindow):
             new_name = to_unicode(self.NameLineEdit.text())
             if new_name != self.name:
                 if QMessageBox.question(self, self.__tr("Rename?"), "Rename '%s' to '%s'?"%(self.name,new_name), \
-                                        QMessageBox.Yes | QMessageBox.No) == QMessageBox.Yes:
+                                        QMessageBox.Yes | QMessageBox.No, QMessageBox.No) == QMessageBox.Yes:
 
                     self.db.rename(self.name, new_name)
                     log.debug("Rename %s to %s" % (self.name, new_name))

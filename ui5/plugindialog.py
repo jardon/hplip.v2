@@ -252,7 +252,7 @@ class PluginDialog(QDialog, Ui_Dialog):
 
                 if QMessageBox.question(self, " ",
                         self.__tr("<b>%s</b><p>Without this, it is not possible to authenticate and validate the plug-in prior to installation.</p>Do you still want to install the plug-in?" %error_str),
-                        QMessageBox.Yes | QMessageBox.No) != QMessageBox.Yes:
+                                        QMessageBox.Yes | QMessageBox.No, QMessageBox.No) != QMessageBox.Yes:
 
                     self.pluginObj.deleteInstallationFiles(download_plugin_file)
                     self.close()
