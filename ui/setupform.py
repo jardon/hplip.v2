@@ -602,7 +602,7 @@ class SetupForm(SetupForm_base):
             if ( QMessageBox.warning(self,
                                 self.caption(),
                                 warn_text,
-                                QMessageBox.Yes,
+                                QMessageBox.Yes |\
                                 QMessageBox.No,
                                 QMessageBox.NoButton) == QMessageBox.Yes ):
 
@@ -804,7 +804,7 @@ class SetupForm(SetupForm_base):
                     if QMessageBox.critical(self,
                                            self.caption(),
                                            error_text,
-                                           QMessageBox.Retry | QMessageBox.Default,
+                                           QMessageBox.Retry | QMessageBox.Default |\
                                            QMessageBox.Cancel | QMessageBox.Escape,
                                            QMessageBox.NoButton) == QMessageBox.Cancel:
                         break
@@ -832,7 +832,7 @@ class SetupForm(SetupForm_base):
                                 if QMessageBox.critical(self,
                                                        self.caption(),
                                                        error_text,
-                                                       QMessageBox.Retry | QMessageBox.Default,
+                                                       QMessageBox.Retry | QMessageBox.Default |\
                                                        QMessageBox.Cancel | QMessageBox.Escape,
                                                        QMessageBox.NoButton) == QMessageBox.Cancel:
                                     break
@@ -1003,7 +1003,7 @@ class SetupForm(SetupForm_base):
         QMessageBox.critical(self,
                              self.caption(),
                              error_text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
@@ -1011,7 +1011,7 @@ class SetupForm(SetupForm_base):
         QMessageBox.warning(self,
                              self.caption(),
                              error_text,
-                              QMessageBox.Ok,
+                              QMessageBox.Ok |\
                               QMessageBox.NoButton,
                               QMessageBox.NoButton)
 
