@@ -252,7 +252,7 @@ void *get_library_symbol(void *pLibHandler, const char *szSymbol)
     void *pSymHandler = NULL;
     if (pLibHandler == NULL)
     {
-        BUG("Invalid Library hanlder\n");
+        BUG("Invalid Library handler\n");
         return NULL;
     }
 
@@ -274,7 +274,7 @@ void unload_library(void *pLibHandler)
     if (pLibHandler)
         dlclose(pLibHandler);
     else
-        BUG("Invalid Library hanlder pLibHandler = NULL.\n");
+        BUG("Invalid Library handler pLibHandler = NULL.\n");
 }
 
 int createTempFile(char* szFileName, FILE** pFilePtr)
