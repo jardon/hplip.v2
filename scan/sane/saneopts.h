@@ -133,7 +133,7 @@
 
 #define SANE_NAME_MULTIPICK "multi-pick"
 #define SANE_TITLE_MULTIPICK SANE_I18N("Multi pick")
-#define SANE_DESC_MULTIPICK SANE_I18N("Select multipick option for ESCL protocal based devices")
+#define SANE_DESC_MULTIPICK SANE_I18N("Select multipick option for ESCL protocol based devices")
 
 #define SANE_TITLE_NUM_OPTIONS		SANE_I18N("Number of options")
 #define SANE_TITLE_PREVIEW		SANE_I18N("Preview")
