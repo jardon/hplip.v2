@@ -941,7 +941,7 @@ enum HPMUD_RESULT readChannel(raw_ipp *responseptr, HPMUD_DEVICE hd, HPMUD_CHANN
         {        
             if(memcmp(&data[*size - CHUNK_DELIMITER_LENGTH], CHUNK_DELIMITER, CHUNK_DELIMITER_LENGTH) == 0)
             {
-                DBG("Chunk end recieved....\n");
+                DBG("Chunk end received....\n");
                 break;        
             }
         }
@@ -950,7 +950,7 @@ enum HPMUD_RESULT readChannel(raw_ipp *responseptr, HPMUD_DEVICE hd, HPMUD_CHANN
             bytes_remaining -= bytes_read;
             if(bytes_remaining == 0)
             {
-                DBG("Complete unchunked data recieved....\n");
+                DBG("Complete unchunked data received....\n");
                 break;   
             }
         }

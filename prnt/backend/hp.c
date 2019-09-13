@@ -666,7 +666,7 @@ static void save_out_file(int fd, int copies, FILE * temp_fp)
 
    if (NULL == temp_fp)
    {
-       BUG("ERROR: save_out_file function recieved NULL temp_fp pointer\n");
+       BUG("ERROR: save_out_file function received NULL temp_fp pointer\n");
        return;
    }
 
