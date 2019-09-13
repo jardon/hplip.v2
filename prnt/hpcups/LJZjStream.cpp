@@ -685,7 +685,7 @@ DRIVER_ERROR LJZjStream::preProcessRasterData(cups_raster_t **ppcups_raster, cup
 		return  NO_ERROR;                                  
     }    
 
-    dbglog ("DEBUG: Getting Swaped Pages Raster.....\n");
+    dbglog ("DEBUG: Getting Swapped Pages Raster.....\n");
 
     memcpy(&cups_header, firstpage_cups_header, sizeof(cups_page_header2_t));
 
