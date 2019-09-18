@@ -34,7 +34,7 @@ from base import utils, services
 from base.sixext import to_bytes_utf8
 
 ver1_pat = re.compile("""(\d+\.\d+\.\d+)""", re.IGNORECASE)
-ver_pat = re.compile("""(\d+.\d+)""", re.IGNORECASE)
+ver_pat = re.compile("""(\d+\.\d+)""", re.IGNORECASE)
 PID = 0
 CMDLINE = 1
 
