@@ -819,21 +819,7 @@ class CoreInstall(object):
             return [x for x in data.split(',') if x]
 
     def load_distros(self):
-        if self.mode == MODE_INSTALLER:
-            distros_dat_file = os.path.join('installer', 'distros.dat')
-
-        elif self.mode == MODE_CREATE_DOCS:
-            distros_dat_file = os.path.join(
-                '..', '..', 'installer', 'distros.dat')
-
-        else:  # MODE_CHECK
-            distros_dat_file = os.path.join(
-                prop.home_dir, 'installer', 'distros.dat')
-
-            if not os.path.exists(distros_dat_file):
-                log.debug(
-                    "DAT file not found at %s. Using local relative path..." % distros_dat_file)
-                distros_dat_file = os.path.join('installer', 'distros.dat')
+        distros_dat_file = '/usr/share/hplip/installer/distros.dat'
 
         distros_dat = ConfigBase(distros_dat_file)
         distros_list = self.__fixup_data(
