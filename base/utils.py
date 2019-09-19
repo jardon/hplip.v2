@@ -2248,12 +2248,14 @@ def check_library( so_file_path):
     return ret_val
 
 
-def download_via_wget(target):
+def download_via_wget(target, head=False):
     status = -1
     wget = which("wget")
     if target and wget:
         wget = os.path.join(wget, "wget")
         cmd = "%s --cache=off --tries=3 --timeout=60 --output-document=- %s" % (wget, target)
+        if head:
+            cmd += " --spider -S"
         log.debug(cmd)
         status, output = run(cmd)
         log.debug("wget returned: %d" % status)
@@ -2261,12 +2263,14 @@ def download_via_wget(target):
         log.debug("wget not found")
     return status
 
-def download_via_curl(target):
+def download_via_curl(target, head=False):
     status = -1
     curl = which("curl")
     if target and curl:
         curl = os.path.join(curl, "curl")
         cmd = "%s --output - --connect-timeout 5 --max-time 10 %s" % (curl, target)
+        if head:
+            cmd += " --head"
         log.debug(cmd)
         status, output = run(cmd)
         log.debug("curl returned: %d" % status)
@@ -2288,9 +2292,9 @@ def check_network_via_ping(target):
     return status
 
 def check_network_connection(url=HTTP_CHECK_TARGET, ping_server=PING_CHECK_TARGET):
-    status = download_via_wget(url)
+    status = download_via_wget(url, head=True)
     if (status != 0):
-        status = download_via_curl(url)
+        status = download_via_curl(url, head=True)
         if (status != 0):
             status = check_network_via_ping(ping_server)
     return (status == 0)
