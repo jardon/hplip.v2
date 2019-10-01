@@ -94,7 +94,7 @@ def usage(typ='text'):
 def _encode(v):
     if isinstance(v, text_type):
         v = v.encode(enc)
-    return v
+    return str(v)
 
 
 
