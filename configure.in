@@ -650,10 +650,13 @@ if test "$class_driver" = "no" && test "$hpijs_only_build" = "no" && test "$lite
    PYTHONINCLUDEDIR=`$PYTHON -c "from distutils.sysconfig import get_python_inc; print (get_python_inc());"`
    AC_MSG_RESULT("using $PYTHONINCLUDEDIR ....  python${PYTHON_VERSION}/Python.h")
    AC_ARG_VAR(PYTHONINCLUDEDIR, [path to Python.h C header file])
-   AC_CHECK_HEADERS([python${PYTHON_VERSION}/Python.h python${PYTHON_VERSION}mu/Python.h python${PYTHON_VERSION}m/Python.h ],
+   save_CPPFLAGS=$CPPFLAGS
+   CPPFLAGS="-I$PYTHONINCLUDEDIR"
+   AC_CHECK_HEADERS([Python.h],
           [FOUND_HEADER=yes; break;])
    AS_IF([test "x$FOUND_HEADER" != "xyes"],
           [AC_MSG_ERROR([cannot find python-devel support], 6)])
+   CPPFLAGS=$save_CPPFLAGS
 fi
 CFLAGS="$save_CFLAGS"
 
