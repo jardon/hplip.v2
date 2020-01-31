@@ -99,7 +99,7 @@ try:
     if mode == GUI_MODE and (ui_toolkit == 'qt4' or ui_toolkit == 'qt5'):
         if not utils.canEnterGUIMode4():
             log.error("%s -u/--gui requires Qt4/Qt5 GUI support. Entering interactive mode." % __mod__)
-            mode = INTERACTIVE_MODE4
+            mode = INTERACTIVE_MODE
 
     elif mode == GUI_MODE and ui_toolkit == 'qt3':
        if not utils.canEnterGUIMode():
