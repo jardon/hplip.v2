@@ -556,6 +556,9 @@ else: # INTERACTIVE_MODE
                             else:
                                 nickname = open(file_path, 'r').read(4096)
 
+                            if sys.version_info[0] > 2:
+                                nickname = nickname.decode('utf-8')
+
                             try:
                                 desc = nickname_pat.search(nickname).group(1)
                             except AttributeError:
