@@ -89,7 +89,14 @@ if __name__ == '__main__':
     log.debug("Creating pipe: hpssd (%d) ==> systemtray (%d)" % (w1, r1))
     
     parent_pid = os.getpid()
-    child_pid1 = os.fork()
+    try:
+        child_pid1 = os.fork()
+    except BlockingIOErrror as e:
+        log.error("hp-systray: error during fork - %s" % e)
+        os.close(w1)
+        os.close(r1)
+        mod.unlockInstance()
+        sys.exit(1)
     
     if child_pid1:
         # parent (UI)
