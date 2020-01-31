@@ -669,7 +669,7 @@ int HPCupsFilter::processRasterData(cups_raster_t *cups_raster)
     char hpPreProcessedRasterFile[MAX_FILE_PATH_LEN]; //temp file needed to store raster data with swaped pages.
 
 
-    sprintf(hpPreProcessedRasterFile, "%s/hp_%s_cups_SwapedPagesXXXXXX",CUPS_TMP_DIR, m_JA.user_name);
+    snprintf(hpPreProcessedRasterFile, sizeof(hpPreProcessedRasterFile), "%s/hp_%s_cups_SwapedPagesXXXXXX",CUPS_TMP_DIR, m_JA.user_name);
     #ifndef DISABLE_IMAGEPROCESSOR 
 	    image_processor_t* imageProcessor=NULL;
 	    IMAGE_PROCESSOR_ERROR result;
