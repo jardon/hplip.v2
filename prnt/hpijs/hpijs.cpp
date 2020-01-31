@@ -605,7 +605,7 @@ int main (int argc, char *argv[], char *evenp[])
    }
 
    if (argc > 2)
-        strncpy(user_name, argv[2], sizeof(user_name));
+        strncpy(user_name, argv[2], sizeof(user_name) - 1);
 
 #ifdef HAVE_LIBHPIP
    char *pDev;
