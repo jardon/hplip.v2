@@ -405,7 +405,7 @@ DISPLAY_STATUS DJ3320::ParseError (BYTE byStatusReg)
 {
     DRIVER_ERROR err = NO_ERROR;
     BYTE byDevIDBuffer[DevIDBuffSize];
-    char *pcStr = NULL;
+    const char *pcStr = NULL;
     BYTE byStatus1, byStatus2;
 
     memset(byDevIDBuffer, 0, sizeof(byDevIDBuffer));
