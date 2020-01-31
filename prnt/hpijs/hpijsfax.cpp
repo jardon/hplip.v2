@@ -282,7 +282,7 @@ int hpijsFaxServer (int argc, char **argv)
 	char user_name[32]={0,};
 
    if (argc > 2)
-        strncpy(user_name, argv[2], sizeof(user_name));
+        strncpy(user_name, argv[2], sizeof(user_name) - 1);
 
     snprintf(hpFileName,sizeof(hpFileName),"%s/hp_%s_ijsfax_Log_XXXXXX",CUPS_TMP_DIR, user_name);
 
