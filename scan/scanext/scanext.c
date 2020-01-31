@@ -408,16 +408,6 @@ static PyObject *setOption (_ScanDevice * self, PyObject * args)
     int n;
     multipick = 1;
 
-if(1)
-{
-SANE_Bool b = SANE_TRUE;
-    sane_control_option (self->h, 9, SANE_ACTION_SET_VALUE, (void *)&b, &i);
-}
-else
-{
-SANE_Bool b = SANE_FALSE;
-    sane_control_option (self->h, 9, SANE_ACTION_SET_VALUE, (void *)&b, &i);
-}
     if (!PyArg_ParseTuple (args, "iO", &n, &value))
         raiseError("Invalid arguments.");
 
