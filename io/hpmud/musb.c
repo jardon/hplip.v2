@@ -1455,7 +1455,7 @@ enum HPMUD_RESULT __attribute__ ((visibility ("hidden"))) musb_raw_channel_write
                     BUG("unable to write data %s: %d second io timeout\n", msp->device[pc->dindex].uri, sec_timeout);
             }
             else
-                BUG("unable to write data (len = %d) %s: %m\n", msp->device[pc->dindex].uri, len);
+                BUG("unable to write data (len = %d) %s: %m\n", len, msp->device[pc->dindex].uri);
             goto bugout;
         }
 		if(len == 0 && size > 0)
