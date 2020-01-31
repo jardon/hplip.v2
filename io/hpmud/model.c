@@ -117,6 +117,7 @@ static int ReadConfig()
       if (rcbuf[0] == '[')
       {
          strncpy(section, rcbuf, sizeof(section)); /* found new section */
+         section[sizeof(section)-1] = '\0';
          continue;
       }
 
@@ -125,6 +126,7 @@ static int ReadConfig()
       if ((strncasecmp(section, "[dirs]", 6) == 0) && (strcasecmp(key, "home") == 0))
       {
          strncpy(homedir, value, sizeof(homedir));
+         homedir[sizeof(homedir)-1] = '\0';
          break;  /* done */
       }
    }

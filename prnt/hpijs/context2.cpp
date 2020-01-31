@@ -1302,6 +1302,7 @@ DRIVER_ERROR PrintContext::SelectDevice
 	if(0 == strnlen((const char *)pSS->strDevID, DevIDBuffSize))
 	{
 		strncpy((char *)pSS->strDevID,szDeviceId,DevIDBuffSize);
+		pSS->strDevID[sizeof(pSS->strDevID)-1] = '\0';
 	}
     thePrinter = pPFI->CreatePrinter (pSS, familyHandle);
     if (thePrinter->constructor_error != NO_ERROR)
