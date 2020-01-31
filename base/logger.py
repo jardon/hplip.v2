@@ -199,6 +199,8 @@ class Logger(object):
                         out.write('\n')
 
                     out.flush()
+                except IOError:
+                    pass
                 finally:
                     self._lock.release()
 
