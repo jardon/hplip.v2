@@ -50,7 +50,7 @@ int __attribute__ ((visibility ("hidden"))) InitDbus(void)
     
    if (dbus_error_is_set(&dbus_err))
    { 
-      BUG("dBus Connection Error (%s)!\n", dbus_err.message); 
+      BUG_SCAN("dBus Connection Error (%s)!\n", dbus_err.message);
       dbus_error_free(&dbus_err); 
    }
 
@@ -79,7 +79,7 @@ int __attribute__ ((visibility ("hidden"))) SendScanEvent(char *device_uri, int 
 
     if (NULL == msg)
     {
-        BUG("dbus message is NULL!\n");
+        BUG_SCAN("dbus message is NULL!\n");
         return 0;
     }
 
@@ -94,7 +94,7 @@ int __attribute__ ((visibility ("hidden"))) SendScanEvent(char *device_uri, int 
 
     if (!dbus_connection_send(dbus_conn, msg, NULL))
     {
-        BUG("dbus message send failed!\n");
+        BUG_SCAN("dbus message send failed!\n");
         return 0;
     }
 

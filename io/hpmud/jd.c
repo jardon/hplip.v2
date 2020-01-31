@@ -31,6 +31,7 @@
 #endif
 
 #include <signal.h>
+#include <stdlib.h>
 #include "hpmud.h"
 #include "hpmudi.h"
 

@@ -274,13 +274,13 @@ static void WriteHeader(char **argument)
     /*		Writing Header Information
     argument[1] = JOB ID , argument[2]= USERNAME,  argument[3] = TITLE		*/
     hpwrite("\x1b%-12345X@PJL JOBNAME=", strlen("\x1b%-12345X@PJL JOBNAME="));
-    sprintf(buffer, "hplip_%s_%s\x0a", argument[2], argument[1]);
+    snprintf(buffer, MAX_BUFFER-1, "hplip_%s_%s\x0a", argument[2], argument[1]);
     hpwrite(buffer, strlen(buffer));
     memset(buffer, 0, sizeof(buffer));
-    sprintf(buffer, "@PJL SET USERNAME=\"%s\"\x0a", argument[2]);
+    snprintf(buffer, MAX_BUFFER-1, "@PJL SET USERNAME=\"%s\"\x0a", argument[2]);
     hpwrite(buffer, strlen(buffer));
     memset(buffer, 0, sizeof(buffer));
-    sprintf(buffer, "@PJL SET JOBNAME=\"%s\"\x0a", argument[3]);
+    snprintf(buffer, MAX_BUFFER-1, "@PJL SET JOBNAME=\"%s\"\x0a", argument[3]);
     hpwrite(buffer, strlen(buffer));
     fprintf(stderr, "HP PS filter func = WriteHeader           : WRITING PJL HEADER INFO\n");
     return;
