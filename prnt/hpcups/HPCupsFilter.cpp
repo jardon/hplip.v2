@@ -589,6 +589,13 @@ int HPCupsFilter::StartPrintJob(int  argc, char *argv[])
 
     signal(SIGTERM, HPCancelJob);
 
+/*
+ *  Prior to the re-write of hpcups, this filter managed the
+ *  marker-supply-low-warning printer state reason.  Make sure to
+ *  clear that state reason so that upgrades work correctly.
+ */
+    fputs ("STATE: -marker-supply-low-warning\n", stderr);
+
     cups_raster = cupsRasterOpen(fd, CUPS_RASTER_READ);
 
     if (cups_raster == NULL) {
