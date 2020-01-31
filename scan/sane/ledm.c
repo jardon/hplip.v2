@@ -813,7 +813,7 @@ SANE_Status ledm_control_option(SANE_Handle handle, SANE_Int option, SANE_Action
 
   if (stat != SANE_STATUS_GOOD)
   {
-     BUG("control_option failed: option=%s action=%s\n", ps->option[option].name, action==SANE_ACTION_GET_VALUE ? "get" : action==SANE_ACTION_SET_VALUE ? "set" : "auto");
+     BUG_SCAN("control_option failed: option=%s action=%s\n", ps->option[option].name, action==SANE_ACTION_GET_VALUE ? "get" : action==SANE_ACTION_SET_VALUE ? "set" : "auto");
   }
 
    return stat;
@@ -1080,7 +1080,7 @@ void ledm_close(SANE_Handle handle)
 
   if (ps == NULL || ps != session)
   {
-    BUG("invalid sane_close\n");
+    BUG_SCAN("invalid sane_close\n");
     return;
   }
 

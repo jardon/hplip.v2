@@ -142,7 +142,7 @@ static int get_ip_data(struct soap_session *ps, SANE_Byte *data, SANE_Int maxLen
 
    if (!ps->ip_handle)
    {
-      BUG("invalid ipconvert state\n");
+      BUG_SCAN("invalid ipconvert state\n");
       goto bugout;
    }      
 
@@ -219,7 +219,7 @@ static struct soap_session *create_session()
 
    if ((ps = malloc(sizeof(struct soap_session))) == NULL)
    {
-      BUG("malloc failed: %m\n");
+      BUG_SCAN("malloc failed: %m\n");
       return NULL;
    }
    memset(ps, 0, sizeof(struct soap_session));
@@ -418,7 +418,7 @@ SANE_Status soap_open(SANE_String_Const device, SANE_Handle *handle)
 
    if (session)
    {
-      BUG("session in use\n");
+      BUG_SCAN("session in use\n");
       return SANE_STATUS_DEVICE_BUSY;
    }
 
@@ -434,7 +434,7 @@ SANE_Status soap_open(SANE_String_Const device, SANE_Handle *handle)
 
    if (hpmud_open_device(session->uri, ma.mfp_mode, &session->dd) != HPMUD_R_OK)
    {
-      BUG("unable to open device %s\n", session->uri);
+      BUG_SCAN("unable to open device %s\n", session->uri);
       goto bugout;
 
       free(session);
@@ -519,7 +519,7 @@ void soap_close(SANE_Handle handle)
 
    if (ps == NULL || ps != session)
    {
-      BUG("invalid sane_close\n");
+      BUG_SCAN("invalid sane_close\n");
       return;
    }
 
@@ -824,7 +824,7 @@ SANE_Status soap_control_option(SANE_Handle handle, SANE_Int option, SANE_Action
 
    if (stat != SANE_STATUS_GOOD)
    {
-      BUG("control_option failed: option=%s action=%s\n", ps->option[option].name, 
+      BUG_SCAN("control_option failed: option=%s action=%s\n", ps->option[option].name, 
                   action==SANE_ACTION_GET_VALUE ? "get" : action==SANE_ACTION_SET_VALUE ? "set" : "auto");
    }
 
@@ -862,7 +862,7 @@ SANE_Status soap_start(SANE_Handle handle)
    ps->user_cancel = 0;
    if (set_extents(ps))
    {
-      BUG("invalid extents: tlx=%d brx=%d tly=%d bry=%d minwidth=%d minheight%d maxwidth=%d maxheight=%d\n",
+      BUG_SCAN("invalid extents: tlx=%d brx=%d tly=%d bry=%d minwidth=%d minheight%d maxwidth=%d maxheight=%d\n",
          ps->currentTlx, ps->currentTly, ps->currentBrx, ps->currentBry, ps->min_width, ps->min_height, ps->tlxRange.max, ps->tlyRange.max);
       stat = SANE_STATUS_INVAL;
       goto bugout;
@@ -913,7 +913,7 @@ SANE_Status soap_start(SANE_Handle handle)
    /* Open image processor. */
    if ((ret = ipOpen(pXform-xforms, xforms, 0, &ps->ip_handle)) != IP_DONE)
    {
-      BUG("unable open image processor: err=%d\n", ret);
+      BUG_SCAN("unable open image processor: err=%d\n", ret);
       stat = SANE_STATUS_INVAL;
       goto bugout;
    }
@@ -955,7 +955,7 @@ SANE_Status soap_start(SANE_Handle handle)
 
          if (ret & (IP_INPUT_ERROR | IP_FATAL_ERROR | IP_DONE))
          {
-            BUG("ipConvert error=%x\n", ret);
+            BUG_SCAN("ipConvert error=%x\n", ret);
             stat = SANE_STATUS_IO_ERROR;
             goto bugout;
          }
@@ -1007,7 +1007,7 @@ SANE_Status soap_read(SANE_Handle handle, SANE_Byte *data, SANE_Int maxLength, S
 
    if(ret & (IP_INPUT_ERROR | IP_FATAL_ERROR))
    {
-      BUG("ipConvert error=%x\n", ret);
+      BUG_SCAN("ipConvert error=%x\n", ret);
       goto bugout;
    }
 
