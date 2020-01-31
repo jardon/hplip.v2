@@ -182,7 +182,7 @@ try:
                         log.error("Cleaning not needed or supported on this device.")
 
                 except Error as e:
-                    log.error("An error occured: %s" % e[0])
+                    log.error("An error occured: %s" % e.msg)
 
             else:
                 log.error("Device is busy or in an error state. Please check device and try again.")
