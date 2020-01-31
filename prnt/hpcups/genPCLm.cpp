@@ -1237,11 +1237,16 @@ void PCLmGenerator::writeJobTicket()
 	char orientation[256];
 	char duplex[256];
 	char colorthemes[256];
-	strncpy(colorthemes,getColorThemesString(m_pPCLmSSettings->colorTheme),256);
-	strncpy(inputBin,getInputBinString(m_pPCLmSSettings->userInputBin),256);
-	strncpy(outputBin,getOutputBin(m_pPCLmSSettings->userOutputBin),256);
-	strncpy(orientation,getOrientationString(m_pPCLmSSettings->userOrientation),256);
-	strncpy(duplex,getDuplexString(currDuplexDisposition),256);
+	strncpy(colorthemes,getColorThemesString(m_pPCLmSSettings->colorTheme), sizeof(colorthemes));
+	colorthemes[sizeof(colorthemes)-1] = '\0';
+	strncpy(inputBin,getInputBinString(m_pPCLmSSettings->userInputBin), sizeof(inputBin));
+	inputBin[sizeof(inputBin)-1] = '\0';
+	strncpy(outputBin,getOutputBin(m_pPCLmSSettings->userOutputBin), sizeof(outputBin));
+	outputBin[sizeof(outputBin)-1] = '\0';
+	strncpy(orientation,getOrientationString(m_pPCLmSSettings->userOrientation), sizeof(orientation));
+	orientation[sizeof(orientation)-1] = '\0';
+	strncpy(duplex,getDuplexString(currDuplexDisposition), sizeof(duplex));
+	duplex[sizeof(duplex)-1] = '\0';
 
 	snprintf(pOutStr,OUT_STR_SIZE,"%%  genPCLm (Ver: %f)\n",PCLM_Ver); writeStr2OutBuff(pOutStr);
 	snprintf(pOutStr,OUT_STR_SIZE,"%%============= Job Ticket =============\n"); writeStr2OutBuff(pOutStr);
@@ -1635,7 +1640,10 @@ int  PCLmGenerator::StartPage(PCLmPageSetup *PCLmPageContent, void **pOutBuffer,
 	}
 
 	if(strlen(PCLmPageContent->mediaSizeName))
-		strncpy(currMediaName,PCLmPageContent->mediaSizeName,256);
+	{
+		strncpy(currMediaName,PCLmPageContent->mediaSizeName, sizeof(currMediaName));
+		currMediaName[sizeof(currMediaName)-1] = '\0';
+	}
 
 	currStripHeight=PCLmPageContent->stripHeight;
 	if(!currStripHeight)

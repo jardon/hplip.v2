@@ -166,5 +166,10 @@ int     getCupsPrinters(printer_t **printer_list);
 HPIPP_RESULT parseResponseHeader(char* header, int *content_length, int *chunked, int* header_size);
 HPIPP_RESULT prepend_http_header(raw_ipp *raw_request);
 enum HPMUD_RESULT sendUSBRequest(char *buf, int size, raw_ipp *responseptr, char * device_uri);
+void _releaseCupsInstance();
+int addCupsPrinter(char *name, char *device_uri, char *location, char *ppd_file, char *model, char *info);
+int delCupsPrinter(char *pr_name);
+int setDefaultCupsPrinter(char *pr_name);
+int controlCupsPrinter(char *pr_name, int op);
 
 # endif //_IPP_H
