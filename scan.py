@@ -965,6 +965,7 @@ try:
                 sys.exit(1)
         except:
             log.error("Failed to get the source from device.")
+            sys.exit(1)
 
         #check if device has only ADF
         if len(source_option) == 1 and 'ADF' in source_option:
