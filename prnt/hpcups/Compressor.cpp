@@ -29,7 +29,7 @@
 \*****************************************************************************/
 #include "Compressor.h"
 
-Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL), UseSeedRow(useseed), inputsize(RasterSize), seeded(false)
+Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL), compressBuf(NULL), UseSeedRow(useseed), inputsize(RasterSize), seeded(false)
 {
     constructor_error = NO_ERROR;
     iRastersReady = 0;
