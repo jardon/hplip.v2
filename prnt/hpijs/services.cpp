@@ -29,6 +29,7 @@
     POSSIBILITY OF SUCH DAMAGE.
 \*****************************************************************************/
 
+#include <errno.h>
 #include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -385,8 +386,16 @@ DRIVER_ERROR UXServices::ToDevice(const BYTE * pBuffer, DWORD * Count)
    if (write(OutputPath, pBuffer, *Count) != (ssize_t)*Count) 
    {
       static int cnt=0;
-      if (cnt++ < 5)
+      if (cnt < 5)
+      {
+	 cnt++;
          BUG("unable to write to output, fd=%d, count=%d: %m\n", OutputPath, *Count);
+      }
+
+      if (errno == EPIPE)
+	 /* The backend has exited.  There's no recovering from that. */
+	 exit (1);
+
       return IO_ERROR;
    }
 
