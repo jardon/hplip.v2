@@ -1602,6 +1602,7 @@ am__dist_ppd_DATA_DIST = prnt/ps/hp-laserjet_3050-ps.ppd.gz \
 	ppd/hpcups/hp-laserjet_cm1418fnw-pcl3.ppd.gz \
 	ppd/hpcups/hp-laserjet_cp1025.ppd.gz \
 	ppd/hpcups/hp-laserjet_cp1025nw.ppd.gz \
+	ppd/hpcups/hp-laserjet_cp_1025nw.ppd.gz \
 	ppd/hpcups/hp-laserjet_m1005.ppd.gz \
 	ppd/hpcups/hp-laserjet_m101-m106.ppd.gz \
 	ppd/hpcups/hp-laserjet_m1120_mfp.ppd.gz \
@@ -1717,6 +1718,7 @@ am__dist_ppd_DATA_DIST = prnt/ps/hp-laserjet_3050-ps.ppd.gz \
 	ppd/hpcups/hp-laserjet_professional_p1608dn.ppd.gz \
 	ppd/hpcups/hp-laserjet_professional_p1609dn.ppd.gz \
 	ppd/hpcups/hp-laserjet_professional_p_1102w.ppd.gz \
+	ppd/hpcups/hp-laserjet_professional_p1102w.ppd.gz \
 	ppd/hpcups/hp-mopier_240-pcl3.ppd.gz \
 	ppd/hpcups/hp-mopier_320-pcl3.ppd.gz \
 	ppd/hpcups/hp-neverstop_laser_100x.ppd.gz \
@@ -4056,6 +4058,7 @@ dist_unrel_DATA =
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_cm1418fnw-pcl3.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_cp1025.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_cp1025nw.ppd.gz \
+@HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_cp_1025nw.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_m1005.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_m101-m106.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_m1120_mfp.ppd.gz \
@@ -4170,6 +4173,7 @@ dist_unrel_DATA =
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_professional_p1607dn.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_professional_p1608dn.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_professional_p1609dn.ppd.gz \
+@HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_professional_p1102w.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-laserjet_professional_p_1102w.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-mopier_240-pcl3.ppd.gz \
 @HPLIP_CLASS_DRIVER_FALSE@   ppd/hpcups/hp-mopier_320-pcl3.ppd.gz \
