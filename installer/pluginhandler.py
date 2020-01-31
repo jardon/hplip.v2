@@ -167,7 +167,7 @@ class PluginHandle(object):
                         continue
                     if link != "":
                         if not utils.check_library(link):
-                            self.__plugin_state = PLUGIN_FILES_CORRUPTED
+                            pass
 
 
     def __getPluginInformation(self, callback=None):
