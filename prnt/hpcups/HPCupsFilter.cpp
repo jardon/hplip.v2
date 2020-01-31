@@ -211,6 +211,7 @@ HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL)
     adj_k_width = 0;
     black_raster = NULL;
     color_raster = NULL;
+    memset (&m_JA, 0, sizeof (m_JA));
 }
 
 HPCupsFilter::~HPCupsFilter()
@@ -428,9 +429,9 @@ DRIVER_ERROR HPCupsFilter::startPage (cups_page_header2_t *cups_header)
         m_JA.media_attributes.physical_height = cups_header->PageSize[1];
         m_JA.media_attributes.printable_width = ((cups_header->ImagingBoundingBox[2]-cups_header->ImagingBoundingBox[0]) * horz_res) / 72;
         m_JA.media_attributes.printable_height = ((cups_header->ImagingBoundingBox[3]-cups_header->ImagingBoundingBox[1]) * vert_res) / 72;
-        strncpy(m_JA.media_attributes.PageSizeName, &cups_header->cupsString[0][0], sizeof(m_JA.media_attributes.PageSizeName));
-        strncpy(m_JA.media_attributes.MediaTypeName, cups_header->MediaType, sizeof(m_JA.media_attributes.MediaTypeName));
-        strncpy(m_JA.quality_attributes.hbpl1_print_quality, cups_header->OutputType, sizeof(m_JA.quality_attributes.hbpl1_print_quality));
+        strncpy(m_JA.media_attributes.PageSizeName, &cups_header->cupsString[0][0], sizeof(m_JA.media_attributes.PageSizeName)-1);
+        strncpy(m_JA.media_attributes.MediaTypeName, cups_header->MediaType, sizeof(m_JA.media_attributes.MediaTypeName)-1);
+        strncpy(m_JA.quality_attributes.hbpl1_print_quality, cups_header->OutputType, sizeof(m_JA.quality_attributes.hbpl1_print_quality)-1);
         m_JA.color_mode = cups_header->cupsRowStep;
     }
     else {
