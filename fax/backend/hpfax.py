@@ -89,7 +89,7 @@ try:
     from base import utils
     #from prnt import cups
 except ImportError as e:
-    bug("Error importing HPLIP modules: %s\n" % (pid, e))
+    bug("Error importing HPLIP modules: %s\n" % (e))
     sys.exit(1)
 
 def handle_sigpipe():
