@@ -36,7 +36,7 @@
 #define _STRINGIZE(x) #x
 #define STRINGIZE(x) _STRINGIZE(x)
 
-#define BUG(args...) {syslog(LOG_ERR, __FILE__ " " STRINGIZE(__LINE__) ": " args); DBG(2, __FILE__ " " STRINGIZE(__LINE__) ": " args);}
+#define BUG_SCAN(args...) {syslog(LOG_ERR, __FILE__ " " STRINGIZE(__LINE__) ": " args); DBG(2, __FILE__ " " STRINGIZE(__LINE__) ": " args);}
 #define BUG_DUMP(data, size) bugdump((data), (size))
 #define BUG_SZ(args...) {syslog(LOG_ERR, args); DBG(2, args);}
 
