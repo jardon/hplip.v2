@@ -290,14 +290,14 @@ DRIVER_ERROR DeviceRegistry::SelectDevice(char* model, int *pVIPVersion, char* p
         err = pSS->GetDeviceID(DevIDBuffer, DevIDBuffSize, FALSE);
         ERRCHECK;   // should be either NO_ERROR or BAD_DEVICE_ID
 
-		char	*cmdStr = (char *) strstr ((const char *) DevIDBuffer+2, "CMD:");
+		char	*cmdStr = strstr ((char *) DevIDBuffer+2, "CMD:");
         char    *cmdStrEnd;
         if ((strstr((const char *) DevIDBuffer+2,"CMD:LDL")))
         {
             device = eDJ3320;
             match = TRUE;
         }
-        if (!match && cmdStr && (cmdStrEnd = (char *) strstr (cmdStr, ";")))
+        if (!match && cmdStr && (cmdStrEnd = strstr (cmdStr, ";")))
         {
             *cmdStrEnd = '\0';
             if (strstr (cmdStr, "LDL"))
@@ -309,12 +309,12 @@ DRIVER_ERROR DeviceRegistry::SelectDevice(char* model, int *pVIPVersion, char* p
         }
 		if (!match && !cmdStr)
 		{
-			cmdStr = (char *) strstr ((const char *) DevIDBuffer+2, "COMMAND SET:");
+			cmdStr = strstr ((char *) DevIDBuffer+2, "COMMAND SET:");
 		}
-		if (!match && cmdStr && (strstr ((const char *) cmdStr+4, "POSTSCRIPT") || 
-			                     strstr ((const char *) cmdStr+4, "PostScript") || 
-					             strstr ((const char *) cmdStr+4, "Postscript") || 
-					             strstr ((const char *) cmdStr+4, "postscript") ))
+		if (!match && cmdStr && (strstr (cmdStr+4, "POSTSCRIPT") ||
+			                     strstr (cmdStr+4, "PostScript") ||
+					             strstr (cmdStr+4, "Postscript") ||
+					             strstr (cmdStr+4, "postscript") ))
 		{
 			device = ePScript;
 			match = TRUE;
