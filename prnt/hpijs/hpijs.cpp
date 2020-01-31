@@ -588,6 +588,7 @@ int main (int argc, char *argv[], char *evenp[])
    char *raster = NULL, *k_raster = NULL;
    int status = EXIT_FAILURE;
    int ret, n, i, kn=0, width, k_width;
+   int low_marker = 0;
    char user_name[32]={0,};
         
    openlog("hpijs", LOG_PID,  LOG_DAEMON);
@@ -675,13 +676,16 @@ int main (int argc, char *argv[], char *evenp[])
 			case WARN_LOW_INK_YELLOW:
 			case WARN_LOW_INK_MULTIPLE_PENS:
                         {
-                           fputs("STATE: +marker-supply-low-warning\n", stderr);
+                           low_marker = 1;
                            break;
                         }
 			default:
-                           fputs("STATE: +marker-supply-low-warning\n", stderr);
+                           low_marker = 1;
 		}
     }
+
+    fprintf(stderr, "STATE: %cmarker-supply-low-warning\n",
+        low_marker ? '+' : '-');
 
 #if 0
    BUG("device model=%s\n", pSS->pPC->PrinterModel());
