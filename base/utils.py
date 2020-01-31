@@ -958,10 +958,7 @@ else:
 
 
 def printable(s):
-    if s:
-        return s.translate(identity, unprintable)
-    else:
-        return ""
+    return s.translate(identity, unprintable)
 
 
 def any(S,f=lambda x:x):
