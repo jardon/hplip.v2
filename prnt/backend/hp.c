@@ -819,12 +819,6 @@ int main(int argc, char *argv[])
                      goto bugout;
                   }
 
-                  if (stat != HPMUD_R_DEVICE_BUSY)
-                  {
-                     BUG("ERROR: open device failed stat=%d: %s\n", stat, argv[0]);
-                     goto bugout;
-                  }
-
                   /* Display user error. */
                   device_event(argv[0], printer, 5000+stat, argv[2], argv[1], argv[3]);
 
