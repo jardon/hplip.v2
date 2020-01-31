@@ -83,6 +83,7 @@
 *cupsManualCopies: False
 *cupsLanguages: "en da de es fi fr it ja ko nb nl pt ru sv zh_CN zh_TW"
 *cupsFilter: "application/vnd.cups-postscript 0 hpps"
+*1284DeviceID: "MFG:Hewlett-Packard;MDL:HP LaserJet 400 color M451dn;DES:HP LaserJet 400 color M451dn;"
 *UIConstraints: *HPOption_Duplexer False *Duplex
 *UIConstraints: *Duplex *HPOption_Duplexer False
 *UIConstraints: *HPOption_Tray3 False *InputSlot Tray3
