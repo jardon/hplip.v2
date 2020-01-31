@@ -519,14 +519,17 @@ int FatFreeSpace(void)
 
 int FatDiskAttributes( PHOTO_CARD_ATTRIBUTES * pa )
 {
-    strncpy( pa->OEMID, bpb.OEMID, 8 );
+    strncpy(pa->OEMID, bpb.OEMID, sizeof(pa->OEMID));
+    pa->OEMID[sizeof(pa->OEMID)-1] = '\0';
     pa->BytesPerSector = bpb.BytesPerSector;
     pa->SectorsPerCluster = bpb.SectorsPerCluster;
     pa->ReservedSectors = bpb.ReservedSectors;
     pa->SectorsPerFat = bpb.SectorsPerFat;
     pa->RootEntries = bpb.RootEntries;
-    strncpy( pa->SystemID, (char *)bpb.SystemID, 8 );
-    strncpy( pa->VolumeLabel, (char *)bpb.VolumeLabel, 11 );
+    strncpy(pa->SystemID, (char *)bpb.SystemID, sizeof(pa->SystemID));
+    pa->SystemID[sizeof(pa->SystemID)-1] = '\0';
+    strncpy(pa->VolumeLabel, (char *)bpb.VolumeLabel, sizeof(pa->VolumeLabel));
+    pa->VolumeLabel[sizeof(pa->VolumeLabel)-1] = '\0';
     pa->WriteProtect = da.WriteProtect;
     
     return 0;
@@ -741,6 +744,7 @@ int FatSetCWD(char *dir)
       return 1;
 
    strncpy(cwd.Name, fa.Name, sizeof(cwd.Name));
+   cwd.Name[sizeof(cwd.Name)-1] = '\0';
    cwd.StartSector = ConvertClusterToSector(fa.StartCluster);
    cwd.CurrSector = cwd.StartSector;
    cwd.StartCluster = fa.StartCluster;

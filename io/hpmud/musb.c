@@ -776,7 +776,7 @@ static int device_id(int fd, unsigned char *buffer, int size)
         len = size-1;   /* leave byte for zero termination */
     if (len > 2)
         len -= 2;
-    memcpy(buffer, buffer+2, len);    /* remove length */
+    memmove(buffer, buffer+2, len);    /* remove length */
     buffer[len]=0;
     DBG("read actual device_id successfully fd=%d len=%d\n", fd, len);
 

@@ -3,7 +3,7 @@
 #
 #  (c) 2004-2015 Copyright HP Development Company, LP
 #  Author: David Suffield, Naga Samrat Chowdary Narla, Sarbeswar Meher
-INCLUDES = -Iip -Iio/hpmud -Iscan/sane -Iprnt/hpijs -Icommon/
+INCLUDES = -Iip -Iio/hpmud -Iscan/sane -Iprnt/hpijs -Icommon/ -Iprotocol
 CFLAGS+= -DCONFDIR=\"$(hplip_confdir)\"
 CXXFLAGS+= -DCONFDIR=\"$(hplip_confdir)\"
 
@@ -308,7 +308,7 @@ dist_pcard_DATA = pcard/__init__.py pcard/photocard.py
 pcardextdir = $(pyexecdir)
 pcardext_LTLIBRARIES = pcardext.la
 pcardext_la_LDFLAGS = -module -avoid-version -lpython$(PYTHON_VERSION)m
-pcardext_la_SOURCES = pcard/pcardext/pcardext.c pcard/fat.c
+pcardext_la_SOURCES = pcard/pcardext/pcardext.c pcard/fat.c pcard/pcardext/pcardext.h
 pcardext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
 
 # prnt
@@ -320,7 +320,7 @@ lib_LTLIBRARIES += libhpipp.la
 #hpipp_LTLIBRARIES = hpipp.la
 #hpipp_la_LDFLAGS = -module -avoid-version
 libhpipp_la_SOURCES = protocol/hp_ipp.c protocol/hp_ipp.h protocol/hp_ipp_i.h
-libhpipp_la_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
+libhpipp_la_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\" -D_GNU_SOURCE
 libhpipp_la_LDFLAGS = -version-info 0:1:0
 libhpipp_la_LIBADD = -lcups libhpmud.la
 

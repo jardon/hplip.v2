@@ -36,6 +36,7 @@
 #include <string.h>
 #include <syslog.h>
 #include <ctype.h>
+#include <unistd.h>
 #include "hpmud.h"
 #include "http.h"
 

@@ -134,7 +134,7 @@ static int get_ip_data(struct marvell_session *ps, SANE_Byte *data, SANE_Int max
 
    if (!ps->ip_handle)
    {
-      BUG("invalid ipconvert state\n");
+      BUG_SCAN("invalid ipconvert state\n");
       goto bugout;
    }
    
@@ -335,7 +335,7 @@ static struct marvell_session *create_session()
 
    if ((ps = malloc(sizeof(struct marvell_session))) == NULL)
    {
-      BUG("malloc failed: %m\n");
+      BUG_SCAN("malloc failed: %m\n");
       return NULL;
    }
    memset(ps, 0, sizeof(struct marvell_session));
@@ -402,7 +402,7 @@ SANE_Status marvell_open(SANE_String_Const device, SANE_Handle *handle)
 
    if (session)
    {
-      BUG("session in use\n");
+      BUG_SCAN("session in use\n");
       return SANE_STATUS_DEVICE_BUSY;
    }
       
@@ -431,7 +431,7 @@ SANE_Status marvell_open(SANE_String_Const device, SANE_Handle *handle)
 
    if (hpmud_open_device(session->uri, ma.mfp_mode, &session->dd) != HPMUD_R_OK)
    {
-      BUG("unable to open device %s\n", session->uri);
+      BUG_SCAN("unable to open device %s\n", session->uri);
       goto bugout;
 
       free(session);
@@ -441,7 +441,7 @@ SANE_Status marvell_open(SANE_String_Const device, SANE_Handle *handle)
 
    if (hpmud_open_channel(session->dd, HPMUD_S_MARVELL_SCAN_CHANNEL, &session->cd) != HPMUD_R_OK)
    {
-      BUG("unable to open %s channel %s\n", HPMUD_S_MARVELL_SCAN_CHANNEL, session->uri);
+      BUG_SCAN("unable to open %s channel %s\n", HPMUD_S_MARVELL_SCAN_CHANNEL, session->uri);
       stat = SANE_STATUS_DEVICE_BUSY;
       goto bugout;
    }
@@ -554,7 +554,7 @@ void marvell_close(SANE_Handle handle)
 
    if (ps == NULL || ps != session)
    {
-      BUG("invalid sane_close\n");
+      BUG_SCAN("invalid sane_close\n");
       return;
    }
 
@@ -849,7 +849,7 @@ SANE_Status marvell_control_option(SANE_Handle handle, SANE_Int option, SANE_Act
                stat = SANE_STATUS_GOOD;
                break;
             }
-            BUG("value=%d brymin=%d brymax=%d\n", *int_value, ps->bryRange.min, ps->bryRange.max);
+            BUG_SCAN("value=%d brymin=%d brymax=%d\n", *int_value, ps->bryRange.min, ps->bryRange.max);
          }
          else
          {  /* Set default. */
@@ -866,7 +866,7 @@ SANE_Status marvell_control_option(SANE_Handle handle, SANE_Int option, SANE_Act
 
    if (stat != SANE_STATUS_GOOD)
    {
-      BUG("control_option failed: option=%s action=%s\n", ps->option[option].name, 
+      BUG_SCAN("control_option failed: option=%s action=%s\n", ps->option[option].name, 
                   action==SANE_ACTION_GET_VALUE ? "get" : action==SANE_ACTION_SET_VALUE ? "set" : "auto");
    }
 
@@ -905,7 +905,7 @@ SANE_Status marvell_start(SANE_Handle handle)
    
    if (set_extents(ps))
    {
-      BUG("invalid extents: tlx=%d brx=%d tly=%d bry=%d minwidth=%d minheight%d maxwidth=%d maxheight=%d\n",
+      BUG_SCAN("invalid extents: tlx=%d brx=%d tly=%d bry=%d minwidth=%d minheight%d maxwidth=%d maxheight=%d\n",
          ps->currentTlx, ps->currentTly, ps->currentBrx, ps->currentBry, ps->min_width, ps->min_height, ps->tlxRange.max, ps->tlyRange.max);
       stat = SANE_STATUS_INVAL;
       goto bugout;
@@ -963,7 +963,7 @@ SANE_Status marvell_start(SANE_Handle handle)
    /* Open image processor. */
    if ((ret = ipOpen(pXform-xforms, xforms, 0, &ps->ip_handle)) != IP_DONE)
    {
-      BUG("unable open image processor: err=%d\n", ret);
+      BUG_SCAN("unable open image processor: err=%d\n", ret);
       stat = SANE_STATUS_INVAL;
       goto bugout;
    }
@@ -1023,7 +1023,7 @@ SANE_Status marvell_read(SANE_Handle handle, SANE_Byte *data, SANE_Int maxLength
 
    if(ret & (IP_INPUT_ERROR | IP_FATAL_ERROR))
    {
-      BUG("ipConvert error=%x\n", ret);
+      BUG_SCAN("ipConvert error=%x\n", ret);
       goto bugout;
    }
 
