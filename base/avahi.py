@@ -52,9 +52,14 @@ def detectNetworkDevices(ttl=4, timeout=10):
                              'status_code': 0, 'device2': '0', 'device3': '0', 'note': ''}
                         y['ip'] = ip
                         y['hn'] = bits[6].replace('.local', '')
-                        details = bits[9].split('" "')
+                        details = bits[9].rstrip ().strip ('"').split('" "')
                         for item in details:
                             key, value = item.split('=', 1)
+                            keyvalue = item.split('=', 1)
+                            if len (keyvalue) < 2:
+                                # Skip parts that don't match key=value
+                                continue
+                            key, value = keyvalue
                             if key == 'ty':
                                 y['mdns'] = value
                                 y['device1'] = "MFG:Hewlett-Packard;MDL:%s;CLS:PRINTER;" % value
