@@ -22753,6 +22753,14 @@ Group "RLT/HP Real Life Technologies"
       Attribute "Product" "" "(HP LaserJet Professional p1102s Printer)"
     }
     {
+      ModelName "HP LaserJet Professional p1102w"
+      Attribute "NickName" "" "HP LaserJet Professional p1102w, hpcups $Version, requires proprietary plugin"
+      Attribute "ShortNickName" "" "HP LaserJet Professional p1102w hpijs"
+      Attribute "1284DeviceID" "" "MFG:Hewlett-Packard;MDL:hp laserjet professional p1102w;DES:hp laserjet professional p1102w;"
+      PCFileName "hp-laserjet_professional_p1102w.ppd"
+      Attribute "Product" "" "(HP LaserJet Professional p1102w Printer)"
+    }
+    {
       ModelName "HP LaserJet Professional p1106"
       Attribute "NickName" "" "HP LaserJet Professional p1106, hpcups $Version"
       Attribute "ShortNickName" "" "HP LJ Pro p1106 hpijs"
@@ -23185,6 +23193,14 @@ Group "RLT/HP Real Life Technologies"
       Attribute "1284DeviceID" "" "MFG:Hewlett-Packard;MDL:hp laserjet cp1025nw;DES:hp laserjet cp1025nw;"
       PCFileName "hp-laserjet_cp1025nw.ppd"
       Attribute "Product" "" "(HP LaserJet Pro cp1025nw Color Printer Series)"
+    }
+    {
+      ModelName "HP LaserJet Cp 1025nw"
+      Attribute "NickName" "" "HP LaserJet Cp 1025nw, hpcups $Version, requires proprietary plugin"
+      Attribute "ShortNickName" "" "HP LaserJet Cp 1025nw hpijs"
+      Attribute "1284DeviceID" "" "MFG:Hewlett-Packard;MDL:hp laserjet cp 1025nw;DES:hp laserjet cp 1025nw;"
+      PCFileName "hp-laserjet_cp_1025nw.ppd"
+      Attribute "Product" "" "(HP LaserJet Pro Cp 1025nw Color Printer Series)"
     }
   }
 } // End LJZjsColor (for proprietary plugin)
