@@ -2239,7 +2239,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
             {
                 case '5':
                 {
-                    if ((*(pStr+1) & 0xf3) > 1)
+                    if ((*(pStr+1) & 0xf3) > '1')
                     {
                         if (err != NO_ERROR)
                         {
@@ -2254,7 +2254,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
                 }
                 case '6':
                 {
-                    if ((*(pStr+1) & 0xf3) > 1)
+                    if ((*(pStr+1) & 0xf3) > '1')
                     {
                         if (err != NO_ERROR)
                         {
@@ -2269,7 +2269,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
                 }
                 case '7':
                 {
-                    if ((*(pStr+1) & 0xf3) > 1)
+                    if ((*(pStr+1) & 0xf3) > '1')
                     {
                         if (err != NO_ERROR)
                         {
@@ -2285,7 +2285,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
                 }
                 case '8':
                 {
-                    if ((*(pStr+1) & 0xf3) > 1)
+                    if ((*(pStr+1) & 0xf3) > '1')
                     {
                         if (err != NO_ERROR)
                         {
