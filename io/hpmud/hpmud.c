@@ -759,6 +759,7 @@ enum HPMUD_RESULT hpmud_get_dstat(HPMUD_DEVICE dd, struct hpmud_dstat *ds)
    }
 
    strncpy(ds->uri, msp->device[dd].uri, sizeof(ds->uri));
+   ds->uri[sizeof(ds->uri)-1] = '\0';
    ds->io_mode = msp->device[dd].io_mode;
    ds->channel_cnt = msp->device[dd].channel_cnt;
    ds->mlc_up = msp->device[dd].mlc_up;
