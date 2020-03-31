@@ -75,37 +75,8 @@ def showPasswordPrompt(prompt):
 
 # TBD this function shoud be removed once distro class implemented
 def get_distro_name():
-    os_name = None
-    try:
-        import platform
-    except ImportError:
-        os_name = None
-
-    try:
-        os_name = platform.dist()[0]
-    except AttributeError:
-        import distro
-        os_name = distro.linux_distribution()[0]
-
-    if not os_name:
-        name = os.popen('lsb_release -i | cut -f 2')
-        os_name = name.read().strip()
-        name.close()
-
-    if not os_name:
-        name = os.popen("cat /etc/issue | awk '{print $1}' | head -n 1")
-        os_name = name.read().strip()
-        name.close()
-
-    os_name = os_name.lower()
-    if "redhatenterprise" in os_name:
-        os_name = 'rhel'
-    elif "suse" in os_name:
-        os_name = 'suse'
-    elif "arch" in os_name:
-         os_name = 'manjarolinux'
-
-    return os_name
+    import distro
+    return distro.linux_distribution(full_distribution_name=False)[0]
 
 
 class Password(object):
