@@ -682,7 +682,7 @@ class DependenciesCheck(object):
 
                                         out =''
                                         for g in getfacl_out_list:
-                                            if 'getfacl' not in g and '' is not g and 'file' not in g:
+                                            if 'getfacl' not in g and '' != g and 'file' not in g:
                                                 pat = re.compile('''.*:(.*)''')
                                                 if pat.search(g):
                                                     out = out +' '+ pat.search(g).group(1)
