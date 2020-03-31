@@ -80,20 +80,13 @@ def showPasswordPrompt(prompt):
 
 
 # TBD this function shoud be removed once distro class implemented
-def get_distro_std_name(os_name):
-    os_name = os_name.lower()
-    if 'mx' in os_name:
-        os_name = "mxlinux"
-    if "redhatenterprise" in os_name:
-        os_name = 'rhel'    
-    elif "suse" in os_name:
-        os_name = 'suse'
-    elif "arch" in os_name:
-        os_name = 'manjarolinux'
-    elif "fedora" in os_name:
-        os_name = 'fedora'
+def get_distro_name():
+    import distro
+    return distro.linux_distribution(full_distribution_name=False)[0]
 
-    return os_name
+# upstream likes to rename stuff
+def get_distro_std_name(os_name1):
+    return get_distro_name()
 
 
 class Password(object):
