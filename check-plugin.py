@@ -113,7 +113,7 @@ def install_firmware(pluginObj,Plugin_Installation_Completed, USB_param):
     options=""
     if USB_param is not None:
         options += " -y3 %s"%(USB_param)
-    if log_level is 'debug':
+    if log_level == 'debug':
         options += " -g"
 
     cmd= execmd + options
