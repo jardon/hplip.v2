@@ -13,45 +13,8 @@ extern int errno;
 
 unsigned char IsChromeOs(void)
 {
-  int file_size=0,i=0;
-  unsigned char ret_stat = 0;
-  char *buf;
-  char *ptr;
-  char os_name[30]={0,};
-
-
-  FILE *fptr = fopen("/etc/os-release","r");
-  if(fptr == NULL)
-    return ret_stat;
-  fseek(fptr,0,SEEK_END);
-  file_size = ftell(fptr);
-  fseek(fptr,0,SEEK_SET);
-
-  buf = (char *)malloc(file_size);
-  fread(buf,file_size,1,fptr);
-
-  ptr=strstr(buf,"NAME");
-  if(ptr != NULL)
-  {
-    ptr = ptr + 5;
-    while(*ptr!='\n'&&*ptr!='\0')
-    {
-      os_name[i]=*ptr;
-      ptr++;i++;
-    }
-    if(strcasestr(os_name,"chrome os")!=NULL)
-      ret_stat = 1;
-    else
-      ret_stat = 0;
-
-  }
-  
-  fclose(fptr);
-  free(buf);
-
-  return ret_stat;
-
-
+  // Debian-derivatives are not ChromeOS.
+  return 0;
 }
 
 static int GetPair(char *buf, int buf_len, char *key, char *value, char **tail)
