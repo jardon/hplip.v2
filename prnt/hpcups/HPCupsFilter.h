@@ -89,6 +89,7 @@ public:
 private:
 
     BYTE            *m_pPrinterBuffer;        
+    int              m_PrinterBufferSize;
     Job            m_Job;
     SystemServices         *m_pSys;
     int             child_pid;
