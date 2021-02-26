@@ -203,7 +203,7 @@ void HPCupsFilter::WriteKBMPRaster (FILE *fp, BYTE *pbyk, int width)
     fwrite (black_raster, 1, adj_k_width, fp);
 }
 
-HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL)
+HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL), m_PrinterBufferSize(0)
 {
     setbuf (stderr, NULL);
 
@@ -230,6 +230,7 @@ void HPCupsFilter::cleanup()
     if (m_pPrinterBuffer) {
         delete [] m_pPrinterBuffer;
         m_pPrinterBuffer = NULL;
+        m_PrinterBufferSize = 0;
     }
 
     if(m_ppd){
@@ -511,8 +512,6 @@ DRIVER_ERROR HPCupsFilter::startPage (cups_page_header2_t *cups_header)
         dbglog("HPCUPS: returning NO_ERROR from startPage\n");
     }
 
-    m_pPrinterBuffer = new BYTE[cups_header->cupsWidth * 4 + 32];
-
     return NO_ERROR;
 }
 
@@ -692,6 +691,14 @@ int HPCupsFilter::processRasterData(cups_raster_t *cups_raster)
 		    }
        #endif
         current_page_number++;
+
+        if (m_PrinterBufferSize < (cups_header.cupsWidth * 4 + 32)) {
+            m_PrinterBufferSize = cups_header.cupsWidth * 4 + 32;
+            if (m_pPrinterBuffer) {
+                delete [] m_pPrinterBuffer;
+            }
+            m_pPrinterBuffer = new BYTE[m_PrinterBufferSize];
+        }
 
         if (current_page_number == 1) {
 
