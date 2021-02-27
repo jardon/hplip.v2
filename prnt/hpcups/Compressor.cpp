@@ -41,8 +41,9 @@ Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL), 
     if (!UseSeedRow)
         return;
 
-    SeedRow = (BYTE *) new BYTE[RasterSize];
+    SeedRow = (BYTE *) new BYTE[RasterSize + 32];
     CNEWCHECK(SeedRow);
+    memset(SeedRow, 0, RasterSize + 32);
 }
 
 Compressor::~Compressor()
