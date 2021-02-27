@@ -181,12 +181,12 @@ Halftoner::Halftoner
             {
                 PlaneSize= OutputWidth[i]/8 + // doublecheck ... should already be divisble by 8
                             ((OutputWidth[i] % 8)!=0);
-                ColorPlane[i][j][k] = (BYTE*) new BYTE[(PlaneSize)];
+                ColorPlane[i][j][k] = (BYTE*) new BYTE[(PlaneSize) + 32];
                 if (ColorPlane[i][j] == NULL)
                 {
                     goto MemoryError;
                 }
-                memset(ColorPlane[i][j][k], 0, PlaneSize);
+                memset(ColorPlane[i][j][k], 0, PlaneSize + 32);
             }
         }
     }
