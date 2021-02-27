@@ -60,7 +60,8 @@ ColorMatcher::ColorMatcher
         EndPlane = K;
     }
 
-    Contone = (BYTE *) new BYTE[InputWidth * ColorPlaneCount];
+    Contone = (BYTE *) new BYTE[InputWidth * ColorPlaneCount + 32];
+    memset(Contone, 0, InputWidth * ColorPlaneCount + 32);
     if (Contone == NULL)
     {
         goto MemoryError;
