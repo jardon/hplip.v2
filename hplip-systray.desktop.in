@@ -10,3 +10,4 @@ Terminal=false
 Categories=Application;Utility;
 X-KDE-StartupNotify=false
 StartupNotify=false
+NotShowIn=GNOME;
