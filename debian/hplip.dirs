@@ -1,0 +1,4 @@
+usr/share/bug/hplip
+var/lib/hp
+var/log/hp
+var/log/hp/tmp

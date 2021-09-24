@@ -1,0 +1,5 @@
+etc/hp
+etc/sane.d/dll.d
+etc/udev/rules.d/56-hpmud.rules lib/udev/rules.d
+usr/lib/*-*/sane/libsane*.so.*
+usr/share/hplip/data/models/models.dat

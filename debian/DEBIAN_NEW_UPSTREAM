@@ -1,0 +1,19 @@
+clone repository from salsa
+	gbp clone --debian-branch=debian/main git@salsa.debian.org:printing-team/hplip.git
+
+get new upstream version
+	make -f debian/rules get-orig-source
+
+check whether limits are fine, otherwise:
+	git config merge.renameLimit 10000
+		needed due to lots of conflicts in new *.ppd.gz files
+
+probably a new pull is needed 
+	git pull
+
+resolve conflicts
+
+build package
+	gbp buildpackage --git-debian-branch=debian/main --git-pbuilder --git-tag
+
+upload

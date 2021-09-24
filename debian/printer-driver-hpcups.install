@@ -1,0 +1,4 @@
+debian/printer-driver-hpcups.ppd-updater usr/share/cups/ppd-updaters/
+fax/ppd/HP-Fax*-hpcups.ppd.gz usr/share/ppd/hplip/HP/
+usr/lib/cups/filter/hpcups*
+usr/share/cups/drv/hpcups.drv

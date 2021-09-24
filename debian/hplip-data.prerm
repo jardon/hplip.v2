@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "purge" ]; then
+    # Inspired by dh_python3
+    dpkg -L hplip-data | perl -ne 's,/([^/]*)\.py$,/__pycache__/\1.*, or next; unlink $_ or die $! foreach glob($_)'
+    find /usr/share/hplip/ -type d -name __pycache__ -empty -print0 | xargs --null --no-run-if-empty rmdir
+fi
+

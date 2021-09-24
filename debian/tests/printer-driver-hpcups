@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# Build a list of driver names from the .drv file, excluding these that say they need a proprietary driver
+# Only take every 25th driver
+HPCUPS_DRIVERS_LIST=$(
+    grep -A4 -P 'NickName.*Version(?!, requires proprietary plugin)\"$' /usr/share/cups/drv/hpcups.drv | \
+    grep -E '^ *PCFileName' | \
+    sed -e 's#^ *PCFileName "\(.*\)"$#drv:///hpcups.drv/\1#g' | \
+    sed -n '0~25p'
+)
+
+/usr/share/cups/test-drivers -n adt-test-hpcups-0 -l "$HPCUPS_DRIVERS_LIST"

@@ -1,0 +1,5 @@
+---
+prnt/cupsext/cupsext.c:
+  license: BSD-3-clause or GPL-2+
+prnt/cupsext/cupsext.h:
+  skip: 1

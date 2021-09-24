@@ -1,0 +1,6 @@
+---
+ignore:
+  pattern:
+  - prnt/cupsext/*
+  suffixes:
+  - ppd

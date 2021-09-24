@@ -1,0 +1,13 @@
+etc/sane.d/dll.conf
+usr/bin/.hplip/hplip.conf
+usr/bin/.hplip/hp-toolbox.lock
+usr/bin/hp-uiscan
+usr/bin/hp-uninstall
+usr/bin/hp-unload
+usr/bin/hp-upgrade
+usr/lib/*/sane/libsane-hpaio.so
+usr/lib/systemd/system/hplip-printer@.service
+usr/share/doc/hplip/COPYING
+usr/share/doc/hplip/copyright
+usr/share/doc/hplip/README_LIBJPG
+usr/share/hal/fdi/preprobe/10osvendor/20-hplip-devices.fdi

@@ -1,0 +1,260 @@
+#!/usr/bin/make -f
+
+derives_from_ubuntu := $(shell (dpkg-vendor --derives-from Ubuntu && echo "yes") || echo "no")
+
+-include /usr/share/python3/python.mk
+ifeq (,$(py_sitename))
+   py_sitename = site-packages
+   py_libdir = /usr/lib/python$(subst python,,$(1))/site-packages
+   py_sitename_sh = $(py_sitename)
+   py_libdir_sh = $(py_libdir)
+endif
+
+# Override py_sitename as the python.mk module gives the wrong "dist-packages"
+py_sitename = site-packages
+
+PYTHON=python3
+PYTHON_DEFAULT_VERSION:=$(shell py3versions -dv)
+PYTHON_SITENAME:=$(call py_sitename, $(PYTHON_DEFAULT_VERSION))
+
+PKGTMP:=$(CURDIR)/debian/tmp
+PPDDIR:=$(PKGTMP)/usr/share/ppd
+
+# Autoconf
+export DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+export DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+GZIP = gzip -n --best
+
+##
+##  Build-tree preparation
+##
+
+%:
+	dh $@ --buildsystem=autoconf --with python3 --with pyppd
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed sh -- debian/autogen.sh
+
+# Clean everything up, including everything auto-generated
+# at build time that needs not to be kept around in the Debian diff
+override_dh_clean:
+	dh_clean
+	find . -regextype posix-extended -iregex '.*\.(ldl|ppd|pdf|ps|pcl)\.gz' | xargs gunzip -f ;\
+	rm -f *.1
+	-rm -f prnt/hpijs/platform.h prnt/hpijs/auto-include.h
+	find -type d -name build -print0 | xargs -0 -r rm -rf \;
+	# We prefer to regenerate these using pyuic
+	(cd ui5 && for i in *.ui ; do rm -f $${i%.ui}.py ; done)
+
+
+##
+##  Package build
+##
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		PYTHON="$(PYTHON)" \
+	 	--config-cache \
+		--docdir=\$${prefix}/share/doc/hplip \
+		--with-docdir=\$${prefix}/share/doc/hplip \
+		--with-htmldir=\$${prefix}/share/doc/hplip-doc \
+		--disable-foomatic-rip-hplip-install \
+		--with-drvdir=\$${prefix}/share/cups/drv \
+		--with-hpppddir=\$${prefix}/share/ppd/hplip/HP \
+		--datadir=\$${prefix}/share \
+		--without-icondir \
+		--enable-hpcups-install \
+		--enable-cups-drv-install \
+		--enable-hpijs-install \
+		--enable-foomatic-drv-install \
+		--disable-foomatic-ppd-install \
+		--disable-imageProcessor-build \
+		--enable-network-build \
+		--enable-scan-build \
+		--enable-gui-build \
+		--enable-fax-build \
+		--disable-qt3 \
+		--disable-qt4 \
+		--enable-qt5 \
+		--enable-policykit
+
+override_dh_auto_build:
+	# Compress various files before building, they are needed for the build, and were
+	# compressed in the non-repacked upstream tarballs
+	-find . -name '*.ppd' | xargs ${GZIP} -f
+	-find data/ -regextype posix-extended -regex '.*\.(ldl|pcl|ps|pdf)' | xargs ${GZIP} -f
+
+	# Rebuild the UI files and patch the imports to be relative
+	(set -e; cd ui5; \
+		for i in *.ui ; do pyuic5 -o $${i%.ui}.py $$i; done; \
+		modules=$$(for i in *.py; do echo -n $${i%%.py}\|; done; echo dummyalternative); \
+		sed -r "s#from ($$modules)#from .\1#" -i *.py \
+	)
+	# Patch out retranslateUi call like upstream does
+	sed -i s/self.retranslateUi/#self.retranslateUi/ ui5/devmgr5_base.py
+
+	# Rebuild the .drv.in files from drv.in.template
+	$(PYTHON) ./dat2drv.py
+	
+	dh_auto_build
+
+##
+## Debian packaging
+##
+
+override_dh_install:
+	# Clean up libtool archives
+	find $(PKGTMP) -name '*.la' -delete
+
+	# Remove hpcups support for the HP Officejet Pro K550 as it is known
+	# to not work. This way hpijs (which works) will be used (Ubuntu bugs
+	# #981473, #1311697)
+	perl -e '$$content = join("", <>); $$content =~ s:^\s*\{[^\n]*?\n[^\n]*?pro.k550.*?\}\s*\n::ism; print $$content' $(PKGTMP)/usr/share/cups/drv/hpcups.drv > $(PKGTMP)/usr/share/cups/drv/hpcups.drv.new
+	rm $(PKGTMP)/usr/share/cups/drv/hpcups.drv
+	mv $(PKGTMP)/usr/share/cups/drv/hpcups.drv.new $(PKGTMP)/usr/share/cups/drv/hpcups.drv
+
+ifeq ($(derives_from_ubuntu),yes)
+	# Install wrapper script for hp-plugin, to be called by update-notifier
+	# on udev signal (Ubuntu only)
+	install -d $(CURDIR)/debian/hplip/usr/bin/
+	install -m 755 debian/local/scripts/hp-plugin-ubuntu $(CURDIR)/debian/hplip/usr/bin/
+endif
+	# Install Apport hook
+	install -D -m 644 debian/local/apport-hook.py $(PKGTMP)/usr/share/apport/package-hooks/source_hplip.py
+
+	# Remove identical PPD files shipped under different names
+	( cd "$(PKGTMP)" && fdupes -r1q usr/share/ppd | while read s; do \
+	      set -- $$(echo $$s | tr ' ' '\n' | sort); \
+	      f=$$1; shift; \
+	      for d; do \
+		  echo "Removing duplicate PPD file $$d, original is $$f"; \
+		  rm $$d; \
+	      done; \
+	  done )
+
+	# Generate man pages corresponding to the programs
+	export HPLIP_BUILD=1; \
+	( cd ./debian/tmp/usr/bin/; \
+	    for file in *; do \
+			if readlink $$file | grep ".py"; then \
+				PYTHONPATH=../lib/python$(PYTHON_DEFAULT_VERSION)/$(PYTHON_SITENAME)/ \
+				HOME=./ \
+				LD_LIBRARY_PATH=../lib/$(DEB_HOST_MULTIARCH) $(PYTHON) ./$$file --help-man > $(CURDIR)/$$file.1 ; \
+			fi; \
+	    done \
+	)
+
+	# Correct Python interpreter path in all executables, and 'upgrade' it to $(PYTHON)
+	for file in ./debian/tmp/usr/bin/* ./debian/tmp/usr/lib/cups/*/*; do \
+	    perl -p -i -e 's:^\s*\#\!\s*/usr/bin/(env\s+)?python.*:#!/usr/bin/$(PYTHON):' `readlink -f $$file`; \
+	done
+
+	# Remove unneeded explicit calls of the Python interpreter to let the
+	# (upgraded) shebangs rule
+	for file in ./debian/tmp/*/udev/rules.d/*.rules; do \
+	    perl -p -i -e 's:/usr/bin/$(PYTHON)\b\s*::' `readlink -f $$file`; \
+	done
+
+	# Remove all *.pyc files, they do not need to be shipped with the
+	# package
+	find ./debian/tmp/ -name '*.pyc' -print0 | xargs -0 rm -f
+
+	# Remove files we are not to ship from the install tree
+	@echo Removing non-shipped files, see debian/non-shipped-files.txt
+	@cat debian/non-shipped-files.txt | \
+		( cd "$(PKGTMP)" && xargs -d '\n' -t -r rm -fv )
+
+	# Remove stray #! lines on python libraries, and fix permissions
+	find "$(PKGTMP)/usr/share/hplip" -maxdepth 1 -mindepth 1 -type d -print0 | \
+		xargs -0 -r -i@ find @ -type f -name '*.py' | \
+		while read -r i ; do \
+			chmod a-x "$$i" && \
+			sed < "$$i" > "$$i.tmp" -e '/^#!/ {1 d}' && \
+			mv -f "$$i.tmp" "$$i" ; \
+		done
+
+	# executable-not-elf-or-script
+	chmod -x $(PKGTMP)/usr/share/hplip/installer/distros.dat
+
+	mkdir -p "$(PKGTMP)/usr/share/applications"
+	install -m 644 debian/*.desktop "$(PKGTMP)/usr/share/applications"
+
+	mkdir -p "$(PKGTMP)/etc/sane.d/dll.d"
+	install -m 644 debian/hplip.sane "$(PKGTMP)/etc/sane.d/dll.d/hplip"
+
+	dh_install
+
+	# Modify all Ghostscript command lines to have the "-dNOINTERPOLATE"
+	# coomand line option. This makes rendering the pages much faster
+	perl -p -i -e "s/(\-sDEVICE=)/-dNOINTERPOLATE \1/" \
+		$(CURDIR)/debian/*/usr/share/ppd/hplip/HP/HP-Fax*.ppd \
+		$(CURDIR)/debian/*/usr/share/cups/drv/hpijs.drv \
+		$(CURDIR)/debian/*/usr/lib/cups/filter/pstotiff
+
+	# Patch the PPDs for the hpijs-ppds package to use foomatic-rip
+	# as CUPS filter and not foomatic-rip-hplip. Also add
+	# "-dNOINTERPOLATE" to the Ghostscript command lines to make rendering
+	# by Ghostscript faster.
+	(if dh_listpackages | grep -q hpijs-ppds; then  \
+	  cd $(CURDIR)/debian/hpijs-ppds/usr/share/ppd/hplip/HP/ && \
+	  for ppdgz in *.ppd.gz; do \
+	    gunzip -f $$ppdgz; \
+	    ppd=$$(basename $$ppdgz .gz);\
+	    perl -p -i -e 's/foomatic-rip-hplip/foomatic-rip/g' $$ppd; \
+	    perl -p -i -e "s/(\-sDEVICE=)/-dNOINTERPOLATE \1/" $$ppd; \
+	  done; fi \
+	)
+
+	# Circumvent CUPS forbidding 'Custom' options (see #935918 and https://github.com/apple/cups/issues/5639 )
+	(if dh_listpackages | grep -q printer-driver-postscript-hp; then  \
+	  cd $(CURDIR)/debian/printer-driver-postscript-hp/usr/share/ppd/hplip/HP/ && \
+	  for ppdgz in *.ppd.gz; do \
+	    gunzip -f $$ppdgz; \
+	    ppd=$$(basename $$ppdgz .gz);\
+	    perl -p -i -e 's/^(\*[^%%].*) Custom([^a-zA-Z].*)$$/\1 Customized\2/g' $$ppd; \
+	  done; fi \
+	)
+
+	# Remove models.dat from hplip-data - we ship with libsane-hpaio
+	if dh_listpackages | grep -q hplip-data; then \
+		rm $(CURDIR)/debian/hplip-data/usr/share/hplip/data/models/models.dat; \
+	fi
+
+override_dh_pyppd:
+	# Don't compress the 4 Fax PPDs
+	dh_pyppd -Nprinter-driver-hpijs -Nprinter-driver-hpcups
+
+override_dh_makeshlibs:
+	dh_makeshlibs -plibsane-hpaio --noscripts
+	dh_makeshlibs --remaining-packages
+
+override_dh_python3:
+	dh_python3 --no-shebang-rewrite
+	dh_python3 /usr/share/hplip --no-shebang-rewrite
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+get-orig-source:
+	set -e;\
+	curbranch=$$(git rev-parse --abbrev-ref HEAD); \
+	repackv=+dfsg0; \
+	quilt pop -af || true ;\
+	rm -Rf .pc ;\
+	gbp import-orig --no-pristine-tar --no-merge --uscan --upstream-branch=upstream/latest;\
+	git checkout upstream/latest-repack ;\
+	utag=`git describe --exact-match heads/upstream/latest | sed -e 's#^upstream/##'` ;\
+	git merge --strategy-option=theirs --no-commit upstream/$$utag || true ;\
+	find . -regextype posix-extended -iregex '.*\.(ldl|ppd|pdf|ps|pcl)\.gz' | xargs gunzip -f ;\
+	rm -f locatedriver prnt/plugins/*.so; \
+	git add -A . ;\
+	git commit -m "Merge upstream $$utag version; un-gzip source files; remove locatedriver and compiled plugins" ;\
+	urtag=$$utag$$repackv ;\
+	urcommit=`git rev-parse --verify HEAD`;\
+	git tag upstream/$$urtag -m "Upstream repacked $$utag version" ;\
+	git archive --format=tar --prefix=hplip-$$urtag/ upstream/$$urtag | xz -6e > ../hplip_$$urtag.orig.tar.xz ;\
+	pristine-tar commit ../hplip_$$urtag.orig.tar.xz upstream/$$urtag ;\
+	git checkout $$curbranch ;\
+	git debrebase new-upstream $$urtag $$urcommit^{commit}

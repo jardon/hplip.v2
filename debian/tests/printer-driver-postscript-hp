@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/cups/ppd-updaters/printer-driver-postscript-hp.ppd-updater
+
+# As of hplip 3.19.8, there are 918 printers supported by postscript-hp; so don't test them _all_.
+# Get the list of drivers from lpinfo here, but only take every 30th driver
+POSTSCRIPT_HP_DRIVERS_LIST=$(lpinfo -m | cut -f1 -d' ' | grep -E $DRIVER_REGEXP | sed -n '0~30p')
+
+/usr/share/cups/test-drivers -n adt-test-postscript-hp-0 -l "$POSTSCRIPT_HP_DRIVERS_LIST"

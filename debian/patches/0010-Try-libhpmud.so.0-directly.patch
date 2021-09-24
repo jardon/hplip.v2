@@ -1,0 +1,52 @@
+From: Evgeny Golov <evgeni@debian.org>
+Date: Fri, 22 Jul 2016 09:32:56 +0200
+Subject: Try libhpmud.so.0 directly
+
+It's the library we ship.
+
+Closes: #600670
+---
+ scan/sane/marvell.c | 2 +-
+ scan/sane/soap.c    | 2 +-
+ scan/sane/soapht.c  | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/scan/sane/marvell.c b/scan/sane/marvell.c
+index ad267a3..6cac67a 100644
+--- a/scan/sane/marvell.c
++++ b/scan/sane/marvell.c
+@@ -60,7 +60,7 @@ static int bb_load(struct marvell_session *ps, const char *so)
+    int stat=1;
+ 
+    /* Load hpmud manually with symbols exported. Otherwise the plugin will not find it. */ 
+-   if ((ps->hpmud_handle = load_library("libhpmud.so")) == NULL)
++   if ((ps->hpmud_handle = dlopen("libhpmud.so.0", RTLD_LAZY|RTLD_GLOBAL)) == NULL)
+    {
+ 	   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
+            goto bugout;
+diff --git a/scan/sane/soap.c b/scan/sane/soap.c
+index 07106fe..a45f1a0 100644
+--- a/scan/sane/soap.c
++++ b/scan/sane/soap.c
+@@ -68,7 +68,7 @@ static int bb_load(struct soap_session *ps, const char *so)
+    int stat=1;
+ 
+    /* Load hpmud manually with symbols exported. Otherwise the plugin will not find it. */ 
+-   if ((ps->hpmud_handle = load_library("libhpmud.so")) == NULL)
++   if ((ps->hpmud_handle = dlopen("libhpmud.so.0", RTLD_LAZY|RTLD_GLOBAL)) == NULL)
+    {
+ 	   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
+            goto bugout;
+diff --git a/scan/sane/soapht.c b/scan/sane/soapht.c
+index 269ab21..df0e807 100644
+--- a/scan/sane/soapht.c
++++ b/scan/sane/soapht.c
+@@ -62,7 +62,7 @@ static int bb_load(struct soap_session *ps, const char *so)
+    int stat=1;
+ 
+    /* Load hpmud manually with symbols exported. Otherwise the plugin will not find it. */ 
+-   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
++   if ((ps->hpmud_handle = dlopen("libhpmud.so.0", RTLD_LAZY|RTLD_GLOBAL)) == NULL)
+    {
+ 	   if ((ps->hpmud_handle = load_library("libhpmud.so.0")) == NULL)
+            goto bugout;

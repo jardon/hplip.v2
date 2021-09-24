@@ -1,0 +1,3 @@
+/usr/share/apport/package-hooks/source_hplip.py
+/usr/share/hplip
+debian/upstream/signing-key.asc /usr/share/hplip/

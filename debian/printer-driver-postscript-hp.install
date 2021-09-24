@@ -1,0 +1,4 @@
+debian/printer-driver-postscript-hp.ppd-updater usr/share/cups/ppd-updaters/
+# These will be recompressed by dh_pyppd
+prnt/ps/*.ppd.gz				usr/share/ppd/hplip/HP
+usr/lib/cups/filter/hpps

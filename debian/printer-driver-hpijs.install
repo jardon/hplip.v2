@@ -1,0 +1,4 @@
+debian/printer-driver-hpijs.ppd-updater usr/share/cups/ppd-updaters/
+fax/ppd/HP-Fax*-hpijs.ppd.gz usr/share/ppd/hplip/HP/
+usr/bin/hpijs	usr/bin/
+usr/share/cups/drv/hpijs.drv usr/share/cups/drv/
