@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.8"
+*FileVersion: "3.21.12"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_pro_mfp_m128fn.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet Pro MFP m128fn"
 *ShortNickName: "HP LJ Pro MFP m128fn hpijs"
-*NickName: "HP LaserJet Pro MFP m128fn, hpcups 3.21.8"
+*NickName: "HP LaserJet Pro MFP m128fn, hpcups 3.21.12"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -51,6 +51,8 @@
 *PageSize Env10/#10 Envelope 4.12x9.5in: "<</cupsString0(na_number-10_4.125x9.5in)/PageSize[297 684]/ImagingBBox null>>setpagedevice"
 *PageSize EnvC5/C5 Envelope 162x229mm: "<</cupsString0(iso_c5_162x229mm)/PageSize[459 649]/ImagingBBox null>>setpagedevice"
 *PageSize EnvISOB5/B5 Envelope 176x250mm: "<</cupsString0(iso_b5_176x250mm)/PageSize[499 709]/ImagingBBox null>>setpagedevice"
+*PageSize EnvC6/C6 Envelope 114x162mm: "<</cupsString0(iso_c6_114x162mm)/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
+*PageSize EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsString0(jpn_chou3_120x235mm)/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
@@ -74,6 +76,8 @@
 *PageRegion Env10/#10 Envelope 4.12x9.5in: "<</cupsString0(na_number-10_4.125x9.5in)/PageSize[297 684]/ImagingBBox null>>setpagedevice"
 *PageRegion EnvC5/C5 Envelope 162x229mm: "<</cupsString0(iso_c5_162x229mm)/PageSize[459 649]/ImagingBBox null>>setpagedevice"
 *PageRegion EnvISOB5/B5 Envelope 176x250mm: "<</cupsString0(iso_b5_176x250mm)/PageSize[499 709]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvC6/C6 Envelope 114x162mm: "<</cupsInteger0 92/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
 *ImageableArea A6/A6 105x148mm: "14 14 283.359985351562 405.760009765625"
@@ -95,6 +99,8 @@
 *ImageableArea Env10/#10 Envelope 4.12x9.5in: "14 14 283 670"
 *ImageableArea EnvC5/C5 Envelope 162x229mm: "14 14 445 635"
 *ImageableArea EnvISOB5/B5 Envelope 176x250mm: "14 14 485 695"
+*ImageableArea EnvC6/C6 Envelope 114x162mm: "14 14 309.279998779297 445.359985351562"
+*ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "14 14 325.839996337891 652"
 *DefaultPaperDimension: Letter
 *PaperDimension A6/A6 105x148mm: "297.359985351562 419.760009765625"
 *PaperDimension A5/A5 148x210mm: "419.760009765625 595.440002441406"
@@ -115,6 +121,8 @@
 *PaperDimension Env10/#10 Envelope 4.12x9.5in: "297 684"
 *PaperDimension EnvC5/C5 Envelope 162x229mm: "459 649"
 *PaperDimension EnvISOB5/B5 Envelope 176x250mm: "499 709"
+*PaperDimension EnvC6/C6 Envelope 114x162mm: "323.279998779297 459.359985351562"
+*PaperDimension EnvChou3/#3 Japanese Envelope 120x235mm: "339.839996337891 666"
 *MaxMediaWidth: "612"
 *MaxMediaHeight: "1008"
 *HWMargins: 14 14 14 14
@@ -209,4 +217,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_pro_mfp_m128fn.ppd, 13790 bytes.
+*% End of hp-laserjet_pro_mfp_m128fn.ppd, 14642 bytes.

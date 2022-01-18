@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.8"
+*FileVersion: "3.21.12"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-Peaks-mod-mech-Normal.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Peaks-mod-mech"
 *ShortNickName: "Peaks-mod-mech"
-*NickName: "Peaks-mod-mech, hpcups 3.21.8"
+*NickName: "Peaks-mod-mech, hpcups 3.21.12"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -26,7 +26,7 @@
 *cupsEvenDuplex: True
 *cupsBackSide: "Rotated"
 *cupsFlipDuplex: True
-*HPMechOffset: "117"
+*HPMechOffset: "140"
 *1284DeviceID: "MFG:HP;MDL:Peaks mod-mech;DES:Peaks mod-mech;"
 *cupsVersion: 1.5
 *cupsModelNumber: 0
@@ -433,4 +433,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-Peaks-mod-mech-Normal.ppd, 28389 bytes.
+*% End of hp-Peaks-mod-mech-Normal.ppd, 28391 bytes.
