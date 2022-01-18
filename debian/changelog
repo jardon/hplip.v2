@@ -1,3 +1,9 @@
+hplip (3.21.12+dfsg0-1) UNRELEASED; urgency=medium
+
+  * Update to new upstream version 3.21.12+dfsg0.
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Tue, 18 Jan 2022 18:02:16 +0000
+
 hplip (3.21.8+dfsg0-2) unstable; urgency=medium
 
   * upload to unstable
