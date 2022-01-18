@@ -1,0 +1,23 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:35:56 +0100
+Subject: Fixed hp-setup crash when user wants to define path to PPD file
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-add-ppd-crash.patch
+---
+ setup.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/setup.py b/setup.py
+index 2608f95..923ef95 100755
+--- a/setup.py
++++ b/setup.py
+@@ -556,6 +556,9 @@ else: # INTERACTIVE_MODE
+                             else:
+                                 nickname = open(file_path, 'r').read(4096)
+ 
++                            if sys.version_info[0] > 2:
++                                nickname = nickname.decode('utf-8')
++
+                             try:
+                                 desc = nickname_pat.search(nickname).group(1)
+                             except AttributeError:

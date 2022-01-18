@@ -1,0 +1,37 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Wed, 18 Sep 2019 22:11:40 +0200
+Subject: Don't gpg --import, but rely on installed signing_key.asc
+
+---
+ base/validation.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/base/validation.py b/base/validation.py
+index d555f12..dfea16c 100644
+--- a/base/validation.py
++++ b/base/validation.py
+@@ -42,9 +42,7 @@ class DigiSign_Verification(object):
+ 
+ 
+ class GPG_Verification(DigiSign_Verification):
+-    def __init__(self, pgp_site = 'pgp.mit.edu', key = 0x4ABA2F66DBD5A95894910E0673D770CDA59047B9):
+-        self.__pgp_site = pgp_site
+-        self.__key = key
++    def __init__(self):
+         self.__gpg = utils.which('gpg',True)
+ 
+         sts, self.__hplipdir = os_utils.getHPLIPDir()
+@@ -83,10 +81,10 @@ class GPG_Verification(DigiSign_Verification):
+ 
+     def __acquire_gpg_key(self):
+ 
+-        cmd = '%s --homedir %s --no-permission-warning --keyserver %s --recv-keys 0x%X' \
+-              % (self.__gpg, self.__gpg_dir, self.__pgp_site, self.__key)
++        cmd = '%s --homedir %s --no-permission-warning --import %s' \
++              % (self.__gpg, self.__gpg_dir, "/usr/share/hplip/signing-key.asc")
+ 
+-        log.info("Receiving digital keys: %s" % cmd)
++        log.info("Importing digital key")
+         status, output = utils.run(cmd)
+         log.debug(output)
+ 

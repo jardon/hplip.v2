@@ -1,0 +1,41 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:30:39 +0100
+Subject: Fix bogus low ink warning from hpijs driver
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-hpijs-marker-supply.patch
+---
+ prnt/hpijs/hpijs.cpp | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/prnt/hpijs/hpijs.cpp b/prnt/hpijs/hpijs.cpp
+index 64b0121..8ad7cf2 100644
+--- a/prnt/hpijs/hpijs.cpp
++++ b/prnt/hpijs/hpijs.cpp
+@@ -588,6 +588,7 @@ int main (int argc, char *argv[], char *evenp[])
+    char *raster = NULL, *k_raster = NULL;
+    int status = EXIT_FAILURE;
+    int ret, n, i, kn=0, width, k_width;
++   int low_marker = 0;
+    char user_name[32]={0,};
+         
+    openlog("hpijs", LOG_PID,  LOG_DAEMON);
+@@ -675,14 +676,17 @@ int main (int argc, char *argv[], char *evenp[])
+ 			case WARN_LOW_INK_YELLOW:
+ 			case WARN_LOW_INK_MULTIPLE_PENS:
+                         {
+-                           fputs("STATE: +marker-supply-low-warning\n", stderr);
++                           low_marker = 1;
+                            break;
+                         }
+ 			default:
+-                           fputs("STATE: +marker-supply-low-warning\n", stderr);
++                           low_marker = 1;
+ 		}
+     }
+ 
++    fprintf(stderr, "STATE: %cmarker-supply-low-warning\n",
++        low_marker ? '+' : '-');
++
+ #if 0
+    BUG("device model=%s\n", pSS->pPC->PrinterModel());
+    BUG("device class=%s\n",  pSS->pPC->PrintertypeToString(pSS->pPC->SelectedDevice()));
