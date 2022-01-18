@@ -248,7 +248,7 @@ get-orig-source:
 	utag=`git describe --exact-match heads/upstream/latest | sed -e 's#^upstream/##'` ;\
 	git merge --strategy-option=theirs --no-commit upstream/$$utag || true ;\
 	find . -regextype posix-extended -iregex '.*\.(ldl|ppd|pdf|ps|pcl)\.gz' | xargs gunzip -f ;\
-	rm -f locatedriver prnt/plugins/*.so; \
+	rm -f locatedriver prnt/plugins/*.so prnt/hpcups/*.so; \
 	git add -A . ;\
 	git commit -m "Merge upstream $$utag version; un-gzip source files; remove locatedriver and compiled plugins" ;\
 	urtag=$$utag$$repackv ;\
