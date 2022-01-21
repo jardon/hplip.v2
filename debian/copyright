@@ -141,7 +141,7 @@ Files: protocol/discovery/*
  scan/sane/*
  scan/sane/orblite.c
 Copyright: 2001-2015, Copyright HP Development Company, LP
-Copyright: 2004, Hewlett-Packard Company
+           2004, Hewlett-Packard Company
 License: Expat
 
 Files: scan/sane/sane.h
