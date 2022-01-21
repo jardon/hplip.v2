@@ -220,6 +220,7 @@ endif
 	# Remove models.dat from hplip-data - we ship with libsane-hpaio
 	if dh_listpackages | grep -q hplip-data; then \
 		rm $(CURDIR)/debian/hplip-data/usr/share/hplip/data/models/models.dat; \
+		-rmdir $(CURDIR)/debian/hplip-data/usr/share/hplip/data/models; \
 	fi
 
 override_dh_pyppd:
