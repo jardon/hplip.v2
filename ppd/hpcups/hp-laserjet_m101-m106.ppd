@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.12"
+*FileVersion: "3.22.2"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_m101-m106.ppd"
@@ -15,7 +15,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet m101-m106"
 *ShortNickName: "HP LaserJet m101-m106 hpijs"
-*NickName: "HP LaserJet m101-m106, hpcups 3.21.12"
+*NickName: "HP LaserJet m101-m106, hpcups 3.22.2"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -57,6 +57,11 @@
 *PageSize EnvISOB5/B5 Envelope 176x250mm: "<</cupsString0(iso_b5_176x250mm)/PageSize[499 709]/ImagingBBox null>>setpagedevice"
 *PageSize EnvC6/C6 Envelope 114x162mm: "<</cupsString0(iso_c6_114x162mm)/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
 *PageSize EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsString0(jpn_chou3_120x235mm)/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageSize Statement/Statement 5.5x8.5in: "<</cupsString0(na_invoice_5.5x8.5in)/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageSize 4x6/Photo 4x6in: "<</cupsString0(na_index-4x6_4x6in)/PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageSize 5x7/Photo 5x7in: "<</cupsString0(na_5x7_5x7in)/PageSize[360 504]/ImagingBBox null>>setpagedevice"
+*PageSize B6/JIS B6 : "<</cupsString0(jis_b6_128x182mm)/PageSize[363 516]/ImagingBBox null>>setpagedevice"
+*PageSize 10x15/Photo 10x15cm: "<</cupsString0(om_small-photo_100x150mm)/PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
@@ -80,8 +85,13 @@
 *PageRegion Env10/#10 Envelope 4.12x9.5in: "<</cupsString0(na_number-10_4.125x9.5in)/PageSize[297 684]/ImagingBBox null>>setpagedevice"
 *PageRegion EnvC5/C5 Envelope 162x229mm: "<</cupsString0(iso_c5_162x229mm)/PageSize[459 649]/ImagingBBox null>>setpagedevice"
 *PageRegion EnvISOB5/B5 Envelope 176x250mm: "<</cupsString0(iso_b5_176x250mm)/PageSize[499 709]/ImagingBBox null>>setpagedevice"
-*PageRegion EnvC6/C6 Envelope 114x162mm: "<</cupsInteger0 92/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
-*PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvC6/C6 Envelope 114x162mm: "<</cupsString0(iso_c6_114x162mm)/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsString0(jpn_chou3_120x235mm)/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageRegion Statement/Statement 5.5x8.5in: "<</cupsString0(na_invoice_5.5x8.5in)/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageRegion 4x6/Photo 4x6in: "<</cupsString0(na_index-4x6_4x6in)/PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageRegion 5x7/Photo 5x7in: "<</cupsString0(na_5x7_5x7in)/PageSize[360 504]/ImagingBBox null>>setpagedevice"
+*PageRegion B6/JIS B6 : "<</cupsString0(jis_b6_128x182mm)/PageSize[363 516]/ImagingBBox null>>setpagedevice"
+*PageRegion 10x15/Photo 10x15cm: "<</cupsString0(om_small-photo_100x150mm)/PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
 *ImageableArea A6/A6 105x148mm: "14 14 283.359985351562 405.760009765625"
@@ -105,6 +115,11 @@
 *ImageableArea EnvISOB5/B5 Envelope 176x250mm: "14 14 485 695"
 *ImageableArea EnvC6/C6 Envelope 114x162mm: "14 14 309.279998779297 445.359985351562"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "14 14 325.839996337891 652"
+*ImageableArea Statement/Statement 5.5x8.5in: "14 14 382 598"
+*ImageableArea 4x6/Photo 4x6in: "14 14 274 418"
+*ImageableArea 5x7/Photo 5x7in: "14 14 346 490"
+*ImageableArea B6/JIS B6 : "14 14 349 502"
+*ImageableArea 10x15/Photo 10x15cm: "14 14 274 418"
 *DefaultPaperDimension: Letter
 *PaperDimension A6/A6 105x148mm: "297.359985351562 419.760009765625"
 *PaperDimension A5/A5 148x210mm: "419.760009765625 595.440002441406"
@@ -127,6 +142,11 @@
 *PaperDimension EnvISOB5/B5 Envelope 176x250mm: "499 709"
 *PaperDimension EnvC6/C6 Envelope 114x162mm: "323.279998779297 459.359985351562"
 *PaperDimension EnvChou3/#3 Japanese Envelope 120x235mm: "339.839996337891 666"
+*PaperDimension Statement/Statement 5.5x8.5in: "396 612"
+*PaperDimension 4x6/Photo 4x6in: "288 432"
+*PaperDimension 5x7/Photo 5x7in: "360 504"
+*PaperDimension B6/JIS B6 : "363 516"
+*PaperDimension 10x15/Photo 10x15cm: "288 432"
 *MaxMediaWidth: "612"
 *MaxMediaHeight: "1008"
 *HWMargins: 14 14 14 14
@@ -221,4 +241,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_m101-m106.ppd, 14727 bytes.
+*% End of hp-laserjet_m101-m106.ppd, 16412 bytes.

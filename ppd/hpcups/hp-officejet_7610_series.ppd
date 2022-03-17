@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.12"
+*FileVersion: "3.22.2"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-officejet_7610_series.ppd"
@@ -12,7 +12,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Officejet 7610 Series"
 *ShortNickName: "HP Officejet 7610 Series hpijs"
-*NickName: "HP Officejet 7610 Series, hpcups 3.21.12"
+*NickName: "HP Officejet 7610 Series, hpcups 3.22.2"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -464,4 +464,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-officejet_7610_series.ppd, 35547 bytes.
+*% End of hp-officejet_7610_series.ppd, 35545 bytes.
