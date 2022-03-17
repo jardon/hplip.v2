@@ -1,0 +1,65 @@
+From: Julian Andres Klode <jak@debian.org>
+Date: Fri, 22 Jul 2016 09:33:11 +0200
+Subject: Patch UI files to match upstream produced .py code
+
+The update tab was manually patched out in the generated code, and the label_2 was renamed in the code.
+---
+ ui5/devmgr5_base.ui         | 31 -------------------------------
+ ui5/wifisetupdialog_base.ui |  2 +-
+ 2 files changed, 1 insertion(+), 32 deletions(-)
+
+diff --git a/ui5/devmgr5_base.ui b/ui5/devmgr5_base.ui
+index 7d0c7f5..09f72bf 100644
+--- a/ui5/devmgr5_base.ui
++++ b/ui5/devmgr5_base.ui
+@@ -547,37 +547,6 @@
+          </item>
+         </layout>
+        </widget>
+-       <widget class="QWidget" name="tab_3">
+-        <attribute name="title">
+-         <string>Page</string>
+-        </attribute>
+-        <widget class="QPushButton" name="pushButton">
+-         <property name="geometry">
+-          <rect>
+-           <x>280</x>
+-           <y>40</y>
+-           <width>96</width>
+-           <height>27</height>
+-          </rect>
+-         </property>
+-         <property name="text">
+-          <string>Install now</string>
+-         </property>
+-        </widget>
+-        <widget class="QLabel" name="label">
+-         <property name="geometry">
+-          <rect>
+-           <x>30</x>
+-           <y>45</y>
+-           <width>251</width>
+-           <height>17</height>
+-          </rect>
+-         </property>
+-         <property name="text">
+-          <string>New version of HPLIP-x.x.x is available</string>
+-         </property>
+-        </widget>
+-       </widget>
+       </widget>
+      </widget>
+     </item>
+diff --git a/ui5/wifisetupdialog_base.ui b/ui5/wifisetupdialog_base.ui
+index a85d14c..4e33640 100644
+--- a/ui5/wifisetupdialog_base.ui
++++ b/ui5/wifisetupdialog_base.ui
+@@ -47,7 +47,7 @@
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+-        <widget class="QLabel" name="label_2">
++        <widget class="QLabel" name="MainTitleLabel">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
