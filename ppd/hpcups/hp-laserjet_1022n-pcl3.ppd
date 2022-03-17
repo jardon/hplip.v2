@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.12"
+*FileVersion: "3.22.2"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_1022n-pcl3.ppd"
@@ -12,7 +12,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet 1022n"
 *ShortNickName: "HP LaserJet 1022n hpijs"
-*NickName: "HP LaserJet 1022n pcl3, hpcups 3.21.12, requires proprietary plugin"
+*NickName: "HP LaserJet 1022n pcl3, hpcups 3.22.2, requires proprietary plugin"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -235,4 +235,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_1022n-pcl3.ppd, 15226 bytes.
+*% End of hp-laserjet_1022n-pcl3.ppd, 15224 bytes.

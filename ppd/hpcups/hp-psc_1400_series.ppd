@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.21.12"
+*FileVersion: "3.22.2"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-psc_1400_series.ppd"
@@ -20,7 +20,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP PSC 1400 Series"
 *ShortNickName: "HP PSC 1400 Series hpijs"
-*NickName: "HP PSC 1400 Series, hpcups 3.21.12"
+*NickName: "HP PSC 1400 Series, hpcups 3.22.2"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -265,4 +265,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-psc_1400_series.ppd, 17635 bytes.
+*% End of hp-psc_1400_series.ppd, 17633 bytes.
