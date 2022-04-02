@@ -21655,7 +21655,7 @@ Group "RLT/HP Real Life Technologies"
     Choice "DraftRGB/Draft Color" "<</cupsColorSpace 1/cupsBitsPerColor 8/cupsRowStep 0/OutputType(-1)/cupsString0(PlainDraftColor)/HWResolution[300 300]>>setpagedevice"
     Choice "DraftGray/Draft Grayscale" "<</cupsColorSpace 1/cupsBitsPerColor 8/cupsRowStep 2/OutputType(-1)/cupsString0(PlainDraftGrayK)/HWResolution[300 300]>>setpagedevice"
     //Choice "BestGray/Best Grayscale" "<</cupsColorSpace 1/cupsBitsPerColor 8/cupsRowStep 2/cupsCompression 2/HWResolution[600 600]>>setpagedevice"  // black only
-    Choice "Photo/High-Resolution Photo" "<</cupsColorSpace 1/cupsBitsPerColor 8/cupsRowStep 0/OutputType(2)/cupsString0(PhotoBestColor)/HWResolution[600 600]>>setpagedevice"
+    Choice "Photo/High-Resolution Photo" "<</cupsColorSpace 1/cupsBitsPerColor 8/cupsRowStep 0/OutputType(1)/cupsString0(PhotoBestColor)/HWResolution[600 600]>>setpagedevice"
 
   // Constraints
   UIConstraints "*MediaType Glossy *OutputMode DraftGray"
