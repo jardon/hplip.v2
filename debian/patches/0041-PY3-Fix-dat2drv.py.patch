@@ -1,0 +1,21 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Tue, 1 Oct 2019 21:49:49 +0200
+Subject: PY3: Fix dat2drv.py
+
+---
+ dat2drv.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dat2drv.py b/dat2drv.py
+index 4b3e460..0bee28f 100755
+--- a/dat2drv.py
++++ b/dat2drv.py
+@@ -94,7 +94,7 @@ def usage(typ='text'):
+ def _encode(v):
+     if isinstance(v, text_type):
+         v = v.encode(enc)
+-    return v
++    return str(v)
+ 
+ 
+ 

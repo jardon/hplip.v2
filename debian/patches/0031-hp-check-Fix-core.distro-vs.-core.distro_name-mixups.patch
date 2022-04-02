@@ -1,0 +1,51 @@
+From: Francois Gouget <fgouget@free.fr>
+Date: Sat, 6 May 2017 00:00:52 +0200
+Subject: hp-check: Fix core.distro vs. core.distro_name mixups.
+
+core.distro is the index of the distribution and is thus not suitable
+for traces and information messages.
+
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1688684
+---
+ check.py | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/check.py b/check.py
+index 50e9527..d2e17a0 100755
+--- a/check.py
++++ b/check.py
+@@ -199,7 +199,7 @@ class DependenciesCheck(object):
+             return
+         elif d == 'hpaio' and not self.scanning_enabled:
+             return
+-        elif self.core.distro =="rhel" and "5." in self.distro_version:
++        elif self.core.distro_name =="rhel" and "5." in self.distro_version:
+             if d in ['dbus','python-devel','python-dbus','pyqt4-dbus','libnetsnmp-devel','gcc','make','reportlab','policykit','sane-devel','cups-ddk']:
+                 return
+ 
+@@ -305,14 +305,14 @@ class DependenciesCheck(object):
+         if self.core.distro_version not in vrs and len(vrs):
+             supported_distro_vrs= vrs[len(vrs)-1]
+             log.warn(log.bold("%s-%s version is not supported. Using %s-%s versions dependencies to verify and install..." \
+-                     %(self.core.distro, self.core.distro_version, self.core.distro, supported_distro_vrs)))
++                     %(self.core.distro_name, self.core.distro_version, self.core.distro_name, supported_distro_vrs)))
+ 
+         tui.header("SYSTEM INFO")
+         Sts, Kernel_info =utils.run("uname -r -v -o")
+         Sts, Host_info =utils.run("uname -n")
+         Sts, Proc_info =utils.run("uname -r -v -o")
+         log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
+-             %(Kernel_info,Host_info,Proc_info,self.core.distro, self.core.distro_version))
++             %(Kernel_info,Host_info,Proc_info,self.core.distro_name, self.core.distro_version))
+         log.info(" Bitness: %s bit\n"%utils.getBitness())
+         tui.header("HPLIP CONFIGURATION")
+         v = sys_conf.get('hplip', 'version')
+@@ -323,7 +323,7 @@ class DependenciesCheck(object):
+             if self.core.is_auto_installer_support():
+                 log.info("HPLIP-Installation: Auto installation is supported for %s distro  %s version " %(self.core.distro_name, self.core.distro_version))
+             else:
+-                log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.core.distro, self.core.distro_version))
++                log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.core.distro_name, self.core.distro_version))
+ 
+             log.info()
+             log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))

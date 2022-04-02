@@ -1,0 +1,473 @@
+From: =?utf-8?b?SmnFmcOtIFBvcGVsa2E=?= <jpopelka@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:49:35 +0100
+Subject: Fix ImageableArea for Laserjet 8150/9000
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-ppd-ImageableArea.patch
+---
+ prnt/ps/hp-laserjet_8150_mfp-ps.ppd    | 40 +++++++++++++++++-----------------
+ prnt/ps/hp-laserjet_9000_mfp-ps.ppd    | 30 ++++++++++++-------------
+ prnt/ps/hp-laserjet_9000_series-ps.ppd | 30 ++++++++++++-------------
+ 3 files changed, 50 insertions(+), 50 deletions(-)
+
+diff --git a/prnt/ps/hp-laserjet_8150_mfp-ps.ppd b/prnt/ps/hp-laserjet_8150_mfp-ps.ppd
+index 8b51cfc..77ec0af 100644
+--- a/prnt/ps/hp-laserjet_8150_mfp-ps.ppd
++++ b/prnt/ps/hp-laserjet_8150_mfp-ps.ppd
+@@ -3431,7 +3431,7 @@ restore
+ *CloseUI: *PageRegion
+ 
+ *DefaultImageableArea: Letter
+-*ImageableArea Letter/Letter:							"4.00 3.00 606.00 786.00"
++*ImageableArea Letter/Letter: "12.00 12.00 599.76 779.76"
+ *da.ImageableArea Letter/Letter: ""
+ *de.ImageableArea Letter/Letter: ""
+ *es.ImageableArea Letter/Letter: ""
+@@ -3463,7 +3463,7 @@ restore
+ *zh_CN.ImageableArea LetterSmall/信纸 (小): ""
+ *zh_TW.ImageableArea LetterSmall/Letter (小): ""
+ 
+-*ImageableArea Executive/Executive:						"3.00 3.00 516.00 750.00"
++*ImageableArea Executive/Executive: "12.00 12.00 509.76 743.76"
+ *da.ImageableArea Executive/Executive: ""
+ *de.ImageableArea Executive/Executive: ""
+ *es.ImageableArea Executive/Exec: ""
+@@ -3479,7 +3479,7 @@ restore
+ *zh_CN.ImageableArea Executive/Executive: ""
+ *zh_TW.ImageableArea Executive/Executive: ""
+ 
+-*ImageableArea Legal/Legal:								"64.00 54.00 606.00 1002.00"
++*ImageableArea Legal/Legal: "12.00 12.00 599.76 995.76"
+ *da.ImageableArea Legal/Legal: ""
+ *de.ImageableArea Legal/Legal: ""
+ *es.ImageableArea Legal/Legal: ""
+@@ -3495,7 +3495,7 @@ restore
+ *zh_CN.ImageableArea Legal/Legal: ""
+ *zh_TW.ImageableArea Legal/Legal: ""
+ 
+-*ImageableArea LegalSmall/Legal (Small):				"3.00 3.00 548.00 954.00"
++*ImageableArea LegalSmall/Legal (Small): "64.00 54.00 548.00 954.00"
+ *da.ImageableArea LegalSmall/Legal (lille): ""
+ *de.ImageableArea LegalSmall/Legal (Klein): ""
+ *es.ImageableArea LegalSmall/Legal (pequeño): ""
+@@ -3511,7 +3511,7 @@ restore
+ *zh_CN.ImageableArea LegalSmall/Legal (小): ""
+ *zh_TW.ImageableArea LegalSmall/Legal (小): ""
+ 
+-*ImageableArea Tabloid/11x17:							"3.00 3.00 786.00 1218.00"
++*ImageableArea Tabloid/11x17: "12.00 12.00 779.76 1211.76"
+ *da.ImageableArea Tabloid/11x17: ""
+ *de.ImageableArea Tabloid/11x17 Zoll: ""
+ *es.ImageableArea Tabloid/11x17: ""
+@@ -3527,7 +3527,7 @@ restore
+ *zh_CN.ImageableArea Tabloid/11x17: ""
+ *zh_TW.ImageableArea Tabloid/11x17 : ""
+ 
+-*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7):	"3.00 3.00 836.00 1268.00"
++*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7): "12.00 12.00 829.68 1261.68"
+ *da.ImageableArea w842h1274/11x17 (overstr.  297 x 450 mm): ""
+ *de.ImageableArea w842h1274/11x17 Zoll (Übergröße 11,7x17,7 Zoll): ""
+ *es.ImageableArea w842h1274/11x17 (Extra 11,7x17,7) : ""
+@@ -3543,7 +3543,7 @@ restore
+ *zh_CN.ImageableArea w842h1274/11x17 (超大尺寸 11.7x17.7): ""
+ *zh_TW.ImageableArea w842h1274/11x17  (Oversize 11.7x17.7): ""
+ 
+-*ImageableArea A3/A3:									"3.00 3.00 836.00 1185.00"
++*ImageableArea A3/A3: "12.00 12.00 829.44 1178.16"
+ *da.ImageableArea A3/A3: ""
+ *de.ImageableArea A3/A3: ""
+ *es.ImageableArea A3/A3: ""
+@@ -3559,7 +3559,7 @@ restore
+ *zh_CN.ImageableArea A3/A3: ""
+ *zh_TW.ImageableArea A3/A3: ""
+ 
+-*ImageableArea A4/A4:									"4.00 3.00 586.00 836.00"
++*ImageableArea A4/A4: "12.00 12.00 582.96 829.44"
+ *da.ImageableArea A4/A4: ""
+ *de.ImageableArea A4/A4: ""
+ *es.ImageableArea A4/A4: ""
+@@ -3591,7 +3591,7 @@ restore
+ *zh_CN.ImageableArea A4Small/A4 (小): ""
+ *zh_TW.ImageableArea A4Small/A4 (小): ""
+ 
+-*ImageableArea A5/A5:									"3.00 3.00 414.00 589.00"
++*ImageableArea A5/A5: "12.00 12.00 407.28 582.96"
+ *da.ImageableArea A5/A5: ""
+ *de.ImageableArea A5/A5: ""
+ *es.ImageableArea A5/A5: ""
+@@ -3607,7 +3607,7 @@ restore
+ *zh_CN.ImageableArea A5/A5: ""
+ *zh_TW.ImageableArea A5/A5: ""
+ 
+-*ImageableArea B4/JIS B4:								"3.00 3.00 723.00 1026.00"
++*ImageableArea B4/JIS B4: "12.00 12.00 716.16 1019.52"
+ *da.ImageableArea B4/JIS B4: ""
+ *de.ImageableArea B4/B4 (JIS): ""
+ *es.ImageableArea B4/JIS B4: ""
+@@ -3623,7 +3623,7 @@ restore
+ *zh_CN.ImageableArea B4/JIS B4: ""
+ *zh_TW.ImageableArea B4/JIS B4: ""
+ 
+-*ImageableArea B5/JIS B5:								"3.00 3.00 510.00 723.00"
++*ImageableArea B5/JIS B5: "12.00 12.00 503.52 716.16"
+ *da.ImageableArea B5/JIS B5: ""
+ *de.ImageableArea B5/JIS B5: ""
+ *es.ImageableArea B5/JIS B5: ""
+@@ -3639,7 +3639,7 @@ restore
+ *zh_CN.ImageableArea B5/JIS B5: ""
+ *zh_TW.ImageableArea B5/JIS B5: ""
+ 
+-*ImageableArea DoublePostcard/Double Postcard (JIS):	"3.00 3.00 413.50 561.00"
++*ImageableArea DoublePostcard/Double Postcard (JIS): "12.00 12.00 407.28 554.64"
+ *da.ImageableArea DoublePostcard/Dobbelt postkort (JIS): ""
+ *de.ImageableArea DoublePostcard/Doppelte Postkarte (JIS): ""
+ *es.ImageableArea DoublePostcard/Tarjeta postal doble (JIS): ""
+@@ -3655,7 +3655,7 @@ restore
+ *zh_CN.ImageableArea DoublePostcard/大号明信片 (JIS): ""
+ *zh_TW.ImageableArea DoublePostcard/雙聯明信片(JIS): ""
+ 
+-*ImageableArea w612h935/Executive (JIS):				"3.00 3.00 606.00 929.00"
++*ImageableArea w612h935/Executive (JIS): "12.00 12.00 599.76 922.76"
+ *da.ImageableArea w612h935/Executive (JIS): ""
+ *de.ImageableArea w612h935/Executive (JIS): ""
+ *es.ImageableArea w612h935/Exec (JIS): ""
+@@ -3671,7 +3671,7 @@ restore
+ *zh_CN.ImageableArea w612h935/Executive (JIS): ""
+ *zh_TW.ImageableArea w612h935/Executive (JIS): ""
+ 
+-*ImageableArea w558h774/16K:							"3.00 3.00 552.00 768.00"
++*ImageableArea w558h774/16K: "12.00 12.00 545.76 761.76"
+ *da.ImageableArea w558h774/16K: ""
+ *de.ImageableArea w558h774/16K: ""
+ *es.ImageableArea w558h774/16K: ""
+@@ -3687,7 +3687,7 @@ restore
+ *zh_CN.ImageableArea w558h774/16K: ""
+ *zh_TW.ImageableArea w558h774/16K: ""
+ 
+-*ImageableArea w774h1116/8K:							"3.00 3.00 768.00 1110.00"
++*ImageableArea w774h1116/8K: "12.00 12.00 761.76 1103.76"
+ *da.ImageableArea w774h1116/8K: ""
+ *de.ImageableArea w774h1116/8K: ""
+ *es.ImageableArea w774h1116/8K: ""
+@@ -3703,7 +3703,7 @@ restore
+ *zh_CN.ImageableArea w774h1116/8K: ""
+ *zh_TW.ImageableArea w774h1116/8K: ""
+ 
+-*ImageableArea Env10/Env Comm10:						"3.00 3.00 291.00 678.00"
++*ImageableArea Env10/Env Comm10: "12.00 12.00 284.64 671.76"
+ *da.ImageableArea Env10/Konvolut Comm10: ""
+ *de.ImageableArea Env10/Umschlag Comm10: ""
+ *es.ImageableArea Env10/Sobre Comm10: ""
+@@ -3719,7 +3719,7 @@ restore
+ *zh_CN.ImageableArea Env10/Comm10号信封: ""
+ *zh_TW.ImageableArea Env10/Comm10 信封: ""
+ 
+-*ImageableArea EnvMonarch/Env Monarch:					"3.00 3.00 273.00 534.00"
++*ImageableArea EnvMonarch/Env Monarch: "12.00 12.00 266.64 527.76"
+ *da.ImageableArea EnvMonarch/Konvolut Monarch: ""
+ *de.ImageableArea EnvMonarch/Umschlag Monarch: ""
+ *es.ImageableArea EnvMonarch/Sobre Monarch: ""
+@@ -3735,7 +3735,7 @@ restore
+ *zh_CN.ImageableArea EnvMonarch/Monarch号信封: ""
+ *zh_TW.ImageableArea EnvMonarch/Monarch 信封: ""
+ 
+-*ImageableArea EnvDL/Env DL:							"3.00 3.00 306.00 618.00"
++*ImageableArea EnvDL/Env DL: "12.00 12.00 299.52 611.28"
+ *da.ImageableArea EnvDL/Konvolut DL: ""
+ *de.ImageableArea EnvDL/Umschlag DL: ""
+ *es.ImageableArea EnvDL/Sobre DL: ""
+@@ -3751,7 +3751,7 @@ restore
+ *zh_CN.ImageableArea EnvDL/DL号信封: ""
+ *zh_TW.ImageableArea EnvDL/DL 信封: ""
+ 
+-*ImageableArea EnvC5/Env C5:							"3.00 3.00 453.00 643.00"
++*ImageableArea EnvC5/Env C5: "12.00 12.00 446.88 636.72"
+ *da.ImageableArea EnvC5/Konvolut C5: ""
+ *de.ImageableArea EnvC5/Umschlag C5: ""
+ *es.ImageableArea EnvC5/Sobre C5: ""
+@@ -3767,7 +3767,7 @@ restore
+ *zh_CN.ImageableArea EnvC5/C5号信封: ""
+ *zh_TW.ImageableArea EnvC5/C5 信封: ""
+ 
+-*ImageableArea EnvISOB5/Env ISO B5:						"3.00 3.00 493.00 703.00"
++*ImageableArea EnvISOB5/Env ISO B5: "12.00 12.00 486.48 696.24"
+ *da.ImageableArea EnvISOB5/Konvolut ISO B5: ""
+ *de.ImageableArea EnvISOB5/Umschlag ISO B5: ""
+ *es.ImageableArea EnvISOB5/Sobre ISO B5: ""
+diff --git a/prnt/ps/hp-laserjet_9000_mfp-ps.ppd b/prnt/ps/hp-laserjet_9000_mfp-ps.ppd
+index cea9ae7..cd25343 100644
+--- a/prnt/ps/hp-laserjet_9000_mfp-ps.ppd
++++ b/prnt/ps/hp-laserjet_9000_mfp-ps.ppd
+@@ -2594,7 +2594,7 @@ currentpagedevice /MediaProcessing known
+ *CloseUI: *PageRegion
+ 
+ *DefaultImageableArea: Letter
+-*ImageableArea Letter/Letter:							"6.00 6.00 606.00 786.00"
++*ImageableArea Letter/Letter: "12.00 12.00 599.76 779.76"
+ *da.ImageableArea Letter/Letter: ""
+ *de.ImageableArea Letter/Letter: ""
+ *es.ImageableArea Letter/Letter: ""
+@@ -2626,7 +2626,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea LetterSmall/信纸 (小): ""
+ *zh_TW.ImageableArea LetterSmall/Letter (小): ""
+ 
+-*ImageableArea Executive/Executive:						"6.00 6.00 516.00 750.00"
++*ImageableArea Executive/Executive: "12.00 12.00 509.76 743.76"
+ *da.ImageableArea Executive/Executive: ""
+ *de.ImageableArea Executive/Executive: ""
+ *es.ImageableArea Executive/Exec: ""
+@@ -2642,7 +2642,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea Executive/Executive: ""
+ *zh_TW.ImageableArea Executive/Executive: ""
+ 
+-*ImageableArea Legal/Legal:								"6.00 6.00 606.00 1002.00"
++*ImageableArea Legal/Legal: "12.00 12.00 599.76 995.76"
+ *da.ImageableArea Legal/Legal: ""
+ *de.ImageableArea Legal/Legal: ""
+ *es.ImageableArea Legal/Legal: ""
+@@ -2674,7 +2674,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea LegalSmall/Legal (小): ""
+ *zh_TW.ImageableArea LegalSmall/Legal (小): ""
+ 
+-*ImageableArea Tabloid/11x17:							"6.00 6.00 786.00 1218.00"
++*ImageableArea Tabloid/11x17: "12.00 12.00 779.76 1211.76"
+ *da.ImageableArea Tabloid/11x17: ""
+ *de.ImageableArea Tabloid/11x17 Zoll: ""
+ *es.ImageableArea Tabloid/11x17: ""
+@@ -2690,7 +2690,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea Tabloid/11x17: ""
+ *zh_TW.ImageableArea Tabloid/11x17 : ""
+ 
+-*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7):	"6.00 6.00 836.00 1268.00"
++*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7): "12.00 12.00 829.68 1261.68"
+ *da.ImageableArea w842h1274/11x17 (overstr.  297 x 450 mm): ""
+ *de.ImageableArea w842h1274/11x17 Zoll (Übergröße 11,7x17,7 Zoll): ""
+ *es.ImageableArea w842h1274/11x17 (Extra 11,7x17,7) : ""
+@@ -2706,7 +2706,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w842h1274/11x17 (超大尺寸 11.7x17.7): ""
+ *zh_TW.ImageableArea w842h1274/11x17  (Oversize 11.7x17.7): ""
+ 
+-*ImageableArea A3/A3:									"6.00 6.00 836.00 1185.00"
++*ImageableArea A3/A3: "12.00 12.00 829.44 1178.16"
+ *da.ImageableArea A3/A3: ""
+ *de.ImageableArea A3/A3: ""
+ *es.ImageableArea A3/A3: ""
+@@ -2722,7 +2722,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A3/A3: ""
+ *zh_TW.ImageableArea A3/A3: ""
+ 
+-*ImageableArea A4/A4:									"6.00 6.00 589.00 836.00"
++*ImageableArea A4/A4: "12.00 12.00 582.96 829.44"
+ *da.ImageableArea A4/A4: ""
+ *de.ImageableArea A4/A4: ""
+ *es.ImageableArea A4/A4: ""
+@@ -2754,7 +2754,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A4Small/A4 (小): ""
+ *zh_TW.ImageableArea A4Small/A4 (小): ""
+ 
+-*ImageableArea A5/A5:									"6.00 6.00 414.00 589.00"
++*ImageableArea A5/A5: "12.00 12.00 407.28 582.96"
+ *da.ImageableArea A5/A5: ""
+ *de.ImageableArea A5/A5: ""
+ *es.ImageableArea A5/A5: ""
+@@ -2770,7 +2770,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A5/A5: ""
+ *zh_TW.ImageableArea A5/A5: ""
+ 
+-*ImageableArea B4/JIS B4:								"6.00 6.00 723.00 1026.00"
++*ImageableArea B4/JIS B4: "12.00 12.00 716.16 1019.52"
+ *da.ImageableArea B4/JIS B4: ""
+ *de.ImageableArea B4/B4 (JIS): ""
+ *es.ImageableArea B4/JIS B4: ""
+@@ -2786,7 +2786,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea B4/JIS B4: ""
+ *zh_TW.ImageableArea B4/JIS B4: ""
+ 
+-*ImageableArea B5/JIS B5:								"6.00 6.00 510.00 723.00"
++*ImageableArea B5/JIS B5: "12.00 12.00 503.52 716.16"
+ *da.ImageableArea B5/JIS B5: ""
+ *de.ImageableArea B5/JIS B5: ""
+ *es.ImageableArea B5/JIS B5: ""
+@@ -2802,7 +2802,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea B5/JIS B5: ""
+ *zh_TW.ImageableArea B5/JIS B5: ""
+ 
+-*ImageableArea DoublePostcard/Double Postcard (JIS):	"6.00 6.00 413.50 561.00"
++*ImageableArea DoublePostcard/Double Postcard (JIS): "12.00 12.00 407.28 554.64"
+ *da.ImageableArea DoublePostcard/Dobbelt postkort (JIS): ""
+ *de.ImageableArea DoublePostcard/Doppelte Postkarte (JIS): ""
+ *es.ImageableArea DoublePostcard/Tarjeta postal doble (JIS): ""
+@@ -2818,7 +2818,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea DoublePostcard/大号明信片 (JIS): ""
+ *zh_TW.ImageableArea DoublePostcard/雙聯明信片(JIS): ""
+ 
+-*ImageableArea w612h935/Executive (JIS):				"6.00 6.00 606.00 929.00"
++*ImageableArea w612h935/Executive (JIS): "12.00 12.00 599.76 922.76"
+ *da.ImageableArea w612h935/Executive (JIS): ""
+ *de.ImageableArea w612h935/Executive (JIS): ""
+ *es.ImageableArea w612h935/Exec (JIS): ""
+@@ -2834,7 +2834,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w612h935/Executive (JIS): ""
+ *zh_TW.ImageableArea w612h935/Executive (JIS): ""
+ 
+-*ImageableArea w558h774/16K:							"6.00 6.00 552.00 768.00"
++*ImageableArea w558h774/16K: "12.00 12.00 545.76 761.76"
+ *da.ImageableArea w558h774/16K: ""
+ *de.ImageableArea w558h774/16K: ""
+ *es.ImageableArea w558h774/16K: ""
+@@ -2850,7 +2850,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w558h774/16K: ""
+ *zh_TW.ImageableArea w558h774/16K: ""
+ 
+-*ImageableArea w774h1116/8K:							"6.00 6.00 768.00 1110.00"
++*ImageableArea w774h1116/8K: "12.00 12.00 761.76 1103.76"
+ *da.ImageableArea w774h1116/8K: ""
+ *de.ImageableArea w774h1116/8K: ""
+ *es.ImageableArea w774h1116/8K: ""
+@@ -2866,7 +2866,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w774h1116/8K: ""
+ *zh_TW.ImageableArea w774h1116/8K: ""
+ 
+-*ImageableArea Env10/Env Comm10:						"11.00 11.00 286.00 673.00"
++*ImageableArea Env10/Env Comm10: "12.00 12.00 284.64 671.76"
+ *da.ImageableArea Env10/Konvolut Comm10: ""
+ *de.ImageableArea Env10/Umschlag Comm10: ""
+ *es.ImageableArea Env10/Sobre Comm10: ""
+diff --git a/prnt/ps/hp-laserjet_9000_series-ps.ppd b/prnt/ps/hp-laserjet_9000_series-ps.ppd
+index a82cf43..8d90946 100644
+--- a/prnt/ps/hp-laserjet_9000_series-ps.ppd
++++ b/prnt/ps/hp-laserjet_9000_series-ps.ppd
+@@ -2661,7 +2661,7 @@ currentpagedevice /MediaProcessing known
+ *CloseUI: *PageRegion
+ 
+ *DefaultImageableArea: Letter
+-*ImageableArea Letter/Letter:							"6.00 6.00 606.00 786.00"
++*ImageableArea Letter/Letter: "12.00 12.00 599.76 779.76"
+ *da.ImageableArea Letter/Letter: ""
+ *de.ImageableArea Letter/Letter: ""
+ *es.ImageableArea Letter/Letter: ""
+@@ -2693,7 +2693,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea LetterSmall/信纸 (小): ""
+ *zh_TW.ImageableArea LetterSmall/Letter (小): ""
+ 
+-*ImageableArea Executive/Executive:						"6.00 6.00 516.00 750.00"
++*ImageableArea Executive/Executive: "12.00 12.00 509.76 743.76"
+ *da.ImageableArea Executive/Executive: ""
+ *de.ImageableArea Executive/Executive: ""
+ *es.ImageableArea Executive/Exec: ""
+@@ -2709,7 +2709,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea Executive/Executive: ""
+ *zh_TW.ImageableArea Executive/Executive: ""
+ 
+-*ImageableArea Legal/Legal:								"6.00 6.00 606.00 1002.00"
++*ImageableArea Legal/Legal: "12.00 12.00 599.76 995.76"
+ *da.ImageableArea Legal/Legal: ""
+ *de.ImageableArea Legal/Legal: ""
+ *es.ImageableArea Legal/Legal: ""
+@@ -2741,7 +2741,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea LegalSmall/Legal (小): ""
+ *zh_TW.ImageableArea LegalSmall/Legal (小): ""
+ 
+-*ImageableArea Tabloid/11x17:							"6.00 6.00 786.00 1218.00"
++*ImageableArea Tabloid/11x17: "12.00 12.00 779.76 1211.76"
+ *da.ImageableArea Tabloid/11x17: ""
+ *de.ImageableArea Tabloid/11x17 Zoll: ""
+ *es.ImageableArea Tabloid/11x17: ""
+@@ -2757,7 +2757,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea Tabloid/11x17: ""
+ *zh_TW.ImageableArea Tabloid/11x17 : ""
+ 
+-*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7):	"6.00 6.00 836.00 1268.00"
++*ImageableArea w842h1274/11x17 (Oversize 11.7x17.7): "12.00 12.00 829.68 1261.68"
+ *da.ImageableArea w842h1274/11x17 (overstr.  297 x 450 mm): ""
+ *de.ImageableArea w842h1274/11x17 Zoll (Übergröße 11,7x17,7 Zoll): ""
+ *es.ImageableArea w842h1274/11x17 (Extra 11,7x17,7) : ""
+@@ -2773,7 +2773,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w842h1274/11x17 (超大尺寸 11.7x17.7): ""
+ *zh_TW.ImageableArea w842h1274/11x17  (Oversize 11.7x17.7): ""
+ 
+-*ImageableArea A3/A3:									"6.00 6.00 836.00 1185.00"
++*ImageableArea A3/A3: "12.00 12.00 829.44 1178.16"
+ *da.ImageableArea A3/A3: ""
+ *de.ImageableArea A3/A3: ""
+ *es.ImageableArea A3/A3: ""
+@@ -2789,7 +2789,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A3/A3: ""
+ *zh_TW.ImageableArea A3/A3: ""
+ 
+-*ImageableArea A4/A4:									"6.00 6.00 589.00 836.00"
++*ImageableArea A4/A4: "12.00 12.00 582.96 829.44"
+ *da.ImageableArea A4/A4: ""
+ *de.ImageableArea A4/A4: ""
+ *es.ImageableArea A4/A4: ""
+@@ -2821,7 +2821,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A4Small/A4 (小): ""
+ *zh_TW.ImageableArea A4Small/A4 (小): ""
+ 
+-*ImageableArea A5/A5:									"6.00 6.00 414.00 589.00"
++*ImageableArea A5/A5: "12.00 12.00 407.28 582.96"
+ *da.ImageableArea A5/A5: ""
+ *de.ImageableArea A5/A5: ""
+ *es.ImageableArea A5/A5: ""
+@@ -2837,7 +2837,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea A5/A5: ""
+ *zh_TW.ImageableArea A5/A5: ""
+ 
+-*ImageableArea B4/JIS B4:								"6.00 6.00 723.00 1026.00"
++*ImageableArea B4/JIS B4: "12.00 12.00 716.16 1019.52"
+ *da.ImageableArea B4/JIS B4: ""
+ *de.ImageableArea B4/B4 (JIS): ""
+ *es.ImageableArea B4/JIS B4: ""
+@@ -2853,7 +2853,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea B4/JIS B4: ""
+ *zh_TW.ImageableArea B4/JIS B4: ""
+ 
+-*ImageableArea B5/JIS B5:								"6.00 6.00 510.00 723.00"
++*ImageableArea B5/JIS B5: "12.00 12.00 503.52 716.16"
+ *da.ImageableArea B5/JIS B5: ""
+ *de.ImageableArea B5/JIS B5: ""
+ *es.ImageableArea B5/JIS B5: ""
+@@ -2869,7 +2869,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea B5/JIS B5: ""
+ *zh_TW.ImageableArea B5/JIS B5: ""
+ 
+-*ImageableArea DoublePostcard/Double Postcard (JIS):	"6.00 6.00 413.50 561.00"
++*ImageableArea DoublePostcard/Double Postcard (JIS): "12.00 12.00 407.28 554.64"
+ *da.ImageableArea DoublePostcard/Dobbelt postkort (JIS): ""
+ *de.ImageableArea DoublePostcard/Doppelte Postkarte (JIS): ""
+ *es.ImageableArea DoublePostcard/Tarjeta postal doble (JIS): ""
+@@ -2885,7 +2885,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea DoublePostcard/大号明信片 (JIS): ""
+ *zh_TW.ImageableArea DoublePostcard/雙聯明信片(JIS): ""
+ 
+-*ImageableArea w612h935/Executive (JIS):				"6.00 6.00 606.00 929.00"
++*ImageableArea w612h935/Executive (JIS): "12.00 12.00 599.76 922.76"
+ *da.ImageableArea w612h935/Executive (JIS): ""
+ *de.ImageableArea w612h935/Executive (JIS): ""
+ *es.ImageableArea w612h935/Exec (JIS): ""
+@@ -2901,7 +2901,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w612h935/Executive (JIS): ""
+ *zh_TW.ImageableArea w612h935/Executive (JIS): ""
+ 
+-*ImageableArea w558h774/16K:							"6.00 6.00 552.00 768.00"
++*ImageableArea w558h774/16K: "12.00 12.00 545.76 761.76"
+ *da.ImageableArea w558h774/16K: ""
+ *de.ImageableArea w558h774/16K: ""
+ *es.ImageableArea w558h774/16K: ""
+@@ -2917,7 +2917,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w558h774/16K: ""
+ *zh_TW.ImageableArea w558h774/16K: ""
+ 
+-*ImageableArea w774h1116/8K:							"6.00 6.00 768.00 1110.00"
++*ImageableArea w774h1116/8K: "12.00 12.00 761.76 1103.76"
+ *da.ImageableArea w774h1116/8K: ""
+ *de.ImageableArea w774h1116/8K: ""
+ *es.ImageableArea w774h1116/8K: ""
+@@ -2933,7 +2933,7 @@ currentpagedevice /MediaProcessing known
+ *zh_CN.ImageableArea w774h1116/8K: ""
+ *zh_TW.ImageableArea w774h1116/8K: ""
+ 
+-*ImageableArea Env10/Env Comm10:						"11.00 11.00 286.00 673.00"
++*ImageableArea Env10/Env Comm10: "12.00 12.00 284.64 671.76"
+ *da.ImageableArea Env10/Konvolut Comm10: ""
+ *de.ImageableArea Env10/Umschlag Comm10: ""
+ *es.ImageableArea Env10/Sobre Comm10: ""

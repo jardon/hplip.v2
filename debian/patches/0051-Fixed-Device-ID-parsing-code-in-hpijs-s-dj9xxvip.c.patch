@@ -1,0 +1,49 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:46:25 +0100
+Subject: Fixed Device ID parsing code in hpijs's dj9xxvip.c
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-bad-low-ink-warning.patch
+---
+ prnt/hpijs/dj9xxvip.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/prnt/hpijs/dj9xxvip.cpp b/prnt/hpijs/dj9xxvip.cpp
+index 519036c..1133b5b 100644
+--- a/prnt/hpijs/dj9xxvip.cpp
++++ b/prnt/hpijs/dj9xxvip.cpp
+@@ -2239,7 +2239,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
+             {
+                 case '5':
+                 {
+-                    if ((*(pStr+1) & 0xf3) > 1)
++                    if ((*(pStr+1) & 0xf3) > '1')
+                     {
+                         if (err != NO_ERROR)
+                         {
+@@ -2254,7 +2254,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
+                 }
+                 case '6':
+                 {
+-                    if ((*(pStr+1) & 0xf3) > 1)
++                    if ((*(pStr+1) & 0xf3) > '1')
+                     {
+                         if (err != NO_ERROR)
+                         {
+@@ -2269,7 +2269,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
+                 }
+                 case '7':
+                 {
+-                    if ((*(pStr+1) & 0xf3) > 1)
++                    if ((*(pStr+1) & 0xf3) > '1')
+                     {
+                         if (err != NO_ERROR)
+                         {
+@@ -2285,7 +2285,7 @@ DRIVER_ERROR DJ9xxVIP::CheckInkLevel()
+                 }
+                 case '8':
+                 {
+-                    if ((*(pStr+1) & 0xf3) > 1)
++                    if ((*(pStr+1) & 0xf3) > '1')
+                     {
+                         if (err != NO_ERROR)
+                         {

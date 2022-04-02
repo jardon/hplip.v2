@@ -1,0 +1,49 @@
+From: =?utf-8?q?Bernhard_=C3=9Cbelacker?= <bernhardu@mailbox.org>
+Date: Sat, 27 Feb 2021 19:05:28 +0100
+Subject: Workaround: Add 32 bytes to allocation Halftoner
+
+Bug-Debian: https://bugs.debian.org/972339
+Bug-Ubuntu: https://launchpad.net/bugs/1901209
+
+==144269== Invalid read of size 1
+==144269==    at 0x114577: Mode9::Process(RASTERDATA*) (Mode9.cpp:332)
+==144269==    by 0x11EDA4: Process (Pipeline.cpp:72)
+==144269==    by 0x11EDA4: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:79)
+==144269==    by 0x11EDDF: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:83)
+==144269==    by 0x11EDDF: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:83)
+==144269==    by 0x112677: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:779)
+==144269==    by 0x112DE8: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==144269==    by 0x4C17D09: (below main) (libc-start.c:308)
+==144269==  Address 0x5a8cc0b is 0 bytes after a block of size 379 alloc'd
+==144269==    at 0x483950F: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==144269==    by 0x12047B: Halftoner::Halftoner(PrintMode_s*, unsigned int, int*, int, bool) (Halftoner.cpp:184)
+==144269==    by 0x11817B: Pcl3::Configure(Pipeline**) (Pcl3.cpp:92)
+==144269==    by 0x11EA30: Job::Configure() (Job.cpp:248)
+==144269==    by 0x11EB67: Job::Init(SystemServices*, JobAttributes_s*, Encapsulator*) (Job.cpp:63)
+==144269==    by 0x111A35: HPCupsFilter::startPage(cups_page_header2_s*) (HPCupsFilter.cpp:481)
+==144269==    by 0x112792: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:668)
+==144269==    by 0x112DE8: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==144269==    by 0x4C17D09: (below main) (libc-start.c:308)
+---
+ prnt/hpcups/Halftoner.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/prnt/hpcups/Halftoner.cpp b/prnt/hpcups/Halftoner.cpp
+index fbe31ab..cb4f593 100644
+--- a/prnt/hpcups/Halftoner.cpp
++++ b/prnt/hpcups/Halftoner.cpp
+@@ -181,12 +181,12 @@ Halftoner::Halftoner
+             {
+                 PlaneSize= OutputWidth[i]/8 + // doublecheck ... should already be divisble by 8
+                             ((OutputWidth[i] % 8)!=0);
+-                ColorPlane[i][j][k] = (BYTE*) new BYTE[(PlaneSize)];
++                ColorPlane[i][j][k] = (BYTE*) new BYTE[(PlaneSize) + 32];
+                 if (ColorPlane[i][j] == NULL)
+                 {
+                     goto MemoryError;
+                 }
+-                memset(ColorPlane[i][j][k], 0, PlaneSize);
++                memset(ColorPlane[i][j][k], 0, PlaneSize + 32);
+             }
+         }
+     }
