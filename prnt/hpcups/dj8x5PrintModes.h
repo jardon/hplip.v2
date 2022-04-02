@@ -21,7 +21,7 @@ PrintMode dj8x5PrintModes[] =
         "PlainNormalColor",
         {600, 300, 300, 300, 300, 300},
         {600, 300, 300, 300, 300, 300},
-        {1, 1, 1, 1, 1, 1}, 4, FED,
+        {1, 2, 2, 2, 2, 2}, 4, FED,
         {ulMapDJ895_KCMY, NULL, NULL},
         300, 300, true, HTBinary_open, HT300x3004level_open
     },
@@ -31,7 +31,7 @@ PrintMode dj8x5PrintModes[] =
         {600, 300, 300, 300, 300, 300},
         {1, 1, 1, 1, 1, 1}, 1, FED,
         {ulMapGRAY_K_6x6x1, NULL, NULL},
-        300, 300, false, HTBinary_open, HTBinary_open
+        600, 600, false, HTBinary_open, HTBinary_open
     },
     {
         "PlainNormalCMY",
@@ -47,7 +47,7 @@ PrintMode dj8x5PrintModes[] =
         {600, 600, 600, 600, 600, 600},
         {1, 2, 2, 2, 2, 2}, 4, FED,
         {ulMapDJ895_HB_KCMY, NULL, NULL},
-        300, 300, false, HTBinary_open, HT600x6004level895_open
+        600, 600, false, HTBinary_open, HT600x6004level895_open
     },
     {
         "PhotoBestCMY",
@@ -55,7 +55,7 @@ PrintMode dj8x5PrintModes[] =
         {600, 600, 600, 600, 600, 600},
         {1, 2, 2, 2, 2, 2}, 3, FED,
         {ulMapDJ895_HB_KCMY, NULL, NULL},
-        300, 300, false, HTBinary_open, HT600x6004level895_open
+        600, 600, false, HTBinary_open, HT600x6004level895_open
     },
     {
         "PlainDraftCMY",
