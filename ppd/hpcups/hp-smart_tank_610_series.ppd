@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-smart_tank_610_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Smart Tank 610 Series"
 *ShortNickName: "HP Smart Tank 610 Series hpijs"
-*NickName: "HP Smart Tank 610 Series, hpcups 3.22.2"
+*NickName: "HP Smart Tank 610 Series, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -219,7 +219,7 @@
 *PageSize 3x5/3x5in: "<</cupsInteger0 78/PageSize [216 360]/ImagingBBox null>>setpagedevice"
 *PageSize 4x5in/4x5in: "<</cupsInteger0 30002/PageSize [288 360]/ImagingBBox null>>setpagedevice"
 *PageSize 4x6in/4x6in (10x15cm) : "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
-*PageSize 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageSize 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageSize 5x7in/5x7in: "<</cupsInteger0 122/PageSize [360 504]/ImagingBBox null>>setpagedevice"
 *PageSize Envelope_No_6_75/Envelope No 6_75: "<</cupsInteger0 83/PageSize [260.88 468]/ImagingBBox null>>setpagedevice"
 *PageSize 8.5x13/8.5x13in: "<</cupsInteger0 10/PageSize [612 936]/ImagingBBox null>>setpagedevice"
@@ -256,7 +256,7 @@
 *PageRegion 3x5/3x5in: "<</cupsInteger0 78/PageSize[216 360]/ImagingBBox null>>setpagedevice"
 *PageRegion 4x5in/4x5in: "<</cupsInteger0 30002/PageSize[288 360]/ImagingBBox null>>setpagedevice"
 *PageRegion 4x6in/4x6in (10x15cm) : "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
-*PageRegion 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageRegion 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageRegion 5x7in/5x7in: "<</cupsInteger0 122/PageSize[360 504]/ImagingBBox null>>setpagedevice"
 *PageRegion Envelope_No_6_75/Envelope No 6_75: "<</cupsInteger0 83/PageSize[260.88 468]/ImagingBBox null>>setpagedevice"
 *PageRegion 8.5x13/8.5x13in: "<</cupsInteger0 10/PageSize[612 936]/ImagingBBox null>>setpagedevice"
@@ -291,7 +291,7 @@
 *ImageableArea 3x5/3x5in: "8.39999961853 8.39999961853 207.60000038147 351.60000038147"
 *ImageableArea 4x5in/4x5in: "8.39999961853 8.39999961853 279.60000038147 351.60000038147"
 *ImageableArea 4x6in/4x6in (10x15cm) : "8.39999961853 8.39999961853 279.60000038147 423.60000038147"
-*ImageableArea 4x12in/4x12in (10x30cm) : "8.39999961853 8.39999961853 279.60000038147 711.60000038147"
+*ImageableArea 4x12in/4x12in (10x30cm) : "8.39999961853 8.39999961853 279.60000038147 855.60000038147"
 *ImageableArea 5x7in/5x7in: "8.39999961853 8.39999961853 351.60000038147 495.60000038147"
 *ImageableArea Envelope_No_6_75/Envelope No 6_75: "8.39999961853 8.39999961853 252.480005264282 459.60000038147"
 *ImageableArea 8.5x13/8.5x13in: "8.39999961853 8.39999961853 603.60000038147 927.60000038147"
@@ -325,7 +325,7 @@
 *PaperDimension 3x5/3x5in: "216 360"
 *PaperDimension 4x5in/4x5in: "288 360"
 *PaperDimension 4x6in/4x6in (10x15cm) : "288 432"
-*PaperDimension 4x12in/4x12in (10x30cm) : "288 720"
+*PaperDimension 4x12in/4x12in (10x30cm) : "288 864"
 *PaperDimension 5x7in/5x7in: "360 504"
 *PaperDimension Envelope_No_6_75/Envelope No 6_75: "260.880004882812 468"
 *PaperDimension 8.5x13/8.5x13in: "612 936"

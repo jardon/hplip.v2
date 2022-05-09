@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-photosmart_pro_b8800_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Photosmart Pro b8800 Series"
 *ShortNickName: "HP PS Pro b8800 Series hpijs"
-*NickName: "HP Photosmart Pro b8800 Series, hpcups 3.22.2"
+*NickName: "HP Photosmart Pro b8800 Series, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -81,8 +81,8 @@
 *PageSize Photo4x10.FB/Photo Borderless 4x10in: "<</cupsInteger0 101/PageSize[304.992 734.112]/ImagingBBox null>>setpagedevice"
 *PageSize Photo4x11/Photo 4x11in: "<</cupsInteger0 101/PageSize[288 792]/ImagingBBox null>>setpagedevice"
 *PageSize Photo4x11.FB/Photo Borderless 4x11in: "<</cupsInteger0 101/PageSize[306.432 806.112]/ImagingBBox null>>setpagedevice"
-*PageSize Photo4x12/Photo 4x12in: "<</cupsInteger0 101/PageSize[288 864]/ImagingBBox null>>setpagedevice"
-*PageSize Photo4x12.FB/Photo Borderless 4x12in: "<</cupsInteger0 101/PageSize[307.8 878.112]/ImagingBBox null>>setpagedevice"
+*PageSize Photo4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
+*PageSize Photo4x12.FB/Photo Borderless 4x12in: "<</cupsInteger0 30000/PageSize[307.8 878.112]/ImagingBBox null>>setpagedevice"
 *PageSize B5/B5 176x250mm: "<</cupsInteger0 65/PageSize[498.96 708.48]/ImagingBBox null>>setpagedevice"
 *PageSize JB5/JB5 182x257mm: "<</cupsInteger0 45/PageSize[516.24 728.64]/ImagingBBox null>>setpagedevice"
 *PageSize JB5.FB/JB5 Borderless 182x257mm: "<</cupsInteger0 45/PageSize[531.792 742.752]/ImagingBBox null>>setpagedevice"
@@ -155,8 +155,8 @@
 *PageRegion Photo4x10.FB/Photo Borderless 4x10in: "<</cupsInteger0 101/cupsReal0 .098/cupsReal1 .098/PageSize[304.992 734.112]/ImagingBBox null>>setpagedevice"
 *PageRegion Photo4x11/Photo 4x11in: "<</cupsInteger0 101/PageSize [288 792]/ImagingBBox null>>setpagedevice"
 *PageRegion Photo4x11.FB/Photo Borderless 4x11in: "<</cupsInteger0 101/cupsReal0 .108/cupsReal1 .098/PageSize[306.432 806.112]/ImagingBBox null>>setpagedevice"
-*PageRegion Photo4x12/Photo 4x12in: "<</cupsInteger0 101/PageSize [288 864]/ImagingBBox null>>setpagedevice"
-*PageRegion Photo4x12.FB/Photo Borderless 4x12in: "<</cupsInteger0 101/cupsReal0 .118/cupsReal1 .098/PageSize[307.8 878.112]/ImagingBBox null>>setpagedevice"
+*PageRegion Photo4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize [288 864]/ImagingBBox null>>setpagedevice"
+*PageRegion Photo4x12.FB/Photo Borderless 4x12in: "<</cupsInteger0 30000/cupsReal0 .118/cupsReal1 .098/PageSize[307.8 878.112]/ImagingBBox null>>setpagedevice"
 *PageRegion B5/B5 176x250mm: "<</cupsInteger0 65/PageSize[498.96 708.48]/ImagingBBox null>>setpagedevice"
 *PageRegion JB5/JB5 182x257mm: "<</cupsInteger0 45/PageSize [516.24 728.64]/ImagingBBox null>>setpagedevice"
 *PageRegion JB5.FB/JB5 Borderless 182x257mm: "<</cupsInteger0 45/cupsReal0 .098/cupsReal1 .098/PageSize [531.792 742.752]/ImagingBBox null>>setpagedevice"
@@ -413,4 +413,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-photosmart_pro_b8800_series.ppd, 33962 bytes.
+*% End of hp-photosmart_pro_b8800_series.ppd, 33970 bytes.

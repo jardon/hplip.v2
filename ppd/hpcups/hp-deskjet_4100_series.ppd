@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_4100_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet 4100 Series"
 *ShortNickName: "HP Deskjet 4100 Series hpijs"
-*NickName: "HP Deskjet 4100 Series, hpcups 3.22.2"
+*NickName: "HP Deskjet 4100 Series, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -42,7 +42,7 @@
 *PageSize Photo4x5/Photo 4x5in: "<</cupsInteger0 30002/PageSize[288 360]/ImagingBBox null>>setpagedevice"
 *PageSize Card4x6/IndexCard 4x6in: "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *PageSize Card10x15/IndexCard 10x15 cm in: "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
-*PageSize Photo_4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageSize Photo_4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageSize Card5x7/Card 5x7in: "<</cupsInteger0 122/PageSize[360 504]/ImagingBBox null>>setpagedevice"
 *PageSize FLSA/Foolscap 8.5x13in: "<</cupsInteger0 10/PageSize[612 936]/ImagingBBox null>>setpagedevice"
 *PageSize Letter/Letter 8x10: "<</cupsInteger0 7/PageSize[576 720]/ImagingBBox null>>setpagedevice"
@@ -81,7 +81,7 @@
 *PageRegion Photo4x5/Photo 4x5in: "<</cupsInteger0 30002/PageSize[288 360]/ImagingBBox null>>setpagedevice"
 *PageRegion Card4x6/IndexCard 4x6in: "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *PageRegion Card10x15/IndexCard 10x15 cm in: "<</cupsInteger0 74/PageSize[288 432]/ImagingBBox null>>setpagedevice"
-*PageRegion Photo_4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageRegion Photo_4x12/Photo 4x12in: "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageRegion Card5x7/Card 5x7in: "<</cupsInteger0 122/PageSize[360 504]/ImagingBBox null>>setpagedevice"
 *PageRegion FLSA/Foolscap 8.5x13in: "<</cupsInteger0 10/PageSize[612 936]/ImagingBBox null>>setpagedevice"
 *PageRegion Letter/Letter 8x10: "<</cupsInteger0 7/PageSize[576 720]/ImagingBBox null>>setpagedevice"
@@ -118,7 +118,7 @@
 *ImageableArea Photo4x5/Photo 4x5in: "8.39999961853 8.39999961853 279.60000038147 324"
 *ImageableArea Card4x6/IndexCard 4x6in: "8.39999961853 8.39999961853 279.60000038147 396"
 *ImageableArea Card10x15/IndexCard 10x15 cm in: "8.39999961853 8.39999961853 252 396"
-*ImageableArea Photo_4x12/Photo 4x12in: "8.39999961853 8.39999961853 279.60000038147 684"
+*ImageableArea Photo_4x12/Photo 4x12in: "8.39999961853 8.39999961853 279.60000038147 828"
 *ImageableArea Card5x7/Card 5x7in: "8.39999961853 8.39999961853 351.60000038147 468"
 *ImageableArea FLSA/Foolscap 8.5x13in: "8.39999961853 8.39999961853 603.60000038147 900"
 *ImageableArea Letter/Letter 8x10: "8.39999961853 8.39999961853 567.60000038147 684"
@@ -154,7 +154,7 @@
 *PaperDimension Photo4x5/Photo 4x5in: "288 360"
 *PaperDimension Card4x6/IndexCard 4x6in: "288 432"
 *PaperDimension Card10x15/IndexCard 10x15 cm in: "288 432"
-*PaperDimension Photo_4x12/Photo 4x12in: "288 720"
+*PaperDimension Photo_4x12/Photo 4x12in: "288 864"
 *PaperDimension Card5x7/Card 5x7in: "360 504"
 *PaperDimension FLSA/Foolscap 8.5x13in: "612 936"
 *PaperDimension Letter/Letter 8x10: "576 720"
