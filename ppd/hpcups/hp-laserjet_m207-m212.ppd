@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_m207-m212.ppd"
@@ -25,7 +25,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet m207-m212"
 *ShortNickName: "HP LaserJet m207-m212 hpijs"
-*NickName: "HP LaserJet m207-m212, hpcups 3.22.2"
+*NickName: "HP LaserJet m207-m212, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False

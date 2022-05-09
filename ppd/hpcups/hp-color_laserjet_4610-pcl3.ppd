@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-color_laserjet_4610-pcl3.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Color LaserJet 4610"
 *ShortNickName: "HP Color LaserJet 4610 hpijs"
-*NickName: "HP Color LaserJet 4610 pcl3, hpcups 3.22.2"
+*NickName: "HP Color LaserJet 4610 pcl3, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True

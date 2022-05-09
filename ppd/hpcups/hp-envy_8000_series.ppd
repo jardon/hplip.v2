@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.2"
+*FileVersion: "3.22.4"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-envy_8000_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Envy 8000 Series"
 *ShortNickName: "HP Envy 8000 Series hpijs"
-*NickName: "HP Envy 8000 Series, hpcups 3.22.2"
+*NickName: "HP Envy 8000 Series, hpcups 3.22.4"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -317,7 +317,7 @@
 *PageSize EnvMonarch/Monarch Envelope 3.875x7.5in: "<</cupsInteger0 80/PageSize[279 540]/ImagingBBox null>>setpagedevice"
 *PageSize EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
 *PageSize 5x5in/5x5in (13x13cm) : "<</cupsInteger0 30003/PageSize[360 360]/ImagingBBox null>>setpagedevice"
-*PageSize 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageSize 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageSize LSize3.5*5/LSize3.5x5in.: "<</cupsInteger0 121/PageSize[252 360]/ImagingBBox null>>setpagedevice"
 *PageSize Env/#6 Envelope 6.63x6.5in: "<</cupsInteger0 83/PageSize[260.88 468]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
@@ -373,7 +373,7 @@
 *PageRegion EnvMonarch/Monarch Envelope 3.875x7.5in: "<</cupsInteger0 80/PageSize[279 540]/ImagingBBox null>>setpagedevice"
 *PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
 *PageRegion 5x5in/5x5in (13x13cm) : "<</cupsInteger0 30003/PageSize[360 360]/ImagingBBox null>>setpagedevice"
-*PageRegion 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 720]/ImagingBBox null>>setpagedevice"
+*PageRegion 4x12in/4x12in (10x30cm) : "<</cupsInteger0 30000/PageSize[288 864]/ImagingBBox null>>setpagedevice"
 *PageRegion LSize3.5*5/LSize3.5x5in.: "<</cupsInteger0 121/PageSize[252 360]/ImagingBBox null>>setpagedevice"
 *PageRegion Env/#6 Envelope 6.63x6.5in: "<</cupsInteger0 83/PageSize[260.88 468]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
@@ -427,7 +427,7 @@
 *ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "8.39999961853 46.799999237061 270.60000038147 493.200000762939"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "8.39999961853 46.799999237061 331.43999671936 619.200000762939"
 *ImageableArea 5x5in/5x5in (13x13cm) : "8.39999961853 8.39999961853 351.60000038147 351.60000038147"
-*ImageableArea 4x12in/4x12in (10x30cm) : "8.39999961853 8.39999961853 279.60000038147 711.60000038147"
+*ImageableArea 4x12in/4x12in (10x30cm) : "8.39999961853 8.39999961853 279.60000038147 855.60000038147"
 *ImageableArea LSize3.5*5/LSize3.5x5in.: "8.39999961853 8.39999961853 243.60000038147 351.60000038147"
 *ImageableArea Env/#6 Envelope 6.63x6.5in: "8.39999961853 8.39999961853 252.480005264282 459.60000038147"
 *DefaultPaperDimension: Letter
@@ -480,7 +480,7 @@
 *PaperDimension EnvMonarch/Monarch Envelope 3.875x7.5in: "279 540"
 *PaperDimension EnvChou3/#3 Japanese Envelope 120x235mm: "339.839996337891 666"
 *PaperDimension 5x5in/5x5in (13x13cm) : "360 360"
-*PaperDimension 4x12in/4x12in (10x30cm) : "288 720"
+*PaperDimension 4x12in/4x12in (10x30cm) : "288 864"
 *PaperDimension LSize3.5*5/LSize3.5x5in.: "252 360"
 *PaperDimension Env/#6 Envelope 6.63x6.5in: "260.880004882812 468"
 *MaxMediaWidth: "612"
