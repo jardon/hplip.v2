@@ -1,0 +1,68 @@
+From: =?utf-8?q?Bernhard_=C3=9Cbelacker?= <bernhardu@mailbox.org>
+Date: Fri, 26 Feb 2021 15:41:07 +0100
+Subject: Grow m_pPrinterBuffer if needed on each page
+
+Bug-Debian: https://bugs.debian.org/974828
+Bug-Ubuntu: https://launchpad.net/bugs/1904318
+---
+ prnt/hpcups/HPCupsFilter.cpp | 13 ++++++++++---
+ prnt/hpcups/HPCupsFilter.h   |  1 +
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/prnt/hpcups/HPCupsFilter.cpp b/prnt/hpcups/HPCupsFilter.cpp
+index f0ad0eb..fdf2984 100644
+--- a/prnt/hpcups/HPCupsFilter.cpp
++++ b/prnt/hpcups/HPCupsFilter.cpp
+@@ -203,7 +203,7 @@ void HPCupsFilter::WriteKBMPRaster (FILE *fp, BYTE *pbyk, int width)
+     fwrite (black_raster, 1, adj_k_width, fp);
+ }
+ 
+-HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL)
++HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL), m_PrinterBufferSize(0)
+ {
+     setbuf (stderr, NULL);
+ 
+@@ -230,6 +230,7 @@ void HPCupsFilter::cleanup()
+     if (m_pPrinterBuffer) {
+         delete [] m_pPrinterBuffer;
+         m_pPrinterBuffer = NULL;
++        m_PrinterBufferSize = 0;
+     }
+ 
+     if(m_ppd){
+@@ -511,8 +512,6 @@ DRIVER_ERROR HPCupsFilter::startPage (cups_page_header2_t *cups_header)
+         dbglog("HPCUPS: returning NO_ERROR from startPage\n");
+     }
+ 
+-    m_pPrinterBuffer = new BYTE[cups_header->cupsWidth * 4 + 32];
+-
+     return NO_ERROR;
+ }
+ 
+@@ -693,6 +692,14 @@ int HPCupsFilter::processRasterData(cups_raster_t *cups_raster)
+        #endif
+         current_page_number++;
+ 
++        if (m_PrinterBufferSize < (cups_header.cupsWidth * 4 + 32)) {
++            m_PrinterBufferSize = cups_header.cupsWidth * 4 + 32;
++            if (m_pPrinterBuffer) {
++                delete [] m_pPrinterBuffer;
++            }
++            m_pPrinterBuffer = new BYTE[m_PrinterBufferSize];
++        }
++
+         if (current_page_number == 1) {
+ 
+             if (startPage(&cups_header) != NO_ERROR) {
+diff --git a/prnt/hpcups/HPCupsFilter.h b/prnt/hpcups/HPCupsFilter.h
+index 60f8580..f5f0706 100644
+--- a/prnt/hpcups/HPCupsFilter.h
++++ b/prnt/hpcups/HPCupsFilter.h
+@@ -89,6 +89,7 @@ public:
+ private:
+ 
+     BYTE            *m_pPrinterBuffer;        
++    int              m_PrinterBufferSize;
+     Job            m_Job;
+     SystemServices         *m_pSys;
+     int             child_pid;

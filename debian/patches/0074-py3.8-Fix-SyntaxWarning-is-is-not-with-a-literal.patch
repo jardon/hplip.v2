@@ -1,0 +1,73 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Tue, 31 Mar 2020 20:12:43 +0200
+Subject: py3.8: Fix SyntaxWarning: "is"/"is not" with a literal
+
+Closes: #955168
+---
+ base/utils.py     | 2 +-
+ check-plugin.py   | 2 +-
+ check.py          | 2 +-
+ ui5/devmgr_ext.py | 4 ++--
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/base/utils.py b/base/utils.py
+index 9ce92df..ca6d82f 100644
+--- a/base/utils.py
++++ b/base/utils.py
+@@ -2059,7 +2059,7 @@ def chunk_write(response, out_fd, chunk_size =8192, status_bar = downLoad_status
+ def download_from_network(weburl, outputFile = None, useURLLIB=False):
+     retValue = -1
+ 
+-    if weburl == "" or weburl == None:
++    if weburl == "" or weburl is None:
+         log.error("URL is empty")
+         return retValue, ""
+ 
+diff --git a/check-plugin.py b/check-plugin.py
+index 79ed923..6fb22b1 100755
+--- a/check-plugin.py
++++ b/check-plugin.py
+@@ -113,7 +113,7 @@ def install_firmware(pluginObj,Plugin_Installation_Completed, USB_param):
+     options=""
+     if USB_param is not None:
+         options += " -y3 %s"%(USB_param)
+-    if log_level is 'debug':
++    if log_level == 'debug':
+         options += " -g"
+ 
+     cmd= execmd + options
+diff --git a/check.py b/check.py
+index d2e17a0..abc0180 100755
+--- a/check.py
++++ b/check.py
+@@ -682,7 +682,7 @@ class DependenciesCheck(object):
+ 
+                                         out =''
+                                         for g in getfacl_out_list:
+-                                            if 'getfacl' not in g and '' is not g and 'file' not in g:
++                                            if 'getfacl' not in g and '' != g and 'file' not in g:
+                                                 pat = re.compile('''.*:(.*)''')
+                                                 if pat.search(g):
+                                                     out = out +' '+ pat.search(g).group(1)
+diff --git a/ui5/devmgr_ext.py b/ui5/devmgr_ext.py
+index 34b4977..6b7a61e 100644
+--- a/ui5/devmgr_ext.py
++++ b/ui5/devmgr_ext.py
+@@ -12,7 +12,7 @@ class Ui_MainWindow_Derived(object):
+ 
+         self.latest_available_version = latest_available_version
+         self.Is_autoInstaller_distro = Is_autoInstaller_distro
+-        if self.latest_available_version is not "":
++        if self.latest_available_version != "":
+             self.tab_3 = QWidget()
+             self.tab_3.setObjectName("tab_3")
+             self.label = QLabel(self.tab_3)
+@@ -34,7 +34,7 @@ class Ui_MainWindow_Derived(object):
+ 
+     def retranslateUi(self, MainWindow):
+         super(Ui_MainWindow_Derived, self).retranslateUi(MainWindow)
+-        if self.latest_available_version is not "":
++        if self.latest_available_version != "":
+             self.label.setText(QApplication.translate("MainWindow", "New version of HPLIP-%s is available"%self.latest_available_version, None))
+             self.Tabs.setTabText(self.Tabs.indexOf(self.tab_3), QApplication.translate("MainWindow", "Upgrade", None))
+             if self.Is_autoInstaller_distro:

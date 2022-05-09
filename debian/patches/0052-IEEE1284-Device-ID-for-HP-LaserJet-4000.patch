@@ -1,0 +1,21 @@
+From: =?utf-8?b?SmnFmcOtIFBvcGVsa2E=?= <jpopelka@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:48:11 +0100
+Subject: IEEE1284 Device ID for HP LaserJet 4000
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-deviceIDs-ppd.patch
+---
+ prnt/ps/hp-lj_300_400_color_m351_m451-ps.ppd | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/prnt/ps/hp-lj_300_400_color_m351_m451-ps.ppd b/prnt/ps/hp-lj_300_400_color_m351_m451-ps.ppd
+index 69e632b..e47748e 100644
+--- a/prnt/ps/hp-lj_300_400_color_m351_m451-ps.ppd
++++ b/prnt/ps/hp-lj_300_400_color_m351_m451-ps.ppd
+@@ -83,6 +83,7 @@
+ *cupsManualCopies: False
+ *cupsLanguages: "en da de es fi fr it ja ko nb nl pt ru sv zh_CN zh_TW"
+ *cupsFilter: "application/vnd.cups-postscript 0 hpps"
++*1284DeviceID: "MFG:Hewlett-Packard;MDL:HP LaserJet 400 color M451dn;DES:HP LaserJet 400 color M451dn;"
+ *UIConstraints: *HPOption_Duplexer False *Duplex
+ *UIConstraints: *Duplex *HPOption_Duplexer False
+ *UIConstraints: *HPOption_Tray3 False *InputSlot Tray3
