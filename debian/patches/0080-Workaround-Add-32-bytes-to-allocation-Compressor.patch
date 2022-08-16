@@ -1,0 +1,46 @@
+From: =?utf-8?q?Bernhard_=C3=9Cbelacker?= <bernhardu@mailbox.org>
+Date: Sat, 27 Feb 2021 19:05:28 +0100
+Subject: Workaround: Add 32 bytes to allocation Compressor
+
+Bug-Debian: https://bugs.debian.org/972339
+Bug-Ubuntu: https://launchpad.net/bugs/1901209
+
+==183233== Invalid read of size 1
+==183233==    at 0x11465A: Mode9::Process(RASTERDATA*) (Mode9.cpp:215)
+==183233==    by 0x11EDA4: Process (Pipeline.cpp:72)
+==183233==    by 0x11EDA4: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:79)
+==183233==    by 0x11EDDF: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:83)
+==183233==    by 0x11EDDF: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:83)
+==183233==    by 0x112677: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:779)
+==183233==    by 0x112DE8: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==183233==    by 0x4C17D09: (below main) (libc-start.c:308)
+==183233==  Address 0x5a8f0a1 is 0 bytes after a block of size 3,025 alloc'd
+==183233==    at 0x483950F: operator new[](unsigned long) (vg_replace_malloc.c:431)
+==183233==    by 0x113AE6: Compressor::Compressor(unsigned int, bool) (Compressor.cpp:44)
+==183233==    by 0x114AEB: Mode9::Mode9(unsigned int, bool) (Mode9.cpp:34)
+==183233==    by 0x1181C1: Pcl3::Configure(Pipeline**) (Pcl3.cpp:95)
+==183233==    by 0x11EA30: Job::Configure() (Job.cpp:248)
+==183233==    by 0x11EB67: Job::Init(SystemServices*, JobAttributes_s*, Encapsulator*) (Job.cpp:63)
+==183233==    by 0x111A35: HPCupsFilter::startPage(cups_page_header2_s*) (HPCupsFilter.cpp:481)
+==183233==    by 0x112792: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:668)
+==183233==    by 0x112DE8: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==183233==    by 0x4C17D09: (below main) (libc-start.c:308)
+---
+ prnt/hpcups/Compressor.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/prnt/hpcups/Compressor.cpp b/prnt/hpcups/Compressor.cpp
+index a29955e..77f6fab 100644
+--- a/prnt/hpcups/Compressor.cpp
++++ b/prnt/hpcups/Compressor.cpp
+@@ -41,8 +41,9 @@ Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL),
+     if (!UseSeedRow)
+         return;
+ 
+-    SeedRow = (BYTE *) new BYTE[RasterSize];
++    SeedRow = (BYTE *) new BYTE[RasterSize + 32];
+     CNEWCHECK(SeedRow);
++    memset(SeedRow, 0, RasterSize + 32);
+ }
+ 
+ Compressor::~Compressor()

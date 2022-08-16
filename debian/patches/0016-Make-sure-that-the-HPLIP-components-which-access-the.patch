@@ -1,0 +1,102 @@
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Fri, 22 Jul 2016 09:33:03 +0200
+Subject: Make sure that the HPLIP components which access the USB (especially
+ the CUPS backends "hp" and "hpfax") do not crash when libusb fails to
+ connect to the USB,
+ for example on machines without USB or with the USB kernel modules not
+ loaded
+
+LP: #1302437
+---
+ io/hpmud/musb.c | 32 +++++++++++++++++++++-----------
+ 1 file changed, 21 insertions(+), 11 deletions(-)
+
+diff --git a/io/hpmud/musb.c b/io/hpmud/musb.c
+index a6741c6..d6a0788 100644
+--- a/io/hpmud/musb.c
++++ b/io/hpmud/musb.c
+@@ -695,7 +695,8 @@ static libusb_device *get_libusb_device(const char *uri)
+     int numdevs = 0;        /* number of connected devices */
+     int i, conf, iface, altset ;
+ 
+-    libusb_init(&libusb_ctx);
++    i = libusb_init(&libusb_ctx);
++    if (i) goto bugout;
+     numdevs = libusb_get_device_list(libusb_ctx, &libusb_dev_list);
+     for (i=0; i< numdevs; i++)
+     {
+@@ -2054,7 +2055,8 @@ int __attribute__ ((visibility ("hidden"))) musb_probe_devices(char *lst, int ls
+     char serial[128], mfg[128], sz[HPMUD_LINE_SIZE];
+     int r, size=0;
+ 
+-    libusb_init(&ctx);
++    i = libusb_init(&ctx);
++    if (i) goto bugout;
+     numdevs = libusb_get_device_list(ctx, &list);
+ 
+     if (numdevs <= 0)
+@@ -2155,13 +2157,15 @@ int __attribute__ ((visibility ("hidden"))) musb_probe_devices(char *lst, int ls
+     }//end for loop
+ 
+ bugout:
+-    if (!hd)
++    if (hd)
+         libusb_close(hd);
+     if (confptr)
+         libusb_free_config_descriptor(confptr);
+-    libusb_free_device_list(list, 1);
++    if (list)
++      libusb_free_device_list(list, 1);
+ bugout1:
+-    libusb_exit(ctx);
++    if (ctx)
++      libusb_exit(ctx);
+ 
+     return size;
+ }
+@@ -2187,7 +2191,8 @@ enum HPMUD_RESULT hpmud_make_usb_uri(const char *busnum, const char *devnum, cha
+ 
+     *bytes_read=0;
+ 
+-    libusb_init(&ctx);
++    i = libusb_init(&ctx);
++    if (i) goto bugout;
+     numdevs = libusb_get_device_list(ctx, &list);
+ 
+     if (numdevs <= 0)
+@@ -2290,8 +2295,10 @@ bugout:
+     if (hd != NULL)
+         libusb_close(hd);
+ 
+-    libusb_free_device_list(list, 1);
+-    libusb_exit(ctx);
++    if (list)
++      libusb_free_device_list(list, 1);
++    if (ctx)
++      libusb_exit(ctx);
+ 
+     return stat;
+ }
+@@ -2310,7 +2317,8 @@ enum HPMUD_RESULT hpmud_make_usb_serial_uri(const char *sn, char *uri, int uri_s
+ 
+     *bytes_read=0;
+ 
+-    libusb_init(&ctx);
++    i = libusb_init(&ctx);
++    if (i) goto bugout;
+     numdevs = libusb_get_device_list(ctx, &list);
+ 
+     if (numdevs <= 0)
+@@ -2336,8 +2344,10 @@ enum HPMUD_RESULT hpmud_make_usb_serial_uri(const char *sn, char *uri, int uri_s
+     stat = HPMUD_R_OK;
+ 
+ bugout:
+-    libusb_free_device_list(list, 1);
+-    libusb_exit(ctx);
++    if (list)
++      libusb_free_device_list(list, 1);
++    if (ctx)
++      libusb_exit(ctx);
+ 
+     return stat;
+ }

@@ -1,0 +1,81 @@
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Fri, 22 Jul 2016 09:32:54 +0200
+Subject: Fixed short-edge duplex for non-PS laser printers
+
+LP: #244295
+---
+ prnt/hpijs/ljcolor.cpp    | 13 +++++++++++++
+ prnt/hpijs/ljjetready.cpp | 11 +++++++++++
+ prnt/hpijs/ljmono.cpp     | 13 +++++++++++++
+ 3 files changed, 37 insertions(+)
+
+diff --git a/prnt/hpijs/ljcolor.cpp b/prnt/hpijs/ljcolor.cpp
+index 0ecbfc6..db35e98 100644
+--- a/prnt/hpijs/ljcolor.cpp
++++ b/prnt/hpijs/ljcolor.cpp
+@@ -330,6 +330,19 @@ DRIVER_ERROR HeaderLJColor::StartSend ()
+ 
+     err = thePrinter->Send ((const BYTE *) res, strlen (res));
+ 
++//  Binding directive
++
++    strcpy (res, "@PJL SET BINDING=LONGEDGE\015\012");
++
++#ifdef APDK_AUTODUPLEX
++    if (thePrintContext->QueryDuplexMode () == DUPLEXMODE_TABLET)
++    {
++        strcpy (res, "@PJL SET BINDING=SHORTEDGE\015\012");
++    }
++#endif
++
++    err = thePrinter->Send ((const BYTE *) res, strlen (res));
++
+ 
+     err = thePrinter->Send ((const BYTE*) EnterLanguage, sizeof (EnterLanguage));
+     ERRCHECK;
+diff --git a/prnt/hpijs/ljjetready.cpp b/prnt/hpijs/ljjetready.cpp
+index 6942d29..d79d409 100644
+--- a/prnt/hpijs/ljjetready.cpp
++++ b/prnt/hpijs/ljjetready.cpp
+@@ -329,6 +329,17 @@ DRIVER_ERROR HeaderLJJetReady::StartSend ()
+     err = thePrinter->Send ((const BYTE *) szScratchStr, strlen (szScratchStr));
+     ERRCHECK;
+ 
++    // Send the Binding command
++    strcpy (szScratchStr, "@PJL SET BINDING=LONGEDGE\015\012");
++#ifdef APDK_AUTODUPLEX
++    if (thePrintContext->QueryDuplexMode () == DUPLEXMODE_TABLET)
++    {
++        strcpy (szScratchStr, "@PJL SET BINDING=SHORTEDGE\015\012");
++    }
++#endif
++    err = thePrinter->Send ((const BYTE *) szScratchStr, strlen (szScratchStr));
++    ERRCHECK;
++
+     //Set the resolution to 600
+     err = thePrinter->Send ((const BYTE*)ccpPJLSetRes,sizeof(ccpPJLSetRes));
+     ERRCHECK;
+diff --git a/prnt/hpijs/ljmono.cpp b/prnt/hpijs/ljmono.cpp
+index 67a0077..8d3ad4d 100644
+--- a/prnt/hpijs/ljmono.cpp
++++ b/prnt/hpijs/ljmono.cpp
+@@ -212,6 +212,19 @@ DRIVER_ERROR HeaderLJMono::StartSend ()
+     err = thePrinter->Send ((const BYTE *) res, strlen (res));
+     ERRCHECK;
+ 
++//  Binding directive
++
++    strcpy (res, "@PJL SET BINDING=LONGEDGE\015\012");
++
++#ifdef APDK_AUTODUPLEX
++    if (thePrintContext->QueryDuplexMode () == DUPLEXMODE_TABLET)
++    {
++        strcpy (res, "@PJL SET BINDING=SHORTEDGE\015\012");
++    }
++#endif
++    err = thePrinter->Send ((const BYTE *) res, strlen (res));
++    ERRCHECK;
++
+     err = thePrinter->Send ((const BYTE*) EnterLanguage, sizeof (EnterLanguage));
+     ERRCHECK;
+ 

@@ -1,0 +1,27 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:33:50 +0100
+Subject: Clear old state reasons
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-clear-old-state-reasons.patch
+---
+ prnt/hpcups/HPCupsFilter.cpp | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/prnt/hpcups/HPCupsFilter.cpp b/prnt/hpcups/HPCupsFilter.cpp
+index daced87..d972778 100644
+--- a/prnt/hpcups/HPCupsFilter.cpp
++++ b/prnt/hpcups/HPCupsFilter.cpp
+@@ -589,6 +589,13 @@ int HPCupsFilter::StartPrintJob(int  argc, char *argv[])
+ 
+     signal(SIGTERM, HPCancelJob);
+ 
++/*
++ *  Prior to the re-write of hpcups, this filter managed the
++ *  marker-supply-low-warning printer state reason.  Make sure to
++ *  clear that state reason so that upgrades work correctly.
++ */
++    fputs ("STATE: -marker-supply-low-warning\n", stderr);
++
+     cups_raster = cupsRasterOpen(fd, CUPS_RASTER_READ);
+ 
+     if (cups_raster == NULL) {

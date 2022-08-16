@@ -1,0 +1,71 @@
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Fri, 22 Jul 2016 09:32:58 +0200
+Subject: For the Lidil printers,
+ enable two-cartridge modes (black and color cartridge) in the hpcups driver
+ and assign the choices of the "Printout Mode" option to two-cartridge modes
+ in the hpijs driver
+
+LP: #235399
+---
+ prnt/drv/hpijs.drv.in.template | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/prnt/drv/hpijs.drv.in.template b/prnt/drv/hpijs.drv.in.template
+index 293ad04..e7fa6ff 100644
+--- a/prnt/drv/hpijs.drv.in.template
++++ b/prnt/drv/hpijs.drv.in.template
+@@ -2220,16 +2220,16 @@ le=- -"
+ r=&quot;HEWLETT-PACKARD&quot; -sDeviceModel=&quot;deskjet 3320&quot;"
+   Attribute "FoomaticRIPOption" "PrintoutMode" "enum Composite B"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft" "Quality=300DraftColorCM&&
+-Y"
++YK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft.Gray" "Quality=300DraftGr&&
+ ayscaleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=300ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=300ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal.Gray" "Quality=300Graysc&&
+ aleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High.Gray" "Quality=600Grayscal&&
+ eK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Photo" "Quality=600PhotoCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Photo" "Quality=600PhotoCMYK"
+   Attribute "FoomaticRIPOption" "PageSize" "enum CmdLine A"
+   Attribute "FoomaticRIPOptionSetting" "PageSize=Letter" " -dDEVICEWIDTHPOINTS=612 -&&
+ dDEVICEHEIGHTPOINTS=792"
+@@ -2402,13 +2402,13 @@ le=- -"
+ r=&quot;HEWLETT-PACKARD&quot; -sDeviceModel=&quot;deskjet 3600&quot;"
+   Attribute "FoomaticRIPOption" "PrintoutMode" "enum Composite B"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft" "Quality=300DraftColorCM&&
+-Y"
++YK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft.Gray" "Quality=300DraftGr&&
+ ayscaleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=300ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=300ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal.Gray" "Quality=300Graysc&&
+ aleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High.Gray" "Quality=600Grayscal&&
+ eK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Photo" "Quality=600PhotoCMYKFul&&
+@@ -2598,13 +2598,13 @@ er=&quot;HEWLETT-PACKARD&quot; -sDeviceModel=&quot;Deskjet D4100&quot;&&
+ "
+   Attribute "FoomaticRIPOption" "PrintoutMode" "enum Composite B"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft" "Quality=600DraftColorCM&&
+-Y"
++YK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Draft.Gray" "Quality=600DraftGr&&
+ ayscaleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=600ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal" "Quality=600ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Normal.Gray" "Quality=600Graysc&&
+ aleK"
+-  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMY"
++  Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High" "Quality=600ColorCMYK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=High.Gray" "Quality=600Grayscal&&
+ eK"
+   Attribute "FoomaticRIPOptionSetting" "PrintoutMode=Photo" "Quality=600PhotoCMYKFul&&

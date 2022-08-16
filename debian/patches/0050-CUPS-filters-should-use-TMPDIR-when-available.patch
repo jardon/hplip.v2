@@ -1,0 +1,36 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:39:29 +0100
+Subject: CUPS filters should use TMPDIR when available
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-logdir.patch
+---
+ prnt/hpcups/HPCupsFilter.cpp   | 2 +-
+ prnt/hpcups/SystemServices.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/prnt/hpcups/HPCupsFilter.cpp b/prnt/hpcups/HPCupsFilter.cpp
+index d972778..322bdaa 100644
+--- a/prnt/hpcups/HPCupsFilter.cpp
++++ b/prnt/hpcups/HPCupsFilter.cpp
+@@ -669,7 +669,7 @@ int HPCupsFilter::processRasterData(cups_raster_t *cups_raster)
+     char hpPreProcessedRasterFile[MAX_FILE_PATH_LEN]; //temp file needed to store raster data with swaped pages.
+ 
+ 
+-    sprintf(hpPreProcessedRasterFile, "%s/hp_%s_cups_SwapedPagesXXXXXX",CUPS_TMP_DIR, m_JA.user_name);
++    snprintf(hpPreProcessedRasterFile, sizeof(hpPreProcessedRasterFile), "%s/hp_%s_cups_SwapedPagesXXXXXX",CUPS_TMP_DIR, m_JA.user_name);
+     #ifndef DISABLE_IMAGEPROCESSOR 
+ 	    image_processor_t* imageProcessor=NULL;
+ 	    IMAGE_PROCESSOR_ERROR result;
+diff --git a/prnt/hpcups/SystemServices.cpp b/prnt/hpcups/SystemServices.cpp
+index f227837..318e539 100644
+--- a/prnt/hpcups/SystemServices.cpp
++++ b/prnt/hpcups/SystemServices.cpp
+@@ -38,7 +38,7 @@ SystemServices::SystemServices(int iLogLevel, int job_id, char* user_name) : m_i
+     if (iLogLevel & SAVE_OUT_FILE)
+     {
+         char    fname[MAX_FILE_PATH_LEN];
+-        sprintf(fname, "%s/hpcups_%s_out_job%d_XXXXXX",CUPS_TMP_DIR, user_name, job_id);
++        snprintf(fname, sizeof(fname), "%s/hpcups_%s_out_job%d_XXXXXX",CUPS_TMP_DIR, user_name, job_id);
+         createTempFile(fname, &m_fp);
+         if (m_fp)
+         {

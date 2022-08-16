@@ -1,0 +1,22 @@
+From: Tim Waugh <twaugh@redhat.com>
+Date: Fri, 31 Jan 2020 13:43:11 +0100
+Subject: Fixed hpcups crash when required plugin missing
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-hpcups-crash.patch
+---
+ prnt/hpcups/Compressor.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/prnt/hpcups/Compressor.cpp b/prnt/hpcups/Compressor.cpp
+index 7fbbcd0..a29955e 100644
+--- a/prnt/hpcups/Compressor.cpp
++++ b/prnt/hpcups/Compressor.cpp
+@@ -29,7 +29,7 @@
+ \*****************************************************************************/
+ #include "Compressor.h"
+ 
+-Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL), UseSeedRow(useseed), inputsize(RasterSize), seeded(false)
++Compressor::Compressor (unsigned int RasterSize, bool useseed) : SeedRow(NULL), compressBuf(NULL), UseSeedRow(useseed), inputsize(RasterSize), seeded(false)
+ {
+     constructor_error = NO_ERROR;
+     iRastersReady = 0;
