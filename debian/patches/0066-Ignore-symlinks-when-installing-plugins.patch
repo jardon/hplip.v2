@@ -1,0 +1,31 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:37:46 +0100
+Subject: Ignore symlinks when installing plugins
+
+External scripts, which are downloaded and run by hp-plugin, try to create links
+in non-existing dirs. These scripts ignore errors, so plugin is installed fine
+but then internal hp-plugin can check for plugin state, where links are checked too.
+It results in corrupted plugin state, which breaks printer installation by GUI hp-setup.
+Temporary workaround is to ignore these bad links and real fix should come from HP,
+because their external scripts try to create links in non-existing dirs.
+Bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=1671513
+Reported upstream: https://bugs.launchpad.net/hplip/+bug/1814574
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-missing-links.patch
+---
+ installer/pluginhandler.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/installer/pluginhandler.py b/installer/pluginhandler.py
+index edc7295..fece028 100755
+--- a/installer/pluginhandler.py
++++ b/installer/pluginhandler.py
+@@ -167,7 +167,7 @@ class PluginHandle(object):
+                         continue
+                     if link != "":
+                         if not utils.check_library(link):
+-                            self.__plugin_state = PLUGIN_FILES_CORRUPTED
++                            pass
+ 
+ 
+     def __getPluginInformation(self, callback=None):

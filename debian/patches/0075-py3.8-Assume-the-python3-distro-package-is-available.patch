@@ -1,0 +1,135 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Tue, 31 Mar 2020 20:33:37 +0200
+Subject: =?utf-8?q?py3=2E8=3A=C2=A0Assume_the_python3-distro_package_is_ava?=
+ =?utf-8?q?ilable?=
+
+---
+ base/password.py          | 42 ++-------------------------------
+ installer/core_install.py | 59 ++++-------------------------------------------
+ 2 files changed, 7 insertions(+), 94 deletions(-)
+
+diff --git a/base/password.py b/base/password.py
+index 8902127..4233544 100644
+--- a/base/password.py
++++ b/base/password.py
+@@ -81,46 +81,8 @@ def showPasswordPrompt(prompt):
+ 
+ # TBD this function shoud be removed once distro class implemented
+ def get_distro_name():
+-    os_name = None
+-    distro_release_name = str()
+-    try:
+-        import platform
+-    except ImportError:
+-        os_name = None
+-
+-    try:
+-        os_name = platform.dist()[0]
+-    except AttributeError:
+-        try:
+-            import distro
+-            os_name = distro.linux_distribution()[0]
+-            distro_release_name = distro.distro_release_attr('name')
+-        except:
+-            os_name = None
+-            
+-    if not os_name:
+-        name = os.popen('lsb_release -i | cut -f 2')
+-        os_name = name.read().strip()
+-        name.close()
+-
+-    if not os_name:
+-        name = os.popen("cat /etc/issue | awk '{print $1}' | head -n 1")
+-        os_name = name.read().strip()
+-        name.close()
+-
+-    os_name = os_name.lower()
+-    if 'MX' in distro_release_name:
+-        os_name = "mxlinux"
+-    if "redhatenterprise" in os_name:
+-        os_name = 'rhel'    
+-    elif "suse" in os_name:
+-        os_name = 'suse'
+-    elif "arch" in os_name:
+-        os_name = 'manjarolinux'
+-    elif "fedora" in os_name:
+-        os_name = 'fedora'
+-
+-    return os_name
++    import distro
++    return distro.linux_distribution(full_distribution_name=False)[0]
+ 
+ 
+ class Password(object):
+diff --git a/installer/core_install.py b/installer/core_install.py
+index ccdd8f1..71ad0de 100644
+--- a/installer/core_install.py
++++ b/installer/core_install.py
+@@ -639,62 +639,13 @@ class CoreInstall(object):
+         log.debug("Determining distro...")
+         name, ver = '', '0.0'
+         found = False
+-        distro_release_name = str()
+-        # Getting distro information using platform module
+-        try:
+-            import platform
+-            try:
+-                name = platform.dist()[0].lower()
+-                ver = platform.dist()[1]
+-            except AttributeError:
+-                import distro
+-                name = distro.linux_distribution()[0].lower()
+-                ver = distro.linux_distribution()[1]
+-                distro_release_name = distro.distro_release_attr('name')
+-            if not name:
+-                found = False
+-                log.debug("Not able to detect distro")
+-            else:
+-                found = True
+-                log.debug("Able to detect distro")
+-        except ImportError:
+-            found = False
+-            log.debug("Not able to detect distro in exception")
+-
+-        # Getting distro information using lsb_release command
+-        # platform retrurn 'redhat' even for 'RHEL' or 'arch' for ManjaroLinux so re-reading using
+-        # lsb_release.
+-        if not found or name == 'redhat' or name == 'arch':
+-            lsb_rel = utils.which("lsb_release", True)
+-            if lsb_rel:
+-                log.debug("Using 'lsb_release -is/-rs'")
+-                status, name = utils.run(lsb_rel + ' -is', self.passwordObj)
+-                if not status and name:
+-                    status, ver = utils.run(lsb_rel + ' -rs', self.passwordObj)
+-                    if not status and ver:
+-                        ver = ver.lower().strip()
+-                        found = True
+ 
+-        # Getting distro information using /etc/issue file
+-        if not found:
+-            try:
+-                name = open('/etc/issue', 'r').read().lower().strip()
+-            except IOError:
+-                found = False
+-            else:
+-                found = True
+-                for n in name.split():
+-                    m = n
+-                    if '.' in n:
+-                        m = '.'.join(n.split('.')[:2])
++        import distro
++        ld = distro.linux_distribution(full_distribution_name=False)
++        name = ld[0]
++        ver = ld[1]
+ 
+-                    try:
+-                        ver = float(m)
+-                    except ValueError:
+-                        try:
+-                            ver = int(m)
+-                        except ValueError:
+-                            ver = '0.0'
++        found = True
+ 
+         # Updating the distro name and version.
+         if found:

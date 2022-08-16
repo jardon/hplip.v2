@@ -1,0 +1,45 @@
+From: =?utf-8?q?Bernhard_=C3=9Cbelacker?= <bernhardu@mailbox.org>
+Date: Sat, 27 Feb 2021 19:05:28 +0100
+Subject: Workaround: Add 32 bytes to allocation ColorMatcher
+
+Bug-Debian: https://bugs.debian.org/972339
+Bug-Ubuntu: https://launchpad.net/bugs/1901209
+
+==12899== Invalid read of size 1
+==12899==    at 0x1174D6: Backward16PixelsNonWhite (Halftoner.h:106)
+==12899==    by 0x1174D6: Halftoner::HTEDiffOpen(Halftoner::THTDitherParms*, unsigned short) (Halftoner.cpp:734)
+==12899==    by 0x117C67: Halftoner::Process(RASTERDATA*) (Halftoner.cpp:548)
+==12899==    by 0x115D5F: Process (Pipeline.cpp:72)
+==12899==    by 0x115D5F: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:79)
+==12899==    by 0x115D81: Pipeline::Execute(RASTERDATA*) (Pipeline.cpp:83)
+==12899==    by 0x10D151: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:779)
+==12899==    by 0x10D651: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==12899==    by 0x4B9BA1F: (below main) (libc-start.c:308)
+==12899==  Address 0x55f8ed2 is 6 bytes after a block of size 12,100 alloc'd
+==12899==    at 0x48416F4: operator new[](unsigned int) (vg_replace_malloc.c:425)
+==12899==    by 0x116011: ColorMatcher::ColorMatcher(ColorMap_s, unsigned int, unsigned int) (ColorMatcher.cpp:63)
+==12899==    by 0x11101B: Pcl3::Configure(Pipeline**) (Pcl3.cpp:90)
+==12899==    by 0x115B71: Job::Configure() (Job.cpp:248)
+==12899==    by 0x115C07: Job::Init(SystemServices*, JobAttributes_s*, Encapsulator*) (Job.cpp:63)
+==12899==    by 0x10C9C1: HPCupsFilter::startPage(cups_page_header2_s*) (HPCupsFilter.cpp:481)
+==12899==    by 0x10D273: HPCupsFilter::processRasterData(_cups_raster_s*) (HPCupsFilter.cpp:668)
+==12899==    by 0x10D651: HPCupsFilter::StartPrintJob(int, char**) (HPCupsFilter.cpp:597)
+==12899==    by 0x4B9BA1F: (below main) (libc-start.c:308)
+---
+ prnt/hpcups/ColorMatcher.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/prnt/hpcups/ColorMatcher.cpp b/prnt/hpcups/ColorMatcher.cpp
+index 2384ec6..6620c75 100644
+--- a/prnt/hpcups/ColorMatcher.cpp
++++ b/prnt/hpcups/ColorMatcher.cpp
+@@ -60,7 +60,8 @@ ColorMatcher::ColorMatcher
+         EndPlane = K;
+     }
+ 
+-    Contone = (BYTE *) new BYTE[InputWidth * ColorPlaneCount];
++    Contone = (BYTE *) new BYTE[InputWidth * ColorPlaneCount + 32];
++    memset(Contone, 0, InputWidth * ColorPlaneCount + 32);
+     if (Contone == NULL)
+     {
+         goto MemoryError;
