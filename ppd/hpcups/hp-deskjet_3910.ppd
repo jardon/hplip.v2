@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Deskjet 3910 with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_3910.ppd"
@@ -16,7 +16,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet 3910"
 *ShortNickName: "HP Deskjet 3910 hpijs"
-*NickName: "HP Deskjet 3910, hpcups 3.22.4"
+*NickName: "HP Deskjet 3910, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -32,7 +32,7 @@
 *HPMechOffset: "70"
 *cupsModelName: "deskjet 3320"
 *1284DeviceID: "MFG:HP;MDL:deskjet 3910;DES:deskjet 3910;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -117,7 +117,7 @@
 *ImageableArea Executive/Executive 7.25x10.5in: "18 36 504 747"
 *ImageableArea 16k/16k 7.75x10.75in: "18 36 540 765"
 *ImageableArea Letter/Letter 8.5x11in: "18 36 594 783"
-*ImageableArea A4/A4 210x297mm: "9.720000267029 36 585.720002174377 832.679992675781"
+*ImageableArea A4/A4 210x297mm: "9.720000267029 36 585.720031738281 832.679992675781"
 *ImageableArea ExecutiveJIS/Executive (JIS) 8.5x12.986in: "18 36 594 927"
 *ImageableArea FLSA/American Foolscap 8.5x13in: "18 36 594 927"
 *ImageableArea Legal/Legal 8.5x14in: "18 36 594 999"

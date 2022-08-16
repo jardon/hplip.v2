@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Photosmart 230 with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-photosmart_230.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Photosmart 230"
 *ShortNickName: "HP Photosmart 230 hpijs"
-*NickName: "HP Photosmart 230, hpcups 3.22.4"
+*NickName: "HP Photosmart 230, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -28,7 +28,7 @@
 *HPMechOffset: "70"
 *cupsModelName: "PHOTOSMART 100"
 *1284DeviceID: "MFG:HP;MDL:photosmart 230;DES:photosmart 230;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -61,7 +61,7 @@
 *ImageableArea Photo4x6/Photo 4x6in with tear-off tab: "9 36 279 423"
 *ImageableArea Photo4x6.FB/Photo Borderless 4x6 in: "0 0 298 396"
 *ImageableArea A6/A6 105x148mm: "9 36 288.359985351562 410.760009765625"
-*ImageableArea A6.FB/A6 Borderless 105x148mm: "0 0 307 383.759998321533"
+*ImageableArea A6.FB/A6 Borderless 105x148mm: "0 0 307 383.760009765625"
 *DefaultPaperDimension: Photo4x6.FB
 *PaperDimension Hagaki/Hagaki 100x148mm: "284 420"
 *PaperDimension Hagaki.FB/Hagaki Borderless 100x148mm: "294 430"

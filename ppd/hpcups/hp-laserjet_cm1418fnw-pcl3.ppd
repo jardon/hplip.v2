@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP LaserJet cm1418fnw with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_cm1418fnw-pcl3.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet cm1418fnw"
 *ShortNickName: "HP LaserJet cm1418fnw hpijs"
-*NickName: "HP LaserJet cm1418fnw pcl3, hpcups 3.22.4"
+*NickName: "HP LaserJet cm1418fnw pcl3, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -26,7 +26,7 @@
 *hpPrinterLanguage: "ljcolor"
 *cupsModelName: "hp color LaserJet"
 *1284DeviceID: "MFG:Hewlett-Packard;MDL:hp laserjet cm1418fnw;DES:hp laserjet cm1418fnw;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -92,32 +92,32 @@
 *PageRegion EnvB5/B5 Envelope 176x250mm: "<</cupsInteger0 100/PageSize[499 709]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
-*ImageableArea Card3x5/Index Card 3x5in: "18 14.39999961853 198 345.60000038147"
-*ImageableArea Hagaki/Hagaki 100x148mm: "18 14.39999961853 266 405.60000038147"
-*ImageableArea Photo4x6/Photo 4x6in: "18 14.39999961853 270 417.60000038147"
-*ImageableArea A6/A6 105x148mm: "18 14.39999961853 279.359985351562 405.360010147095"
-*ImageableArea Photo5x7/Photo 5x7in: "18 14.39999961853 342 489.60000038147"
-*ImageableArea Card5x8/Index Card 5x8in: "18 14.39999961853 342 561.60000038147"
-*ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "18 14.39999961853 549 405.60000038147"
-*ImageableArea A5/A5 148x210mm: "18 14.39999961853 401.760009765625 581.040002822876"
+*ImageableArea Card3x5/Index Card 3x5in: "18 14.39999961853 198 345.600006103516"
+*ImageableArea Hagaki/Hagaki 100x148mm: "18 14.39999961853 266 405.600006103516"
+*ImageableArea Photo4x6/Photo 4x6in: "18 14.39999961853 270 417.600006103516"
+*ImageableArea A6/A6 105x148mm: "18 14.39999961853 279.359985351562 405.360015869141"
+*ImageableArea Photo5x7/Photo 5x7in: "18 14.39999961853 342 489.600006103516"
+*ImageableArea Card5x8/Index Card 5x8in: "18 14.39999961853 342 561.599975585938"
+*ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "18 14.39999961853 549 405.600006103516"
+*ImageableArea A5/A5 148x210mm: "18 14.39999961853 401.760009765625 581.039978027344"
 *ImageableArea B5/B5 176x250mm: "18 14 480.959991455078 694.47998046875"
 *ImageableArea JB5/JB5 182x257mm: "18 14 498.239990234375 714.640014648438"
-*ImageableArea Executive/Executive 7.25x10.5in: "18 14.39999961853 504 741.60000038147"
-*ImageableArea 16k/16k 7.75x10.75in: "18 14.39999961853 540 759.60000038147"
-*ImageableArea Letter/Letter 8.5x11in: "18 14.39999961853 594 777.60000038147"
-*ImageableArea A4/A4 210x297mm: "18 14.39999961853 577.440002441406 827.279993057251"
-*ImageableArea ExecutiveJIS/Executive (JIS) 8.5x12.986in: "18 14.39999961853 594 921.60000038147"
-*ImageableArea FLSA/American Foolscap 8.5x13in: "18 14.39999961853 594 921.60000038147"
-*ImageableArea Legal/Legal 8.5x14in: "18 14.39999961853 594 993.60000038147"
+*ImageableArea Executive/Executive 7.25x10.5in: "18 14.39999961853 504 741.599975585938"
+*ImageableArea 16k/16k 7.75x10.75in: "18 14.39999961853 540 759.599975585938"
+*ImageableArea Letter/Letter 8.5x11in: "18 14.39999961853 594 777.599975585938"
+*ImageableArea A4/A4 210x297mm: "18 14.39999961853 577.440002441406 827.279968261719"
+*ImageableArea ExecutiveJIS/Executive (JIS) 8.5x12.986in: "18 14.39999961853 594 921.599975585938"
+*ImageableArea FLSA/American Foolscap 8.5x13in: "18 14.39999961853 594 921.599975585938"
+*ImageableArea Legal/Legal 8.5x14in: "18 14.39999961853 594 993.599975585938"
 *ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "18 14 296.640014648438 400"
-*ImageableArea EnvC6/C6 Envelope 114x162mm: "18 14.39999961853 305.279998779297 444.959985733032"
+*ImageableArea EnvC6/C6 Envelope 114x162mm: "18 14.39999961853 305.279998779297 444.959991455078"
 *ImageableArea EnvChou4/#4 Japanese Envelope 90x205mm: "18 14 236.880004882812 567.039978027344"
-*ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "18 14.39999961853 261 525.60000038147"
-*ImageableArea EnvDL/DL Envelope 110x220mm: "18 14.39999961853 293.760009765625 609.12001991272"
-*ImageableArea Env10/#10 Envelope 4.12x9.5in: "18 14.39999961853 279 669.60000038147"
+*ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "18 14.39999961853 261 525.599975585938"
+*ImageableArea EnvDL/DL Envelope 110x220mm: "18 14.39999961853 293.760009765625 609.119995117188"
+*ImageableArea Env10/#10 Envelope 4.12x9.5in: "18 14.39999961853 279 669.599975585938"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "18 14 321.839996337891 652"
-*ImageableArea EnvC5/C5 Envelope 162x229mm: "18 14.39999961853 441 634.60000038147"
-*ImageableArea EnvB5/B5 Envelope 176x250mm: "18 14.39999961853 481 694.60000038147"
+*ImageableArea EnvC5/C5 Envelope 162x229mm: "18 14.39999961853 441 634.599975585938"
+*ImageableArea EnvB5/B5 Envelope 176x250mm: "18 14.39999961853 481 694.599975585938"
 *DefaultPaperDimension: Letter
 *PaperDimension Card3x5/Index Card 3x5in: "216 360"
 *PaperDimension Hagaki/Hagaki 100x148mm: "284 420"
@@ -236,4 +236,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_cm1418fnw-pcl3.ppd, 15825 bytes.
+*% End of hp-laserjet_cm1418fnw-pcl3.ppd, 15842 bytes.

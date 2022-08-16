@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for PCLM-MONO with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-PCLM-MONO.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP PCLM-MONO"
 *ShortNickName: "PCLM-MONO"
-*NickName: "PCLM-MONO, hpcups 3.22.4"
+*NickName: "PCLM-MONO, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -27,7 +27,7 @@
 *cupsBackSide: "Rotated"
 *cupsFlipDuplex: True
 *1284DeviceID: "MFG:HP;MDL:PCLM-MONO;DES:PCLM-MONO;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -38,8 +38,8 @@
 *PageSize A6/A6 105x148mm: "<</cupsString0(iso_a6_105x148mm)/PageSize[298 420]/ImagingBBox null>>setpagedevice"
 *PageSize 4x6/4x6: "<</cupsString0(na_index-4x6_4x6in)/PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *PageSize Card3x5/Index Card 3x5in: "<</cupsInteger0 78/PageSize [216 360]/ImagingBBox null>>setpagedevice"
-*PageSize Photo5x7/Photo 5x7in: "<</cupsInteger0 122/PageSize[360 504]/ImagingBBox null>>setpagedevice"
-*PageSize B5/JB5 182x257mm: "<</cupsString0(jis_b5_182x257mm)/PageSize[516 729]/ImagingBBox null>>setpagedevice"
+*PageSize Photo5x7/Photo 5x7in: "<</cupsString0(na_5x7_5x7in)/PageSize[360 504]/ImagingBBox null>>setpagedevice"
+*PageSize JB5/JB5 182x257mm: "<</cupsString0(jis_b5_182x257mm)/PageSize[516 729]/ImagingBBox null>>setpagedevice"
 *PageSize Letter/Letter 8.5x11in: "<</cupsString0(na_letter_8.5x11in)/PageSize[612 792]/ImagingBBox null>>setpagedevice"
 *PageSize A4/A4 210x297mm: "<</cupsString0(iso_a4_210x297mm)/PageSize[595 842]/ImagingBBox null>>setpagedevice"
 *PageSize Legal/Legal 8.5x14in: "<</cupsString0(na_legal_8.5x14in)/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
@@ -53,6 +53,12 @@
 *PageSize A5/A5 148x210mm: "<</cupsString0(iso_a5_148x210mm)/PageSize[420 595]/ImagingBBox null>>setpagedevice"
 *PageSize EnvC6/C6 Envelope 114x162mm: "<</cupsString0(iso_c6_114x162mm)/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
 *PageSize EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsString0(jpn_chou3_120x235mm)/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageSize Executive/Executive : "<</cupsString0(na_executive_7.25x10.5in)/PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageSize B6/JIS B6 : "<</cupsString0(jis_b6_128x182mm)/PageSize[363 516]/ImagingBBox null>>setpagedevice"
+*PageSize EnvChou4/Japanese Envelope Chou#4 : "<</cupsString0(jpn_chou4_90x205mm)/PageSize[254.88 581.04]/ImagingBBox null>>setpagedevice"
+*PageSize OfukuHagaki/Japanese Postcard : "<</cupsString0(jpn_oufuku_148x200mm)/PageSize[568.32 419.52]/ImagingBBox null>>setpagedevice"
+*PageSize 195.07x270mm/16k 195x270 mm: "<</cupsString0(om_16k_195x270mm)/PageSize[552.96 765.36]/ImagingBBox null>>setpagedevice"
+*PageSize B5/B5 : "<</cupsString0(iso_b5_176x250mm)/PageSize[498.72 708.48]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
@@ -60,8 +66,8 @@
 *PageRegion A6/A6 105x148mm: "<</cupsString0(iso_a6_105x148mm)/PageSize[297.36 419.76]/ImagingBBox null>>setpagedevice"
 *PageRegion 4x6/4x6: "<</cupsString0(na_index-4x6_4x6in)/PageSize [288 432]/ImagingBBox null>>setpagedevice"
 *PageRegion Card3x5/Index Card 3x5in: "<</cupsInteger0 78/PageSize[216 360]/ImagingBBox null>>setpagedevice"
-*PageRegion Photo5x7/Photo 5x7in: "<</cupsInteger0 101/PageSize[360 504]/ImagingBBox null>>setpagedevice"
-*PageRegion B5/JB5 182x257mm: "<</cupsString0(jis_b5_182x257mm)/PageSize [516.24 728.64]/ImagingBBox null>>setpagedevice"
+*PageRegion Photo5x7/Photo 5x7in: "<</cupsString0(na_5x7_5x7in)/PageSize[360 504]/ImagingBBox null>>setpagedevice"
+*PageRegion JB5/JB5 182x257mm: "<</cupsString0(jis_b5_182x257mm)/PageSize [516.24 728.64]/ImagingBBox null>>setpagedevice"
 *PageRegion Letter/Letter 8.5x11in: "<</cupsString0(na_letter_8.5x11in)/PageSize[612 792]/ImagingBBox null>>setpagedevice"
 *PageRegion A4/A4 210x297mm: "<</cupsString0(iso_a4_210x297mm)/PageSize[595.44 841.68]/ImagingBBox null>>setpagedevice"
 *PageRegion Legal/Legal 8.5x14in: "<</cupsString0(na_legal_8.5x14in)/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
@@ -73,15 +79,21 @@
 *PageRegion 8.5x13in/Oficio 8.5x13: "<</cupsString0(na_foolscap_8.5x13in)/PageSize[612 936]/ImagingBBox null>>setpagedevice"
 *PageRegion 216x340mm/Oficio 216x340mm: "<</cupsString0(na_legal_216x340mm)/PageSize[612 964]/ImagingBBox null>>setpagedevice"
 *PageRegion A5/A5 148x210mm: "<</cupsString0(iso_a5_148x210mm)/PageSize[419.76 595.44]/ImagingBBox null>>setpagedevice"
-*PageRegion EnvC6/C6 Envelope 114x162mm: "<</cupsInteger0 92/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
-*PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvC6/C6 Envelope 114x162mm: "<</cupsString0(iso_c6_114x162mm)/PageSize[323.28 459.36]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvChou3/#3 Japanese Envelope 120x235mm: "<</cupsString0(jpn_chou3_120x235mm)/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageRegion Executive/Executive : "<</cupsString0(na_executive_7.25x10.5in)/PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageRegion B6/JIS B6 : "<</cupsString0(jis_b6_128x182mm)/PageSize[363 516]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvChou4/Japanese Envelope Chou#4 : "<</cupsString0(jpn_chou4_90x205mm)/PageSize[254.88 581.04]/ImagingBBox null>>setpagedevice"
+*PageRegion OfukuHagaki/Japanese Postcard : "<</cupsString0(jpn_oufuku_148x200mm)/PageSize[568.32 419.52]/ImagingBBox null>>setpagedevice"
+*PageRegion 195.07x270mm/16k 195x270 mm: "<</cupsString0(om_16k_195x270mm)/PageSize[552.96 765.36]/ImagingBBox null>>setpagedevice"
+*PageRegion B5/B5 : "<</cupsString0(iso_b5_176x250mm)/PageSize[498.72 708.48]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
 *ImageableArea A6/A6 105x148mm: "14 14 283.359985351562 405.760009765625"
 *ImageableArea 4x6/4x6: "14 14 274 418"
 *ImageableArea Card3x5/Index Card 3x5in: "14 14 202 346"
 *ImageableArea Photo5x7/Photo 5x7in: "14 14 346 490"
-*ImageableArea B5/JB5 182x257mm: "14 14 502.239990234375 714.640014648438"
+*ImageableArea JB5/JB5 182x257mm: "14 14 502.239990234375 714.640014648438"
 *ImageableArea Letter/Letter 8.5x11in: "14 14 598 778"
 *ImageableArea A4/A4 210x297mm: "14 14 581.440002441406 827.679992675781"
 *ImageableArea Legal/Legal 8.5x14in: "14 14 598 994"
@@ -95,12 +107,18 @@
 *ImageableArea A5/A5 148x210mm: "14 14 405.760009765625 581.440002441406"
 *ImageableArea EnvC6/C6 Envelope 114x162mm: "14 14 309.279998779297 445.359985351562"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "14 14 325.839996337891 652"
+*ImageableArea Executive/Executive : "8.39999961853 36 513.599975585938 747.599975585938"
+*ImageableArea B6/JIS B6 : "14 14 349 502"
+*ImageableArea EnvChou4/Japanese Envelope Chou#4 : "8.39999961853 36 246.480010986328 572.639953613281"
+*ImageableArea OfukuHagaki/Japanese Postcard : "8.39999961853 36 559.919982910156 411.119995117188"
+*ImageableArea 195.07x270mm/16k 195x270 mm: "18 36 534.960021972656 756.359985351562"
+*ImageableArea B5/B5 : "8.39999961853 8.39999961853 490.320007324219 700.079956054688"
 *DefaultPaperDimension: Letter
 *PaperDimension A6/A6 105x148mm: "297.359985351562 419.760009765625"
 *PaperDimension 4x6/4x6: "288 432"
 *PaperDimension Card3x5/Index Card 3x5in: "216 360"
 *PaperDimension Photo5x7/Photo 5x7in: "360 504"
-*PaperDimension B5/JB5 182x257mm: "516.239990234375 728.640014648438"
+*PaperDimension JB5/JB5 182x257mm: "516.239990234375 728.640014648438"
 *PaperDimension Letter/Letter 8.5x11in: "612 792"
 *PaperDimension A4/A4 210x297mm: "595.440002441406 841.679992675781"
 *PaperDimension Legal/Legal 8.5x14in: "612 1008"
@@ -114,6 +132,12 @@
 *PaperDimension A5/A5 148x210mm: "419.760009765625 595.440002441406"
 *PaperDimension EnvC6/C6 Envelope 114x162mm: "323.279998779297 459.359985351562"
 *PaperDimension EnvChou3/#3 Japanese Envelope 120x235mm: "339.839996337891 666"
+*PaperDimension Executive/Executive : "522 756"
+*PaperDimension B6/JIS B6 : "363 516"
+*PaperDimension EnvChou4/Japanese Envelope Chou#4 : "254.880004882812 581.039978027344"
+*PaperDimension OfukuHagaki/Japanese Postcard : "568.320007324219 419.519989013672"
+*PaperDimension 195.07x270mm/16k 195x270 mm: "552.960021972656 765.359985351562"
+*PaperDimension B5/B5 : "498.720001220703 708.47998046875"
 *OpenUI *Duplex/Double-Sided Printing: PickOne
 *OrderDependency: 10 AnySetup *Duplex
 *DefaultDuplex: None
@@ -211,4 +235,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-PCLM-MONO.ppd, 13335 bytes.
+*% End of hp-PCLM-MONO.ppd, 15801 bytes.

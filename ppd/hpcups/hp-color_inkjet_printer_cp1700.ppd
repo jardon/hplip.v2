@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Color Inkjet Printer cp1700 with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-color_inkjet_printer_cp1700.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Color Inkjet Printer cp1700"
 *ShortNickName: "HP CJ IJ Printer cp1700 hpijs"
-*NickName: "HP Color Inkjet Printer cp1700, hpcups 3.22.4"
+*NickName: "HP Color Inkjet Printer cp1700, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -31,7 +31,7 @@
 *HPMechOffset: "70"
 *cupsModelName: "DESKJET 990"
 *1284DeviceID: "MFG:HP;MDL:hp color inkjet printer cp1700;DES:hp color inkjet printer cp1700;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -226,11 +226,11 @@
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "9 41 330.839996337891 657"
 *ImageableArea EnvC5/C5 Envelope 162x229mm: "18 36 441 640"
 *ImageableArea EnvB5/B5 Envelope 176x250mm: "18 36 481 700"
-*ImageableArea SuperB/SuperB 13x19in: "14.39999961853 36 921.60000038147 1359"
+*ImageableArea SuperB/SuperB 13x19in: "14.39999961853 36 921.599975585938 1359"
 *ImageableArea B4/B4 257x364mm: "18 36 711 1024"
 *ImageableArea B4.Duplex/B4 AutoDuplex 257x364mm: "18 27 711 988"
 *ImageableArea 8k/8k 10.75x15.5in: "18 36 756 1107"
-*ImageableArea Ledger/Ledger 11x17in: "14.39999961853 36 777.60000038147 1215"
+*ImageableArea Ledger/Ledger 11x17in: "14.39999961853 36 777.599975585938 1215"
 *ImageableArea A3/A3 297x420mm: "18 36 824 1181"
 *ImageableArea A3.Duplex/A3 AutoDuplex 297x420mm: "18 27 824 1145"
 *DefaultPaperDimension: Letter
@@ -373,4 +373,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-color_inkjet_printer_cp1700.ppd, 24822 bytes.
+*% End of hp-color_inkjet_printer_cp1700.ppd, 24824 bytes.

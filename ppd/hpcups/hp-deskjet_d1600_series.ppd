@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Deskjet d1600 Series with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_d1600_series.ppd"
@@ -17,7 +17,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet d1600 Series"
 *ShortNickName: "HP Deskjet d1600 Series hpijs"
-*NickName: "HP Deskjet d1600 Series, hpcups 3.22.4"
+*NickName: "HP Deskjet d1600 Series, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -32,7 +32,7 @@
 *hpPrinterPlatform: "dj2600"
 *HPMechOffset: "70"
 *1284DeviceID: "MFG:HP;MDL:deskjet d1600 series;DES:deskjet d1600 series;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -106,28 +106,28 @@
 *PageRegion EnvC5/C5 Envelope 162x229mm: "<</cupsInteger0 91/PageSize[459.36 649.44]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
-*ImageableArea Card3x5/Index Card 3x5in: "9 36 207 355.03200006485"
-*ImageableArea Card4x6/Card 4x6in: "9 36 279 427.03200006485"
+*ImageableArea Card3x5/Index Card 3x5in: "9 36 207 355.032012939453"
+*ImageableArea Card4x6/Card 4x6in: "9 36 279 427.032012939453"
 *ImageableArea Photo4x6/Photo 4x6in: "9 36 279 423"
 *ImageableArea Photo4x6tab/Photo 4x6in (tab): "9 9 279 423"
 *ImageableArea Photo4x6tab.FB/Photo Borderless 4x6in (tab): "0 0 303.549987792969 443.010009765625"
-*ImageableArea A6/A6 105x148mm: "9 36 288.359985351562 414.792009830475"
-*ImageableArea Cabinet/Cabinet Size 120x165mm: "9 36 330.839996337891 463.03200006485"
+*ImageableArea A6/A6 105x148mm: "9 36 288.359985351562 414.792022705078"
+*ImageableArea Cabinet/Cabinet Size 120x165mm: "9 36 330.839996337891 463.032012939453"
 *ImageableArea Photo5x7/Photo 5x7in: "9 36 351 495"
-*ImageableArea Card5x8/Index Card 5x8in: "9 36 351 571.03200006485"
-*ImageableArea A5/A5 148x210mm: "9 36 410.760009765625 590.472002506256"
-*ImageableArea B5/B5 176x250mm: "9 36 489.959991455078 703.5119805336"
-*ImageableArea JB5/JB5 182x257mm: "9 36 507.239990234375 723.672014713287"
-*ImageableArea Executive/Executive 7.25x10.5in: "18 36 504 751.03200006485"
+*ImageableArea Card5x8/Index Card 5x8in: "9 36 351 571.031982421875"
+*ImageableArea A5/A5 148x210mm: "9 36 410.760009765625 590.471984863281"
+*ImageableArea B5/B5 176x250mm: "9 36 489.959991455078 703.511962890625"
+*ImageableArea JB5/JB5 182x257mm: "9 36 507.239990234375 723.671997070312"
+*ImageableArea Executive/Executive 7.25x10.5in: "18 36 504 751.031982421875"
 *ImageableArea 8x10/8x10in: "9 36 567 711"
-*ImageableArea Letter/Letter 8.5x11in: "9 36 603 787.03200006485"
-*ImageableArea A4/A4 210x297mm: "9 36 586.440002441406 836.711992740631"
-*ImageableArea Legal/Legal 8.5x14in: "18 36 594 1003.03200006485"
-*ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "9 36 305.640014648438 409.03200006485"
-*ImageableArea EnvC6/C6 Envelope 114x162mm: "9 36 314.279998779297 454.391985416412"
-*ImageableArea EnvDL/DL Envelope 110x220mm: "9 36 302.760009765625 618.5520195961"
-*ImageableArea Env10/#10 Envelope 4.125x9.5in: "9 36 288 679.03200006485"
-*ImageableArea EnvC5/C5 Envelope 162x229mm: "9 36 450.359985351562 644.472002506256"
+*ImageableArea Letter/Letter 8.5x11in: "9 36 603 787.031982421875"
+*ImageableArea A4/A4 210x297mm: "9 36 586.440002441406 836.711975097656"
+*ImageableArea Legal/Legal 8.5x14in: "18 36 594 1003.031982421875"
+*ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "9 36 305.640014648438 409.032012939453"
+*ImageableArea EnvC6/C6 Envelope 114x162mm: "9 36 314.279998779297 454.391998291016"
+*ImageableArea EnvDL/DL Envelope 110x220mm: "9 36 302.760009765625 618.552001953125"
+*ImageableArea Env10/#10 Envelope 4.125x9.5in: "9 36 288 679.031982421875"
+*ImageableArea EnvC5/C5 Envelope 162x229mm: "9 36 450.359985351562 644.471984863281"
 *DefaultPaperDimension: Letter
 *PaperDimension Card3x5/Index Card 3x5in: "216 360"
 *PaperDimension Card4x6/Card 4x6in: "288 432"
@@ -226,4 +226,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-deskjet_d1600_series.ppd, 14950 bytes.
+*% End of hp-deskjet_d1600_series.ppd, 14963 bytes.

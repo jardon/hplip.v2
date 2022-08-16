@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Deskjet f4200 Series with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_f4200_series.ppd"
@@ -28,7 +28,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet f4200 Series"
 *ShortNickName: "HP Deskjet f4200 Series hpijs"
-*NickName: "HP Deskjet f4200 Series, hpcups 3.22.4"
+*NickName: "HP Deskjet f4200 Series, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -46,7 +46,7 @@
 *HPMechOffset: "70"
 *cupsModelName: "deskjet 5600"
 *1284DeviceID: "MFG:HP;MDL:deskjet f4200 series;DES:deskjet f4200 series;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"

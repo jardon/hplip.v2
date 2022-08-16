@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Officejet 7000 e809a Series with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-officejet_7000_e809a_series.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Officejet 7000 e809a Series"
 *ShortNickName: "HP OJ 7000 e809a Series hpijs"
-*NickName: "HP Officejet 7000 e809a Series, hpcups 3.22.4"
+*NickName: "HP Officejet 7000 e809a Series, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -27,7 +27,7 @@
 *hpPrinterLanguage: "pcl3gui2"
 *HPMechOffset: "69"
 *1284DeviceID: "MFG:HP;MDL:officejet 7000 e809a series;DES:officejet 7000 e809a series;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -206,18 +206,18 @@
 *ImageableArea Env10/#10 Envelope 4.125x9.5in: "9 42.192001342773 288 675"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "9 42.192001342773 330.839996337891 657"
 *ImageableArea EnvKaku2/#2 Envelope Kaku 240x332mm: "9 42.192001342773 671.400024414062 932.039978027344"
-*ImageableArea 11x14/11x14in: "14.184000015259 56.736000061035 777.815999984741 951.263999938965"
+*ImageableArea 11x14/11x14in: "14.184000015259 56.736000061035 777.815979003906 951.263977050781"
 *ImageableArea 11x14.FB/Borderless 11x14in: "0 0 807.552001953125 1022.111999511719"
-*ImageableArea 12x12/12x12in: "14.184000015259 56.736000061035 849.815999984741 807.263999938965"
+*ImageableArea 12x12/12x12in: "14.184000015259 56.736000061035 849.815979003906 807.263977050781"
 *ImageableArea 12x12.FB/Borderless 12x12in: "0 0 879.552001953125 878.111999511719"
-*ImageableArea JB4/JB4 257x364mm: "14.184000015259 56.736000061035 715.175985336304 975.02400970459"
-*ImageableArea B/B 11x17in: "14.184000015259 56.736000061035 777.815999984741 1167.263999938965"
+*ImageableArea JB4/JB4 257x364mm: "14.184000015259 56.736000061035 715.175964355469 975.023986816406"
+*ImageableArea B/B 11x17in: "14.184000015259 56.736000061035 777.815979003906 1167.264038085938"
 *ImageableArea B.FB/B Borderless 11x17in: "0 0 807.552001953125 1238.112060546875"
-*ImageableArea SuperB/SuperB 13x19in: "14.184000015259 56.736000061035 921.815999984741 1311.263999938965"
+*ImageableArea SuperB/SuperB 13x19in: "14.184000015259 56.736000061035 921.815979003906 1311.264038085938"
 *ImageableArea SuperB.FB/SuperB Borderless 13x19in: "0 0 951.552001953125 1382.112060546875"
-*ImageableArea A3/A3 297x420mm: "14.184000015259 56.736000061035 827.495992660522 1134.144004821777"
+*ImageableArea A3/A3 297x420mm: "14.184000015259 56.736000061035 827.495971679688 1134.14404296875"
 *ImageableArea A3.FB/A3 Borderless 297x420mm: "0 0 857.231994628906 1204.991943359375"
-*ImageableArea SuperA3/A3+ 330x483mm: "14.184000015259 56.736000061035 921.096029281616 1312.703941345215"
+*ImageableArea SuperA3/A3+ 330x483mm: "14.184000015259 56.736000061035 921.096008300781 1312.703979492188"
 *ImageableArea SuperA3.FB/A3+ Borderless 330x483mm: "0 0 950.831970214844 1383.552001953125"
 *DefaultPaperDimension: Letter
 *PaperDimension Card3x5/Index Card 3x5in: "216 360"

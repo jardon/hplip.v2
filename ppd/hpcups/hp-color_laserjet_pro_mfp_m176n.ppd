@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Color LaserJet Pro MFP m176n with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-color_laserjet_pro_mfp_m176n.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Color LaserJet Pro MFP m176n"
 *ShortNickName: "HP CJ LJ Pro MFP m176n hpijs"
-*NickName: "HP Color LaserJet Pro MFP m176n, hpcups 3.22.4, requires proprietary plugin"
+*NickName: "HP Color LaserJet Pro MFP m176n, hpcups 3.22.6, requires proprietary plugin"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -24,7 +24,7 @@
 *RequiresPageRegion All: True
 *hpPrinterLanguage: "hbpl1"
 *1284DeviceID: "MFG:Hewlett-Packard;MDL:hp color laserjet pro mfp m176n;DES:hp color laserjet pro mfp m176n;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
