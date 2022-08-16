@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for LJ-Class4A with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-LJ-Class4A.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LJ-Class4A"
 *ShortNickName: "LJ-Class4A"
-*NickName: "LJ-Class4A, hpcups 3.22.4"
+*NickName: "LJ-Class4A, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -25,7 +25,7 @@
 *hpPrinterLanguage: "ljzjstream"
 *cupsIPPReason hplip.plugin-error/HP Device requires a proprietary binary Plug-in, run hp-plugin: ""
 *1284DeviceID: "MFG:HP;MDL:LJ-Class4A;DES:LJ-Class4A;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -91,31 +91,31 @@
 *PageRegion EnvB5/B5 Envelope 176x250mm: "<</cupsInteger0 96/PageSize[499 709]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
-*ImageableArea Card3x5/Index Card 3x5in: "12.960000038147 15.5 203.039999961853 344.5"
-*ImageableArea Hagaki/Hagaki 100x148mm: "19.120000839233 15.5 264.879999160767 404.5"
-*ImageableArea Photo4x6/Photo 4x6in: "17.280000686646 14.39999961853 270.719999313354 417.60000038147"
-*ImageableArea A6/A6 105x148mm: "18.120000839233 15.5 279.239984512329 404.260009765625"
-*ImageableArea Photo5x7/Photo 5x7in: "12.960000038147 14.39999961853 347.039999961853 489.60000038147"
-*ImageableArea Card5x8/Index Card 5x8in: "18.719999313354 15.5 341.280000686646 560.5"
-*ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "18.540000915527 15.5 548.459999084473 404.5"
+*ImageableArea Card3x5/Index Card 3x5in: "12.960000038147 15.5 203.039993286133 344.5"
+*ImageableArea Hagaki/Hagaki 100x148mm: "19.120000839233 15.5 264.880004882812 404.5"
+*ImageableArea Photo4x6/Photo 4x6in: "17.280000686646 14.39999961853 270.720001220703 417.600006103516"
+*ImageableArea A6/A6 105x148mm: "18.120000839233 15.5 279.239990234375 404.260009765625"
+*ImageableArea Photo5x7/Photo 5x7in: "12.960000038147 14.39999961853 347.040008544922 489.600006103516"
+*ImageableArea Card5x8/Index Card 5x8in: "18.719999313354 15.5 341.279998779297 560.5"
+*ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "18.540000915527 15.5 548.460021972656 404.5"
 *ImageableArea A5/A5 148x210mm: "18 15.5 401.760009765625 579.940002441406"
-*ImageableArea B5/B5 176x250mm: "19.079999923706 14.39999961853 479.879991531372 694.07998085022"
+*ImageableArea B5/B5 176x250mm: "19.079999923706 14.39999961853 479.880004882812 694.079956054688"
 *ImageableArea JB5/JB5 182x257mm: "18 15.5 498.239990234375 713.140014648438"
-*ImageableArea Executive/Executive 7.25x10.5in: "19.079999923706 15.5 502.920000076294 740.5"
+*ImageableArea Executive/Executive 7.25x10.5in: "19.079999923706 15.5 502.920013427734 740.5"
 *ImageableArea 16k/16k 7.75x10.75in: "18 15.5 540 758.5"
 *ImageableArea Letter/Letter 8.5x11in: "18 15.5 594 776.5"
 *ImageableArea A4/A4 210x297mm: "18 15.5 577.440002441406 826.179992675781"
 *ImageableArea ExecutiveJIS/Executive (JIS) 8.5x12.986in: "18 15.5 594 920.5"
 *ImageableArea FLSA/American Foolscap 8.5x13in: "18 15.5 594 920.5"
 *ImageableArea Legal/Legal 8.5x14in: "18 15.5 594 992.5"
-*ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "19.079999923706 15.5 295.560014724731 398.5"
-*ImageableArea EnvC6/C6 Envelope 114x162mm: "19.559999465942 15.5 303.719999313354 443.859985351562"
-*ImageableArea EnvChou4/#4 Japanese Envelope 90x205mm: "19.920000076294 15.5 234.960004806519 565.539978027344"
+*ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "19.079999923706 15.5 295.560028076172 398.5"
+*ImageableArea EnvC6/C6 Envelope 114x162mm: "19.559999465942 15.5 303.720001220703 443.859985351562"
+*ImageableArea EnvChou4/#4 Japanese Envelope 90x205mm: "19.920000076294 15.5 234.960006713867 565.539978027344"
 *ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "18 15.5 261 524.5"
 *ImageableArea EnvDL/DL Envelope 110x220mm: "18 15.5 293.760009765625 608.02001953125"
 *ImageableArea Env10/#10 Envelope 4.12x9.5in: "18 15.5 279 668.5"
 *ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "18 15.5 321.839996337891 650.5"
-*ImageableArea EnvC5/C5 Envelope 162x229mm: "18.299999237061 15.5 440.700000762939 633.5"
+*ImageableArea EnvC5/C5 Envelope 162x229mm: "18.299999237061 15.5 440.700012207031 633.5"
 *ImageableArea EnvB5/B5 Envelope 176x250mm: "18 15.5 481 693.5"
 *DefaultPaperDimension: Letter
 *PaperDimension Card3x5/Index Card 3x5in: "216 360"
@@ -203,4 +203,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-LJ-Class4A.ppd, 14048 bytes.
+*% End of hp-LJ-Class4A.ppd, 14051 bytes.

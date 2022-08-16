@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP LaserJet 1100a with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_1100a.ppd"
@@ -12,7 +12,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet 1100a"
 *ShortNickName: "HP LaserJet 1100a hpijs"
-*NickName: "HP LaserJet 1100a, hpcups 3.22.4"
+*NickName: "HP LaserJet 1100a, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -27,7 +27,7 @@
 *hpPrinterLanguage: "ljmono"
 *cupsModelName: "HP LaserJet"
 *1284DeviceID: "MFG:Hewlett-Packard;MDL:hp laserjet 1100a;DES:hp laserjet 1100a;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"

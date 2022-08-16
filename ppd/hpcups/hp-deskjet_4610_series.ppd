@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Deskjet 4610 Series with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_4610_series.ppd"
@@ -12,7 +12,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet 4610 Series"
 *ShortNickName: "HP Deskjet 4610 Series hpijs"
-*NickName: "HP Deskjet 4610 Series, hpcups 3.22.4"
+*NickName: "HP Deskjet 4610 Series, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -26,7 +26,7 @@
 *hpPrinterLanguage: "pcl3gui2"
 *HPMechOffset: "69"
 *1284DeviceID: "MFG:HP;MDL:deskjet 4610 series;DES:deskjet 4610 series;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"

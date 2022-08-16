@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Deskjet 5520 Series with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_5520_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet 5520 Series"
 *ShortNickName: "HP Deskjet 5520 Series hpijs"
-*NickName: "HP Deskjet 5520 Series, hpcups 3.22.4"
+*NickName: "HP Deskjet 5520 Series, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -28,7 +28,7 @@
 *hpPrinterLanguage: "pcl3gui2"
 *HPMechOffset: "69"
 *1284DeviceID: "MFG:HP;MDL:deskjet 5520 series;DES:deskjet 5520 series;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -272,21 +272,21 @@
 *ImageableArea Card5x8.Duplex/Index Card AutoDuplex 5x8in: "9 0 351 558"
 *ImageableArea A5/A5 148x210mm: "9 9 410.760009765625 586.440002441406"
 *ImageableArea A5.FB/A5 Borderless 148x210mm: "0 0 435.31201171875 609.552001953125"
-*ImageableArea A5.Duplex/A5 AutoDuplex 148x210mm: "9 33.192001342773 410.760009765625 544.248001098633"
+*ImageableArea A5.Duplex/A5 AutoDuplex 148x210mm: "9 33.192001342773 410.760009765625 544.247985839844"
 *ImageableArea 2L/2L 127x178mm: "9 9 351 495"
 *ImageableArea 2L.FB/2L Borderless 127x178mm: "0 0 372.816009521484 518.111999511719"
 *ImageableArea Oufuku/Oufuku-Hagaki 200x148mm: "9 9 557.640014648438 410.760009765625"
 *ImageableArea Oufuku.Duplex/Oufuku-Hagaki AutoDuplex 200x148mm: "9 0 557.640014648438 401.760009765625"
 *ImageableArea JB5/JB5 182x257mm: "9 9 507.239990234375 719.640014648438"
-*ImageableArea JB5.Duplex/JB5 AutoDuplex 182x257mm: "9 33.192001342773 507.239990234375 677.448013305664"
+*ImageableArea JB5.Duplex/JB5 AutoDuplex 182x257mm: "9 33.192001342773 507.239990234375 677.447998046875"
 *ImageableArea Executive/Executive 7.25x10.5in: "9 9 513 747"
-*ImageableArea Executive.Duplex/Executive AutoDuplex 7.25x10.5in: "9 33.192001342773 513 704.807998657227"
+*ImageableArea Executive.Duplex/Executive AutoDuplex 7.25x10.5in: "9 33.192001342773 513 704.807983398438"
 *ImageableArea Letter/Letter 8.5x11in: "9 9 603 783"
 *ImageableArea Letter.FB/Letter Borderless 8.5x11in: "0 0 627.552001953125 806.111999511719"
-*ImageableArea Letter.Duplex/Letter AutoDuplex 8.5x11in: "9 33.192001342773 603 740.807998657227"
+*ImageableArea Letter.Duplex/Letter AutoDuplex 8.5x11in: "9 33.192001342773 603 740.807983398438"
 *ImageableArea A4/A4 210x297mm: "9 9 586.440002441406 832.679992675781"
 *ImageableArea A4.FB/A4 Borderless 210x297mm: "0 0 610.992004394531 855.7919921875"
-*ImageableArea A4.Duplex/A4 AutoDuplex 210x297mm: "9 33.192001342773 586.440002441406 790.487991333008"
+*ImageableArea A4.Duplex/A4 AutoDuplex 210x297mm: "9 33.192001342773 586.440002441406 790.487976074219"
 *ImageableArea Legal/Legal 8.5x14in: "9 9 603 999"
 *ImageableArea Photo10x15/Photo 10x15cm: "9 9 279 423"
 *ImageableArea Photo10x15.FB/Borderless Photo 10x15cm: "0 0 303.552001953125 446.111999511719"

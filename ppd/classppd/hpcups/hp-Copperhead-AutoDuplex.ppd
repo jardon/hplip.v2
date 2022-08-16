@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for Copperhead with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-Copperhead-AutoDuplex.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Copperhead"
 *ShortNickName: "Copperhead"
-*NickName: "Copperhead, hpcups 3.22.4"
+*NickName: "Copperhead, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -28,7 +28,7 @@
 *cupsBackSide: "Rotated"
 *cupsFlipDuplex: True
 *1284DeviceID: "MFG:HP;MDL:Copperhead;DES:Copperhead;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -277,12 +277,12 @@
 *ImageableArea EnvC5/C5 Envelope 162x229mm: "9 42.192001342773 450.359985351562 640.440002441406"
 *ImageableArea Card4x6.Duplex/Index Card AutoDuplex 4x6in: "9 0 279 414"
 *ImageableArea Card5x8.Duplex/Index Card AutoDuplex 5x8in: "9 0 351 558"
-*ImageableArea A5.Duplex/A5 AutoDuplex 148x210mm: "9 33.192001342773 410.760009765625 544.248001098633"
-*ImageableArea B5.Duplex/B5 AutoDuplex 176x250mm: "9 33.192001342773 489.959991455078 657.287979125977"
-*ImageableArea JB5.Duplex/JB5 AutoDuplex 182x257mm: "9 33.192001342773 507.239990234375 677.448013305664"
-*ImageableArea Executive.Duplex/Executive AutoDuplex 7.25x10.5in: "9 33.192001342773 513 704.807998657227"
-*ImageableArea A4.Duplex/A4 AutoDuplex 210x297mm: "9 33.192001342773 586.440002441406 790.487991333008"
-*ImageableArea Letter.Duplex/Letter AutoDuplex 8.5x11in: "9 33.192001342773 603 740.807998657227"
+*ImageableArea A5.Duplex/A5 AutoDuplex 148x210mm: "9 33.192001342773 410.760009765625 544.247985839844"
+*ImageableArea B5.Duplex/B5 AutoDuplex 176x250mm: "9 33.192001342773 489.959991455078 657.287963867188"
+*ImageableArea JB5.Duplex/JB5 AutoDuplex 182x257mm: "9 33.192001342773 507.239990234375 677.447998046875"
+*ImageableArea Executive.Duplex/Executive AutoDuplex 7.25x10.5in: "9 33.192001342773 513 704.807983398438"
+*ImageableArea A4.Duplex/A4 AutoDuplex 210x297mm: "9 33.192001342773 586.440002441406 790.487976074219"
+*ImageableArea Letter.Duplex/Letter AutoDuplex 8.5x11in: "9 33.192001342773 603 740.807983398438"
 *ImageableArea Hagaki.Duplex/Hagaki AutoDuplex 100x148mm: "9 0 274.679992675781 401.760009765625"
 *ImageableArea Oufuku.Duplex/Oufuku-Hagaki AutoDuplex 200x148mm: "9 0 557.640014648438 401.760009765625"
 *DefaultPaperDimension: Letter

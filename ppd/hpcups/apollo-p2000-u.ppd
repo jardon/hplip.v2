@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for Apollo p2000-u with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "apollo-p2000-u.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "Apollo"
 *ModelName: "Apollo p2000-u"
 *ShortNickName: "Apollo p2000-u hpijs"
-*NickName: "Apollo p2000-u, hpcups 3.22.4"
+*NickName: "Apollo p2000-u, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -27,7 +27,7 @@
 *HPMechOffset: "40"
 *cupsModelName: "P-2000U"
 *1284DeviceID: "MFG:Apollo;MDL:apollo p2000-u;DES:apollo p2000-u;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"

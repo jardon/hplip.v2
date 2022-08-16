@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP LaserJet p1505n with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_p1505n-zxs.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet p1505n"
 *ShortNickName: "HP LaserJet p1505n hpijs"
-*NickName: "HP LaserJet p1505n zxs, hpcups 3.22.4, requires proprietary plugin"
+*NickName: "HP LaserJet p1505n zxs, hpcups 3.22.6, requires proprietary plugin"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -25,7 +25,7 @@
 *hpPrinterLanguage: "ljzxstream"
 *cupsModelName: "HP LaserJet M1005"
 *1284DeviceID: "MFG:Hewlett-Packard;MDL:hp laserjet p1505n;DES:hp laserjet p1505n;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -94,21 +94,21 @@
 *ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "12 13 555 407"
 *ImageableArea A5/A5 148x210mm: "12 13 407.760009765625 582.440002441406"
 *ImageableArea B5/B5 176x250mm: "12 13 486.959991455078 695.47998046875"
-*ImageableArea JB5/JB5 182x257mm: "12.359999656677 13 503.879990577698 715.640014648438"
+*ImageableArea JB5/JB5 182x257mm: "12.359999656677 13 503.880004882812 715.640014648438"
 *ImageableArea Executive/Executive 7.25x10.5in: "12 13 510 743"
 *ImageableArea 16k/16k 7.75x10.75in: "12 13 546 761"
 *ImageableArea Letter/Letter 8.5x11in: "12 13 600 779"
-*ImageableArea A4/A4 210x297mm: "13.560000419617 13.5 581.88000202179 828.179992675781"
+*ImageableArea A4/A4 210x297mm: "13.560000419617 13.5 581.880004882812 828.179992675781"
 *ImageableArea ExecutiveJIS/Executive (JIS) 8.5x12.986in: "12 13 600 923"
 *ImageableArea FLSA/American Foolscap 8.5x13in: "12 13 600 923"
 *ImageableArea Legal/Legal 8.5x14in: "12 13 600 995"
 *ImageableArea EnvA2/A2 Envelope 4.37x5.75in: "12 13 302.640014648438 401"
 *ImageableArea EnvC6/C6 Envelope 114x162mm: "12 13 311.279998779297 446.359985351562"
-*ImageableArea EnvChou4/#4 Japanese Envelope 90x205mm: "12.239999771118 13 242.640005111694 568.039978027344"
-*ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "12.779999732971 13 266.220000267029 527"
-*ImageableArea EnvDL/DL Envelope 110x220mm: "11.760000228882 13 300.000009536743 610.52001953125"
+*ImageableArea EnvChou4/#4 Japanese Envelope 90x205mm: "12.239999771118 13 242.639999389648 568.039978027344"
+*ImageableArea EnvMonarch/Monarch Envelope 3.875x7.5in: "12.779999732971 13 266.220001220703 527"
+*ImageableArea EnvDL/DL Envelope 110x220mm: "11.760000228882 13 300 610.52001953125"
 *ImageableArea Env10/#10 Envelope 4.12x9.5in: "12 13 285 671"
-*ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "12.479999542236 13 327.359996795654 653"
+*ImageableArea EnvChou3/#3 Japanese Envelope 120x235mm: "12.479999542236 13 327.359985351562 653"
 *ImageableArea EnvC5/C5 Envelope 162x229mm: "12 13 447 636"
 *ImageableArea EnvB5/B5 Envelope 176x250mm: "12 13 487 696"
 *DefaultPaperDimension: Letter
@@ -224,4 +224,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_p1505n-zxs.ppd, 14583 bytes.
+*% End of hp-laserjet_p1505n-zxs.ppd, 14571 bytes.

@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for HP Neverstop Laser 100x with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-neverstop_laser_100x.ppd"
@@ -14,7 +14,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Neverstop Laser 100x"
 *ShortNickName: "HP Neverstop Laser 100x hpijs"
-*NickName: "HP Neverstop Laser 100x, hpcups 3.22.4"
+*NickName: "HP Neverstop Laser 100x, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -27,7 +27,7 @@
 *RequiresPageRegion All: True
 *hpPrinterLanguage: "hbpl1"
 *1284DeviceID: "MFG:HP;MDL:hp neverstop laser 100x;DES:hp neverstop laser 100x;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"

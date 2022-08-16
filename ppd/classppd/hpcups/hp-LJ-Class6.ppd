@@ -1,9 +1,9 @@
 *PPD-Adobe: "4.3"
 *%%%% PPD file for LJ-Class6 with CUPS.
-*%%%% Created by the CUPS PPD Compiler CUPS v1.5.0.
+*%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.4"
+*FileVersion: "3.22.6"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-LJ-Class6.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LJ-Class6"
 *ShortNickName: "LJ-Class6"
-*NickName: "LJ-Class6, hpcups 3.22.4"
+*NickName: "LJ-Class6, hpcups 3.22.6"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -26,7 +26,7 @@
 *hpPrinterLanguage: "ljmono"
 *cupsModelName: "HP LaserJet"
 *1284DeviceID: "MFG:HP;MDL:LJ-Class6;DES:LJ-Class6;"
-*cupsVersion: 1.5
+*cupsVersion: 2.3
 *cupsModelNumber: 0
 *cupsManualCopies: True
 *cupsFilter: "application/vnd.cups-raster 0 hpcups"
@@ -107,10 +107,10 @@
 *ImageableArea Photo4x6/Photo 4x6in: "18 14 270 418"
 *ImageableArea A6/A6 105x148mm: "18 14 279.359985351562 405.760009765625"
 *ImageableArea B4/B4 257x364mm: "18 36 711 1024"
-*ImageableArea SuperB/SuperB 13x19in: "14.39999961853 36 921.60000038147 1359"
+*ImageableArea SuperB/SuperB 13x19in: "14.39999961853 36 921.599975585938 1359"
 *ImageableArea A3/A3 297x420mm: "18 36 824 1181"
 *ImageableArea 8k/8k 10.75x15.5in: "18 36 756 1107"
-*ImageableArea Ledger/Ledger 11x17in: "14.39999961853 36 777.60000038147 1215"
+*ImageableArea Ledger/Ledger 11x17in: "14.39999961853 36 777.599975585938 1215"
 *ImageableArea Photo5x7/Photo 5x7in: "18 14 342 490"
 *ImageableArea Card5x8/Index Card 5x8in: "18 14 342 562"
 *ImageableArea Oufuku/Oufuku-Hagaki 148x200mm: "18 14 549 406"
@@ -245,4 +245,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-LJ-Class6.ppd, 16228 bytes.
+*% End of hp-LJ-Class6.ppd, 16230 bytes.
