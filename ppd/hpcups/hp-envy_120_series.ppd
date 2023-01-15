@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-envy_120_series.ppd"
@@ -12,7 +12,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Envy 120 Series"
 *ShortNickName: "HP Envy 120 Series hpijs"
-*NickName: "HP Envy 120 Series, hpcups 3.22.6"
+*NickName: "HP Envy 120 Series, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -488,4 +488,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-envy_120_series.ppd, 35171 bytes.
+*% End of hp-envy_120_series.ppd, 35173 bytes.

@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-officejet_pro_8500_a910.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Officejet Pro 8500 a910"
 *ShortNickName: "HP OJ Pro 8500 a910 hpijs"
-*NickName: "HP Officejet Pro 8500 a910, hpcups 3.22.6"
+*NickName: "HP Officejet Pro 8500 a910, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -434,4 +434,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-officejet_pro_8500_a910.ppd, 31223 bytes.
+*% End of hp-officejet_pro_8500_a910.ppd, 31225 bytes.

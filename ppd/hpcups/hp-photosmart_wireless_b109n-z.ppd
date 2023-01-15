@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-photosmart_wireless_b109n-z.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Photosmart Wireless b109n-z"
 *ShortNickName: "HP PS WL b109n-z hpijs"
-*NickName: "HP Photosmart Wireless b109n-z, hpcups 3.22.6"
+*NickName: "HP Photosmart Wireless b109n-z, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -298,4 +298,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-photosmart_wireless_b109n-z.ppd, 21805 bytes.
+*% End of hp-photosmart_wireless_b109n-z.ppd, 21807 bytes.

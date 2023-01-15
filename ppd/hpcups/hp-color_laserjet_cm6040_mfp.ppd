@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-color_laserjet_cm6040_mfp.ppd"
@@ -13,7 +13,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Color LaserJet cm6040 MFP"
 *ShortNickName: "HP CJ LJ cm6040 MFP hpijs"
-*NickName: "HP Color LaserJet cm6040 MFP, hpcups 3.22.6"
+*NickName: "HP Color LaserJet cm6040 MFP, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -248,4 +248,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-color_laserjet_cm6040_mfp.ppd, 16934 bytes.
+*% End of hp-color_laserjet_cm6040_mfp.ppd, 16936 bytes.

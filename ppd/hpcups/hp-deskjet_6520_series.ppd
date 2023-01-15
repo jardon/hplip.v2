@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-deskjet_6520_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Deskjet 6520 Series"
 *ShortNickName: "HP Deskjet 6520 Series hpijs"
-*NickName: "HP Deskjet 6520 Series, hpcups 3.22.6"
+*NickName: "HP Deskjet 6520 Series, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -454,4 +454,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-deskjet_6520_series.ppd, 33540 bytes.
+*% End of hp-deskjet_6520_series.ppd, 33542 bytes.

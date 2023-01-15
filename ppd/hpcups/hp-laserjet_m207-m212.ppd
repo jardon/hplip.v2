@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-laserjet_m207-m212.ppd"
@@ -25,7 +25,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP LaserJet m207-m212"
 *ShortNickName: "HP LaserJet m207-m212 hpijs"
-*NickName: "HP LaserJet m207-m212, hpcups 3.22.6"
+*NickName: "HP LaserJet m207-m212, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: False
@@ -261,4 +261,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-laserjet_m207-m212.ppd, 17175 bytes.
+*% End of hp-laserjet_m207-m212.ppd, 17177 bytes.

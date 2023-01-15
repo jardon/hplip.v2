@@ -3,7 +3,7 @@
 *%%%% Created by the CUPS PPD Compiler CUPS v2.3.1.
 *% (c) 2008 Copyright HP Development Company, LP
 *FormatVersion: "4.3"
-*FileVersion: "3.22.6"
+*FileVersion: "3.22.10"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-smart_tank_plus_550_series.ppd"
@@ -11,7 +11,7 @@
 *Manufacturer: "HP"
 *ModelName: "HP Smart Tank Plus 550 Series"
 *ShortNickName: "HP Smart TK Ps 550 Series hpijs"
-*NickName: "HP Smart Tank Plus 550 Series, hpcups 3.22.6"
+*NickName: "HP Smart Tank Plus 550 Series, hpcups 3.22.10"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True
@@ -247,6 +247,16 @@
 *PageSize Letter/Letter: "<</cupsInteger0 2/PageSize [612 792]/ImagingBBox null>>setpagedevice"
 *PageSize OfukuHagaki/Ofuku Hagaki: "<</cupsInteger0 72/PageSize [566.64 428.16]/ImagingBBox null>>setpagedevice"
 *PageSize Statement/Statement: "<</cupsInteger0 15/PageSize [396 612]/ImagingBBox null>>setpagedevice"
+*PageSize Executive.FB/Executive Borderless: "<</cupsInteger0 1/PageSize [522 756]/ImagingBBox null>>setpagedevice"
+*PageSize Legal.FB/Legal Borderless: "<</cupsInteger0 3/PageSize [612 1008]/ImagingBBox null>>setpagedevice"
+*PageSize Statement.FB/Statement Borderless: "<</cupsInteger0 15/PageSize [396 612]/ImagingBBox null>>setpagedevice"
+*PageSize B5.FB/B5 Borderless: "<</cupsInteger0 65/PageSize [498.72 708.48]/ImagingBBox null>>setpagedevice"
+*PageSize Envelope#10.FB/Envelope #10 Borderless: "<</cupsInteger0 81/PageSize [296.88 684]/ImagingBBox null>>setpagedevice"
+*PageSize EnvelopeDL.FB/Envelope DL Borderless: "<</cupsInteger0 90/PageSize [311.76 623.52]/ImagingBBox null>>setpagedevice"
+*PageSize EnvelopeC6.FB/Envelope C6 Borderless: "<</cupsInteger0 92/PageSize [323.04 459.12]/ImagingBBox null>>setpagedevice"
+*PageSize JapaneseEnvelope#3.FB/Japanese Envelope #3 Borderless: "<</cupsInteger0 110/PageSize [339.84 666]/ImagingBBox null>>setpagedevice"
+*PageSize JapaneseEnvelope#4.FB/Japanese Envelope #4 Borderless: "<</cupsInteger0 111/PageSize [254.88 581.04]/ImagingBBox null>>setpagedevice"
+*PageSize 8.5x13.FB/8.5x13in Borderless: "<</cupsInteger0 10/PageSize [612 936]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 *OpenUI *PageRegion/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
@@ -284,6 +294,16 @@
 *PageRegion Letter/Letter: "<</cupsInteger0 2/PageSize[612 792]/ImagingBBox null>>setpagedevice"
 *PageRegion OfukuHagaki/Ofuku Hagaki: "<</cupsInteger0 72/PageSize[566.64 428.16]/ImagingBBox null>>setpagedevice"
 *PageRegion Statement/Statement: "<</cupsInteger0 15/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageRegion Executive.FB/Executive Borderless: "<</cupsInteger0 1/PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageRegion Legal.FB/Legal Borderless: "<</cupsInteger0 3/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageRegion Statement.FB/Statement Borderless: "<</cupsInteger0 15/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+*PageRegion B5.FB/B5 Borderless: "<</cupsInteger0 65/PageSize[498.72 708.48]/ImagingBBox null>>setpagedevice"
+*PageRegion Envelope#10.FB/Envelope #10 Borderless: "<</cupsInteger0 81/PageSize[296.88 684]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvelopeDL.FB/Envelope DL Borderless: "<</cupsInteger0 90/PageSize[311.76 623.52]/ImagingBBox null>>setpagedevice"
+*PageRegion EnvelopeC6.FB/Envelope C6 Borderless: "<</cupsInteger0 92/PageSize[323.04 459.12]/ImagingBBox null>>setpagedevice"
+*PageRegion JapaneseEnvelope#3.FB/Japanese Envelope #3 Borderless: "<</cupsInteger0 110/PageSize[339.84 666]/ImagingBBox null>>setpagedevice"
+*PageRegion JapaneseEnvelope#4.FB/Japanese Envelope #4 Borderless: "<</cupsInteger0 111/PageSize[254.88 581.04]/ImagingBBox null>>setpagedevice"
+*PageRegion 8.5x13.FB/8.5x13in Borderless: "<</cupsInteger0 10/PageSize[612 936]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 *DefaultImageableArea: Letter
 *ImageableArea 2L/2L 127x178mm: "8.39999961853 8.39999961853 351.600006103516 495.600006103516"
@@ -319,6 +339,16 @@
 *ImageableArea Letter/Letter: "8.39999961853 8.39999961853 603.599975585938 783.599975585938"
 *ImageableArea OfukuHagaki/Ofuku Hagaki: "8.39999961853 8.39999961853 558.239990234375 419.760009765625"
 *ImageableArea Statement/Statement: "8.39999961853 8.39999961853 387.600006103516 603.599975585938"
+*ImageableArea Executive.FB/Executive Borderless: "0 0 522 756"
+*ImageableArea Legal.FB/Legal Borderless: "0 0 612 1008"
+*ImageableArea Statement.FB/Statement Borderless: "0 0 396 612"
+*ImageableArea B5.FB/B5 Borderless: "0 0 498.720001220703 708.47998046875"
+*ImageableArea Envelope#10.FB/Envelope #10 Borderless: "0 0 296.880004882812 684"
+*ImageableArea EnvelopeDL.FB/Envelope DL Borderless: "0 0 311.760009765625 623.52001953125"
+*ImageableArea EnvelopeC6.FB/Envelope C6 Borderless: "0 0 323.040008544922 459.119995117188"
+*ImageableArea JapaneseEnvelope#3.FB/Japanese Envelope #3 Borderless: "0 0 339.839996337891 666"
+*ImageableArea JapaneseEnvelope#4.FB/Japanese Envelope #4 Borderless: "0 0 254.880004882812 581.039978027344"
+*ImageableArea 8.5x13.FB/8.5x13in Borderless: "0 0 612 936"
 *DefaultPaperDimension: Letter
 *PaperDimension 2L/2L 127x178mm: "360 504"
 *PaperDimension L/3.5x5in, L: "252 360"
@@ -353,6 +383,16 @@
 *PaperDimension Letter/Letter: "612 792"
 *PaperDimension OfukuHagaki/Ofuku Hagaki: "566.640014648438 428.160003662109"
 *PaperDimension Statement/Statement: "396 612"
+*PaperDimension Executive.FB/Executive Borderless: "522 756"
+*PaperDimension Legal.FB/Legal Borderless: "612 1008"
+*PaperDimension Statement.FB/Statement Borderless: "396 612"
+*PaperDimension B5.FB/B5 Borderless: "498.720001220703 708.47998046875"
+*PaperDimension Envelope#10.FB/Envelope #10 Borderless: "296.880004882812 684"
+*PaperDimension EnvelopeDL.FB/Envelope DL Borderless: "311.760009765625 623.52001953125"
+*PaperDimension EnvelopeC6.FB/Envelope C6 Borderless: "323.040008544922 459.119995117188"
+*PaperDimension JapaneseEnvelope#3.FB/Japanese Envelope #3 Borderless: "339.839996337891 666"
+*PaperDimension JapaneseEnvelope#4.FB/Japanese Envelope #4 Borderless: "254.880004882812 581.039978027344"
+*PaperDimension 8.5x13.FB/8.5x13in Borderless: "612 936"
 *MaxMediaWidth: "360"
 *MaxMediaHeight: "1008"
 *HWMargins: 8.39999961853 41.040000915527 8.39999961853 8.39999961853
@@ -437,4 +477,4 @@
 *Font Times-Roman: Standard "(1.05)" Standard ROM
 *Font ZapfChancery-MediumItalic: Standard "(1.05)" Standard ROM
 *Font ZapfDingbats: Special "(001.005)" Special ROM
-*% End of hp-smart_tank_plus_550_series.ppd, 28674 bytes.
+*% End of hp-smart_tank_plus_550_series.ppd, 32696 bytes.
