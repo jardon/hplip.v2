@@ -1,0 +1,22 @@
+From: Tim Waugh <twaugh@redhat.com>
+Date: Fri, 31 Jan 2020 13:05:07 +0100
+Subject: Ignore IOError when logging output
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-silence-ioerror.patch
+---
+ base/logger.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/base/logger.py b/base/logger.py
+index 949c2f7..1a37379 100644
+--- a/base/logger.py
++++ b/base/logger.py
+@@ -199,6 +199,8 @@ class Logger(object):
+                         out.write('\n')
+ 
+                     out.flush()
++                except IOError:
++                    pass
+                 finally:
+                     self._lock.release()
+ 

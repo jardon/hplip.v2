@@ -1,0 +1,44 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Mon, 12 Mar 2018 13:37:19 +0100
+Subject: Make dat2drv and locateppd build dependent of class driver enabling;
+ copes with its source code removal from source
+
+---
+ Makefile.am | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index f23f3a8..efe3f17 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -623,12 +623,14 @@ endif # FAX_BUILD
+ endif # HPCUPS ONLY
+ endif # HPCUPS_INSTALL
+ 
++if HPLIP_CLASS_DRIVER
+ dat2drvdir = $(hplipdir)
+ dat2drv_PROGRAMS = dat2drv
+ dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
+ if GCC_GE_47
+ dat2drv_CXXFLAGS = -std=c++11
+ endif
++endif # HPLIP_CLASS_DRIVER
+ 
+ if HPPS_INSTALL
+ hppsdir = $(cupsfilterdir)
+@@ -639,6 +641,7 @@ hpps_LDADD = -lcups  $(DBUS_LIBS)
+ endif #HPPS_INSTALL
+ 
+ 
++if HPLIP_CLASS_DRIVER
+ #locate driver
+ locatedriverdir = $(hplipdir)
+ locatedriver_PROGRAMS = locatedriver
+@@ -646,7 +649,6 @@ locatedriver_SOURCES = FindPPD.cpp FindPPD.h
+ if GCC_GE_47
+ locatedriver_CXXFLAGS = -std=c++11
+ endif
+-if HPLIP_CLASS_DRIVER
+ dist_locatedriver_DATA = locatedriver
+ endif #HPLIP_CLASS_DRIVER
+ 

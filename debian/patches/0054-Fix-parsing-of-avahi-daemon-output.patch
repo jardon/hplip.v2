@@ -1,0 +1,29 @@
+From: =?utf-8?b?SmnFmcOtIFBvcGVsa2E=?= <jpopelka@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:58:28 +0100
+Subject: Fix parsing of avahi-daemon output
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-avahi-parsing.patch
+---
+ base/avahi.py | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/base/avahi.py b/base/avahi.py
+index 4749978..85c64fe 100755
+--- a/base/avahi.py
++++ b/base/avahi.py
+@@ -52,9 +52,14 @@ def detectNetworkDevices(ttl=4, timeout=10):
+                              'status_code': 0, 'device2': '0', 'device3': '0', 'note': ''}
+                         y['ip'] = ip
+                         y['hn'] = bits[6].replace('.local', '')
+-                        details = bits[9].split('" "')
++                        details = bits[9].rstrip ().strip ('"').split('" "')
+                         for item in details:
+                             key, value = item.split('=', 1)
++                            keyvalue = item.split('=', 1)
++                            if len (keyvalue) < 2:
++                                # Skip parts that don't match key=value
++                                continue
++                            key, value = keyvalue
+                             if key == 'ty':
+                                 y['mdns'] = value
+                                 y['device1'] = "MFG:Hewlett-Packard;MDL:%s;CLS:PRINTER;" % value

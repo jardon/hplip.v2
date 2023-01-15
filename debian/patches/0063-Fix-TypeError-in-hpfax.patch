@@ -1,0 +1,22 @@
+From: Tomas Korbar <tkorbar@redhat.com>
+Date: Fri, 31 Jan 2020 13:30:52 +0100
+Subject: Fix TypeError in hpfax
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-hpfax-importerror-print.patch
+---
+ fax/backend/hpfax.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/fax/backend/hpfax.py b/fax/backend/hpfax.py
+index 2514e78..95ff135 100755
+--- a/fax/backend/hpfax.py
++++ b/fax/backend/hpfax.py
+@@ -89,7 +89,7 @@ try:
+     from base import utils
+     #from prnt import cups
+ except ImportError as e:
+-    bug("Error importing HPLIP modules: %s\n" % (pid, e))
++    bug("Error importing HPLIP modules: %s\n" % (e))
+     sys.exit(1)
+ 
+ def handle_sigpipe():

@@ -1,0 +1,139 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sat, 21 Sep 2019 19:02:07 +0200
+Subject: Enforce Debian assumptions:
+
+- The distro version is supported
+- Auto installation is not allowed
+- Do not allow the installer to install "missing" packages by itself
+---
+ installer/core_install.py | 109 +++-------------------------------------------
+ 1 file changed, 5 insertions(+), 104 deletions(-)
+
+diff --git a/installer/core_install.py b/installer/core_install.py
+index 647a13a..f56965a 100644
+--- a/installer/core_install.py
++++ b/installer/core_install.py
+@@ -1976,34 +1976,12 @@ class CoreInstall(object):
+             return True
+ 
+     def validate_distro_version(self):
+-        if self.validate_disto():
+-            for vers in self.distros[self.distro_name]['versions']:
+-                if self.distro_version == vers:
+-                    return True
+-
+-        return False
++        # It's shipped in Debian. It's supported.
++        return True
+ 
+     def is_auto_installer_support(self, distro_version=DISTRO_VER_UNKNOWN):
+-        if not self.distro_name:
+-            self.get_distro()
+-            try:
+-                self.distro_name = self.distros_index[self.distro]
+-            except KeyError:
+-                log.debug("Auto installation is not supported as Distro Name can't find for distro index [%d]." % (
+-                    self.distro))
+-                return False
+-
+-        if distro_version == DISTRO_VER_UNKNOWN:
+-            distro_version = self.distro_version
+-
+-        if self.distro != DISTRO_UNKNOWN and distro_version != DISTRO_VER_UNKNOWN and self.get_ver_data('supported', False, distro_version):
+-            log.debug("Auto installation is supported for Distro =%s version =%s " % (
+-                self.distro_name, distro_version))
+-            return True
+-        else:
+-            log.debug("Auto installation is not supported for Distro =%s version =%s " % (
+-                self.distro_name, distro_version))
+-            return False
++        # No auto install ever.
++        return False
+ 
+     # Uninstalls the HPLIP package.
+     # Input:
+@@ -2341,83 +2319,6 @@ class CoreInstall(object):
+             log.info("No missing dependencies")
+             return 0
+ 
+-        if mode == INTERACTIVE_MODE:
+-            ok, user_input = tui.enter_choice(
+-                "Do you want to update repository and Install missing/incompatible packages. (a=install all*, c=custom_install, s=skip):", ['a', 'c', 's'], 'a')
+-            if not ok or user_input == 'q':
+-                return 1
+-            elif user_input == 's':
+-                log.info(
+-                    log.bold("Install manually above missing/incompatible packages."))
+-            else:
+-                self.close_package_managers()
+-
+-                log.info(log.bold("Updating repository"))
+-                log.info(log.bold('-' * len("Updating repository")))
+-                if pre_depend_cmd:
+-                    for cmd in pre_depend_cmd:
+-                        log.info("cmd =%s" % (cmd))
+-                        sts, out = utils.run(cmd, self.passwordObj)
+-                        if sts != 0 or "Failed" in out:
+-                            log.warn(
+-                                "Failed to update Repository, check if any update/installation is running.")
+-
+-                if user_input == 'c':
+-                    log.info(log.bold("Installing missing/incompatible packages"))
+-                    log.info(
+-                        log.bold('-' * len("Installing missing/incompatible packages")))
+-                    for d in overall_install_cmds:
+-                        ok, user_input = tui.enter_choice(
+-                            "Do you want to install '%s' package?(y=yes*, n=no):" % d, ['y', 'n'], 'y')
+-                        if ok and user_input == 'y':
+-                            if 'hpaio' in overall_install_cmds[d]:
+-                                self.update_hpaio()
+-                            else:
+-                                log.info("cmd =%s" % overall_install_cmds[d])
+-                                sts, out = utils.run(overall_install_cmds[
+-                                                     d], self.passwordObj)
+-                                if sts != 0 or "Failed" in out:
+-                                    log.error(
+-                                        "Failed to install '%s' package, please install manually. " % d)
+-                    if 'cups' in d:
+-                        if not services.start_service('cups', self.passwordObj):
+-                            log.error(
+-                                "Failed to start CUPS service. Please start CUPS manually or restart system.")
+-                    for cmd in missing_cmd:
+-                        ok, user_input = tui.enter_choice(
+-                            "Do you want to run '%s' command?(y=yes*, n=no):" % d, ['y', 'n'], 'y')
+-                        if ok and user_input == 'y':
+-                            sts, out = utils.run(cmd, self.passwordObj)
+-                            if sts != 0 or "Failed" in out:
+-                                log.error(
+-                                    "Failed to run '%s' command, please run manually. " % d)
+-
+-                elif user_input == 'a':
+-                    log.info(log.bold("Installing Missing/Incompatible packages"))
+-                    log.info(
+-                        log.bold('-' * len("Installing Missing/Incompatible packages")))
+-                    for d in overall_install_cmds:
+-                        if 'hpaio' in overall_install_cmds[d]:
+-                            self.update_hpaio()
+-                        else:
+-                            log.info("cmd =%s" % overall_install_cmds[d])
+-                            sts, out = utils.run(overall_install_cmds[
+-                                                 d], self.passwordObj)
+-                            if sts != 0 or "Failed" in out:
+-                                log.error(
+-                                    "Failed to install '%s' package, please install manually. " % d)
+-                    if 'cups' in d:
+-                        if not services.start_service('cups', self.passwordObj):
+-                            log.error(
+-                                "Failed to start CUPS sevice. Please start CUPS manually or restart system.")
+-                    for cmd in missing_cmd:
+-                        sts, out = utils.run(cmd, self.passwordObj)
+-                        if sts != 0 or "Failed" in out:
+-                            log.error(
+-                                "Failed to run '%s' command, please run manually. " % d)
+-
+-        else:
+-            log.error("GUI is not yet supported..1")
+-            # TBD
++        # Do not allow HPLIP to run APT or anything else, especially not as root.
+ 
+         return 0

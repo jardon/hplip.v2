@@ -1,0 +1,97 @@
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Fri, 22 Jul 2016 09:32:53 +0200
+Subject: models.dat: Correct entry for the HP PhotoSmart Pro B9100
+
+LP: #213984
+---
+ data/models/models.dat | 77 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 77 insertions(+)
+
+diff --git a/data/models/models.dat b/data/models/models.dat
+index 4c0254a..ae84327 100644
+--- a/data/models/models.dat
++++ b/data/models/models.dat
+@@ -52297,6 +52297,83 @@ usb-pid=d12
+ usb-vid=3f0
+ wifi-config=0
+ 
++[photosmart_pro_b9100_series]
++align-type=1
++clean-type=1
++color-cal-type=3
++copy-type=0
++embedded-server-type=1
++fax-type=0
++fw-download=False
++icon=Photosmart_Pro_B9180.png
++io-mfp-mode=4
++io-mode=1
++io-support=6
++job-storage=0
++linefeed-cal-type=0
++model1=HP Photosmart Pro B9180gp Photo Printer
++model2=HP Photosmart Pro B9180 Photo Printer
++monitor-type=0
++panel-check-type=1
++pcard-type=0
++plugin=0
++plugin-reason=0
++power-settings=0
++pq-diag-type=0
++r-type=0
++r0-agent1-kind=1
++r0-agent1-sku=C9407A
++r0-agent1-type=16
++r0-agent10-kind=2
++r0-agent10-sku=C9417A
++r0-agent10-type=6
++r0-agent11-kind=2
++r0-agent11-sku=C9418A
++r0-agent11-type=7
++r0-agent12-kind=2
++r0-agent12-sku=C9419A
++r0-agent12-type=8
++r0-agent2-kind=1
++r0-agent2-sku=C9406A
++r0-agent2-type=14
++r0-agent3-kind=1
++r0-agent3-sku=C9405A
++r0-agent3-type=13
++r0-agent4-kind=1
++r0-agent4-sku=C9404A
++r0-agent4-type=15
++r0-agent5-kind=2
++r0-agent5-sku=C9412A
++r0-agent5-type=1
++r0-agent6-kind=2
++r0-agent6-sku=C9413A
++r0-agent6-type=19
++r0-agent7-kind=2
++r0-agent7-sku=C9414A
++r0-agent7-type=17
++r0-agent8-kind=2
++r0-agent8-sku=C9415A
++r0-agent8-type=4
++r0-agent9-kind=2
++r0-agent9-sku=C9416A
++r0-agent9-type=5
++scan-src=0
++scan-type=0
++status-battery-check=0
++status-dynamic-counters=0
++status-type=2
++support-released=True
++support-subtype=219b2b
++support-type=2
++support-ver=2.8.4
++tech-class=PSB9100
++family-class=Undefined
++tech-subclass=Normal
++tech-type=2
++usb-pid=bd02
++usb-vid=3f0
++wifi-config=0
++
+ [hp_deskjet_9300]
+ align-type=1
+ clean-type=1

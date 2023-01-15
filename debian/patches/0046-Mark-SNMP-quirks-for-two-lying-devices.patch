@@ -1,0 +1,31 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:23:46 +0100
+Subject: Mark SNMP quirks for two lying devices
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-snmp-quirks.patch
+---
+ prnt/drv/hpcups.drv.in | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/prnt/drv/hpcups.drv.in b/prnt/drv/hpcups.drv.in
+index af3b0be..20b5254 100644
+--- a/prnt/drv/hpcups.drv.in
++++ b/prnt/drv/hpcups.drv.in
+@@ -10430,6 +10430,8 @@ Manufacturer "HP"
+       Attribute "NickName" "" "HP Officejet Pro 8500 a909a, hpcups $Version"
+       Attribute "ShortNickName" "" "HP OJ Pro 8500 a909a hpijs"
+       Attribute "1284DeviceID" "" "MFG:HP;MDL:officejet pro 8500 a909a;DES:officejet pro 8500 a909a;"
++      // This device lies about its supplies capacity.
++      Attribute "cupsSNMPQuirks" "" "capacity"
+       PCFileName "hp-officejet_pro_8500_a909a.ppd"
+       Attribute "Product" "" "(HP Officejet Pro 8500 All-in-one Printer - a909a)"
+     }
+@@ -10438,6 +10440,8 @@ Manufacturer "HP"
+       Attribute "NickName" "" "HP Officejet Pro 8500 a909g, hpcups $Version"
+       Attribute "ShortNickName" "" "HP OJ Pro 8500 a909g hpijs"
+       Attribute "1284DeviceID" "" "MFG:HP;MDL:officejet pro 8500 a909g;DES:officejet pro 8500 a909g;"
++      // This device lies about its supplies capacity.
++      Attribute "cupsSNMPQuirks" "" "capacity"
+       PCFileName "hp-officejet_pro_8500_a909g.ppd"
+       Attribute "Product" "" "(HP Officejet Pro 8500 Wireless All-in-one Printer - a909g)"
+     }
