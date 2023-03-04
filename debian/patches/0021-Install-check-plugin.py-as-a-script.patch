@@ -1,0 +1,29 @@
+From: Julian Andres Klode <jak@debian.org>
+Date: Fri, 22 Jul 2016 09:33:08 +0200
+Subject: Install check-plugin.py as a script
+
+The installer installs check-plugin.py as hp-check-plugin, do the same from the Makefile.
+
+Origin: vendor
+Forwarded: no
+---
+ Makefile.am | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index caf17e4..f23f3a8 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -181,10 +181,10 @@ if !HPLIP_CLASS_DRIVER
+ dist_cmd_SCRIPTS = align.py info.py print.py toolbox.py clean.py colorcal.py unload.py testpage.py makeuri.py check.py fab.py levels.py \
+ 	sendfax.py setup.py makecopies.py probe.py timedate.py firmware.py scan.py systray.py plugin.py linefeedcal.py pqdiag.py \
+ 	faxsetup.py devicesettings.py printsettings.py query.py pkservice.py wificonfig.py diagnose_plugin.py uninstall.py \
+-	upgrade.py config_usb_printer.py diagnose_queues.py logcapture.py doctor.py uiscan.py
++	upgrade.py config_usb_printer.py diagnose_queues.py logcapture.py doctor.py uiscan.py check-plugin.py
+ 
+ homedir = $(hplipdir)
+-dist_home_DATA =  check-plugin.py 
++dist_home_DATA =
+ dist_home_DATA +=  hplip_clean.sh
+ 
+ # base

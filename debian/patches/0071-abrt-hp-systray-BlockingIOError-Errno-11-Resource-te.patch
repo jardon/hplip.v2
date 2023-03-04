@@ -1,0 +1,34 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:48:32 +0100
+Subject: [abrt] hp-systray:BlockingIOError: [Errno 11] Resource temporarily
+ unavailable
+
+Traceback in hp-systray when there are no resource
+wanted to report upstream, but launchpad ends with timeout error
+bugzilla https://bugzilla.redhat.com/show_bug.cgi?id=1738321
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-logging-segfault.patch
+---
+ systray.py | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/systray.py b/systray.py
+index a47cf16..a976f64 100644
+--- a/systray.py
++++ b/systray.py
+@@ -89,7 +89,14 @@ if __name__ == '__main__':
+     log.debug("Creating pipe: hpssd (%d) ==> systemtray (%d)" % (w1, r1))
+     
+     parent_pid = os.getpid()
+-    child_pid1 = os.fork()
++    try:
++        child_pid1 = os.fork()
++    except BlockingIOErrror as e:
++        log.error("hp-systray: error during fork - %s" % e)
++        os.close(w1)
++        os.close(r1)
++        mod.unlockInstance()
++        sys.exit(1)
+     
+     if child_pid1:
+         # parent (UI)

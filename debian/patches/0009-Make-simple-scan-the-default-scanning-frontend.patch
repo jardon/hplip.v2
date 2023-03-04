@@ -1,0 +1,56 @@
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Fri, 22 Jul 2016 09:32:55 +0200
+Subject: Make simple-scan the default scanning frontend
+
+LP: #539015
+---
+ base/utils.py   | 17 ++++++++++-------
+ ui5/ui_utils.py |  2 +-
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/base/utils.py b/base/utils.py
+index 94d5c8c..c9daa62 100644
+--- a/base/utils.py
++++ b/base/utils.py
+@@ -567,18 +567,21 @@ class UserSettings(object): # Note: Deprecated after 2.8.8 in Qt4 (see ui4/ui_ut
+ 
+         # Scan
+         self.cmd_scan = ''
+-        path = which('xsane')
+-
++        path = which('simple-scan')
+         if len(path) > 0:
+-            self.cmd_scan = 'xsane -V %SANE_URI%'
++            self.cmd_scan = 'simple-scan %SANE_URI%'
+         else:
+-            path = which('kooka')
++            path = which('xsane')
+             if len(path) > 0:
+-                self.cmd_scan = 'kooka'
++                self.cmd_scan = 'xsane -V %SANE_URI%'
+             else:
+-                path = which('xscanimage')
++                path = which('kooka')
+                 if len(path) > 0:
+-                    self.cmd_scan = 'xscanimage'
++                    self.cmd_scan = 'kooka'
++                else:
++                    path = which('xscanimage')
++                    if len(path) > 0:
++                        self.cmd_scan = 'xscanimage'
+ 
+         # Photo Card
+         path = which('hp-unload')
+diff --git a/ui5/ui_utils.py b/ui5/ui_utils.py
+index caba339..865d6eb 100644
+--- a/ui5/ui_utils.py
++++ b/ui5/ui_utils.py
+@@ -205,7 +205,7 @@ class UserSettings(QSettings):
+         return ''
+ 
+     def loadDefaults(self):
+-        self.cmd_scan = self.__setup(['xsane -V %SANE_URI%', 'kooka', 'xscanimage'])
++        self.cmd_scan = self.__setup(['simple-scan %SANE_URI%', 'xsane -V %SANE_URI%', 'kooka', 'xscanimage'])
+         self.cmd_fab = self.__setup(['hp-fab'])
+ 
+ 

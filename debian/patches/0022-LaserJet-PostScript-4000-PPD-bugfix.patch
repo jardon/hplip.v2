@@ -1,0 +1,36 @@
+From: Jean Tourrilhes <jt@hpl.hp.com>
+Date: Fri, 22 Jul 2016 09:33:10 +0200
+Subject: LaserJet PostScript 4000 PPD bugfix
+
+The PostScript PPD for the HP LaserJet 4000 is buggy, and prevent printing complex documents.
+The 4000 and 4050 are pretty much the same printer. The fix was to extract the missing snipset from the PPD for the 4050 and put it in the PPD for the 4000.
+
+Origin: vendor
+Bug: https://bugs.launchpad.net/hplip/+bug/1298194
+Bug-Debian: https://bugs.debian.org/742766
+---
+ prnt/ps/hp-laserjet_4000_series-ps.ppd | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/prnt/ps/hp-laserjet_4000_series-ps.ppd b/prnt/ps/hp-laserjet_4000_series-ps.ppd
+index db1248c..66c4032 100644
+--- a/prnt/ps/hp-laserjet_4000_series-ps.ppd
++++ b/prnt/ps/hp-laserjet_4000_series-ps.ppd
+@@ -97,6 +97,17 @@
+ *SuggestedWaitTimeout: "120"
+ *PrintPSErrors: True
+ 
++*% =================================
++*% PostScript Patches
++*% =================================
++*JobPatchFile 1: "
++/limitinterpolate { dup type /dicttype eq { dup /Interpolate known { dup /Interpolate get {
++	1 1 idtransform 2 index /ImageMatrix get dtransform exch abs 1 exch div exch abs 1 exch div 2 copy lt
++	{ exch }if pop 4 lt { dup /Interpolate false put } if } if } if } if
++} bind def
++/image { limitinterpolate systemdict /image get exec } bind def
++/imagemask { limitinterpolate systemdict /imagemask get exec } bind def"
++*End
+ 
+ *% ===================================
+ *%         Installable Options

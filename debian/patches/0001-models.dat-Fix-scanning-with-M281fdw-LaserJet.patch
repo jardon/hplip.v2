@@ -1,0 +1,26 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:41:53 +0100
+Subject: models.dat: Fix scanning with M281fdw LaserJet
+
+Error was: Failed: Error during device I/O
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-m278-m281-needs-plugin.patch
+---
+ data/models/models.dat | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/data/models/models.dat b/data/models/models.dat
+index b413b9c..4c0254a 100644
+--- a/data/models/models.dat
++++ b/data/models/models.dat
+@@ -61977,8 +61977,8 @@ model11=HP Color LaserJet Pro MFP M280c2
+ monitor-type=0
+ panel-check-type=0
+ pcard-type=0
+-plugin=0
+-plugin-reason=0
++plugin=1
++plugin-reason=64
+ power-settings=0
+ ppd-name=hp-color_laserjet_mfp_m278-m281-ps.ppd
+ family-ppd=hp-postscript-laserjet-pro.ppd
