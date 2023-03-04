@@ -1,0 +1,26 @@
+From: Tim Waugh <twaugh@fedoraproject.org>
+Date: Fri, 31 Jan 2020 12:21:17 +0100
+Subject: Retry when connecting to device fails
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-retry-open.patch
+---
+ prnt/backend/hp.c | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/prnt/backend/hp.c b/prnt/backend/hp.c
+index 066866e..9aa0bf3 100644
+--- a/prnt/backend/hp.c
++++ b/prnt/backend/hp.c
+@@ -819,12 +819,6 @@ int main(int argc, char *argv[])
+                      goto bugout;
+                   }
+ 
+-                  if (stat != HPMUD_R_DEVICE_BUSY)
+-                  {
+-                     BUG("ERROR: open device failed stat=%d: %s\n", stat, argv[0]);
+-                     goto bugout;
+-                  }
+-
+                   /* Display user error. */
+                   device_event(argv[0], printer, 5000+stat, argv[2], argv[1], argv[3]);
+ 

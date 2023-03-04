@@ -1,0 +1,52 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:24:11 +0100
+Subject: hp-setup fails on fax setup - use binary strings
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-use-binary-str.patch
+---
+ base/utils.py | 5 +----
+ fax/pmlfax.py | 8 ++++----
+ 2 files changed, 5 insertions(+), 8 deletions(-)
+
+diff --git a/base/utils.py b/base/utils.py
+index bfe985c..880a9b5 100644
+--- a/base/utils.py
++++ b/base/utils.py
+@@ -958,10 +958,7 @@ else:
+ 
+ 
+ def printable(s):
+-    if s:
+-        return s.translate(identity, unprintable)
+-    else:
+-        return ""
++    return s.translate(identity, unprintable)
+ 
+ 
+ def any(S,f=lambda x:x):
+diff --git a/fax/pmlfax.py b/fax/pmlfax.py
+index 78d9135..b1020d0 100644
+--- a/fax/pmlfax.py
++++ b/fax/pmlfax.py
+@@ -143,8 +143,8 @@ class PMLFaxDevice(FaxDevice):
+ 
+     def getPhoneNum(self):
+         if PY3:
+-            data = utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1])
+-            return data
++            data = utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1].encode('utf-8'))
++            return data.decode('utf-8')
+         else:
+             return utils.printable(self.getPML(pml.OID_FAX_LOCAL_PHONE_NUM)[1])
+     phone_num = property(getPhoneNum, setPhoneNum, doc="OID_FAX_LOCAL_PHONE_NUM")
+@@ -155,8 +155,8 @@ class PMLFaxDevice(FaxDevice):
+ 
+     def getStationName(self):
+         if PY3:
+-            data = utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1])
+-            return data
++            data = utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1].encode('utf-8'))
++            return data.decode('utf-8')
+         else:
+             return utils.printable(self.getPML(pml.OID_FAX_STATION_NAME)[1])
+ 

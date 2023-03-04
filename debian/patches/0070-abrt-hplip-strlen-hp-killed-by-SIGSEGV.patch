@@ -1,0 +1,26 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:46:58 +0100
+Subject: [abrt] hplip: strlen(): hp killed by SIGSEGV
+
+Segfault during logging to syslog because argument are switched
+bugzilla https://bugzilla.redhat.com/show_bug.cgi?id=1727162
+upstream https://bugs.launchpad.net/hplip/+bug/1837846
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-logging-segfault.patch
+---
+ io/hpmud/musb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/io/hpmud/musb.c b/io/hpmud/musb.c
+index 761f5f2..3e26bc4 100644
+--- a/io/hpmud/musb.c
++++ b/io/hpmud/musb.c
+@@ -1455,7 +1455,7 @@ enum HPMUD_RESULT __attribute__ ((visibility ("hidden"))) musb_raw_channel_write
+                     BUG("unable to write data %s: %d second io timeout\n", msp->device[pc->dindex].uri, sec_timeout);
+             }
+             else
+-                BUG("unable to write data (len = %d) %s: %m\n", msp->device[pc->dindex].uri, len);
++                BUG("unable to write data (len = %d) %s: %m\n", len, msp->device[pc->dindex].uri);
+             goto bugout;
+         }
+ 		if(len == 0 && size > 0)

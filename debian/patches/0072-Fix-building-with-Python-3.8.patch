@@ -1,0 +1,72 @@
+From: Matthias Klose <doko@ubuntu.com>
+Date: Wed, 29 Jan 2020 10:20:11 +0100
+Subject: Fix building with Python 3.8
+
+---
+ Makefile.am  | 8 ++++----
+ configure.in | 5 ++++-
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 907bcfd..e293b44 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -308,7 +308,7 @@ dist_pcard_DATA = pcard/__init__.py pcard/photocard.py
+ # pcardext
+ pcardextdir = $(pyexecdir)
+ pcardext_LTLIBRARIES = pcardext.la
+-pcardext_la_LDFLAGS = -module -avoid-version -lpython$(PYTHON_VERSION)m
++pcardext_la_LDFLAGS = -module -avoid-version -lpython$(PYTHON_VERSION)
+ pcardext_la_SOURCES = pcard/pcardext/pcardext.c pcard/fat.c pcard/pcardext/pcardext.h
+ pcardext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
+ 
+@@ -331,7 +331,7 @@ cupsext_LTLIBRARIES = cupsext.la
+ cupsext_la_LDFLAGS = -module -avoid-version
+ cupsext_la_SOURCES =  prnt/cupsext/cupsext.c prnt/cupsext/cupsext.h
+ cupsext_la_CFLAGS = -I$(PYTHONINCLUDEDIR) -Iprotocol
+-cupsext_la_LIBADD = -lcups -lpython$(PYTHON_VERSION)m libhpipp.la
++cupsext_la_LIBADD = -lcups -lpython$(PYTHON_VERSION) libhpipp.la
+ endif #HPLIP_CLASS_DRIVER
+ 
+ if !HPLIP_CLASS_DRIVER
+@@ -343,7 +343,7 @@ dist_scan_DATA = scan/__init__.py scan/sane.py
+ # scanext
+ scanextdir = $(pyexecdir)
+ scanext_LTLIBRARIES = scanext.la
+-scanext_la_LDFLAGS = -module -avoid-version -lsane -lpython$(PYTHON_VERSION)m
++scanext_la_LDFLAGS = -module -avoid-version -lsane -lpython$(PYTHON_VERSION)
+ scanext_la_SOURCES =  scan/scanext/scanext.c
+ scanext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
+ endif #SCAN_BUILD
+@@ -353,7 +353,7 @@ endif #!HPLIP_CLASS_DRIVER
+ if !HPLIP_CLASS_DRIVER
+ hpmudextdir = $(pyexecdir)
+ hpmudext_LTLIBRARIES = hpmudext.la
+-hpmudext_la_LDFLAGS = -module -avoid-version -lpython$(PYTHON_VERSION)m
++hpmudext_la_LDFLAGS = -module -avoid-version -lpython$(PYTHON_VERSION)
+ hpmudext_la_SOURCES = io/mudext/hpmudext.c
+ hpmudext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
+ hpmudext_la_LIBADD = libhpmud.la
+diff --git a/configure.in b/configure.in
+index f67d465..1ca12ac 100644
+--- a/configure.in
++++ b/configure.in
+@@ -652,7 +652,9 @@ if test "$class_driver" = "no" && test "$hpijs_only_build" = "no" && test "$lite
+    PYTHONINCLUDEDIR=`$PYTHON -c "from distutils.sysconfig import get_python_inc; print (get_python_inc());"`
+    AC_MSG_RESULT("using $PYTHONINCLUDEDIR ....  python${PYTHON_VERSION}/Python.h")
+    AC_ARG_VAR(PYTHONINCLUDEDIR, [path to Python.h C header file])
+-   AC_CHECK_HEADERS([python${PYTHON_VERSION}/Python.h python${PYTHON_VERSION}mu/Python.h python${PYTHON_VERSION}m/Python.h ],
++   save_CPPFLAGS=$CPPFLAGS
++   CPPFLAGS="-I$PYTHONINCLUDEDIR"
++   AC_CHECK_HEADERS([Python.h],
+           [FOUND_HEADER=yes; break;])
+ 
+    if test "x$FOUND_HEADER" != "xyes"; then
+@@ -665,6 +667,7 @@ if test "$class_driver" = "no" && test "$hpijs_only_build" = "no" && test "$lite
+    
+    AS_IF([test "x$FOUND_HEADER" != "xyes"],
+           [AC_MSG_ERROR([cannot find python-devel support], 6)])
++   CPPFLAGS=$save_CPPFLAGS
+ fi
+ CFLAGS="$save_CFLAGS"
+ 

@@ -1,0 +1,22 @@
+From: Tomas Korbar <tkorbar@redhat.com>
+Date: Fri, 31 Jan 2020 13:33:22 +0100
+Subject: Fix AttributeError when connecting to printer via wifi
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-wifisetup.patch
+---
+ ui5/wifisetupdialog.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ui5/wifisetupdialog.py b/ui5/wifisetupdialog.py
+index e735650..507b105 100644
+--- a/ui5/wifisetupdialog.py
++++ b/ui5/wifisetupdialog.py
+@@ -564,7 +564,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+             try:                
+                 self.ip,_,addressmode, subnetmask, gateway, pridns, sec_dns= self.wifiObj.getIPConfiguration(self.dev, self.adapterName)
+                 if self.ip == "0.0.0.0":
+-                    self.ip, subnetmask, gateway, pri_dns, sec_dns, addressmode = self.wifiObj.getwifiotherdetails(self.dev,self.adapterName)
++                    self.ip, subnetmask, gateway, pridns, sec_dns, addressmode = self.wifiObj.getwifiotherdetails(self.dev,self.adapterName)
+                 vsa_codes = self.wifiObj.getVSACodes(self.dev, self.adapterName)
+                 ss_max, ss_min, ss_val, ss_dbm = self.wifiObj.getSignalStrength(self.dev, self.adapterName,self.network, self.adaptor_id)                 
+                 self.hn = self.wifiObj.getHostname(self.dev) 

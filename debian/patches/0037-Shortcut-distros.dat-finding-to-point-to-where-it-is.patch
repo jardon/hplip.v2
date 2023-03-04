@@ -1,0 +1,35 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Thu, 19 Sep 2019 08:37:21 +0200
+Subject: Shortcut distros.dat finding to point to where it is
+
+---
+ installer/core_install.py | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
+
+diff --git a/installer/core_install.py b/installer/core_install.py
+index b49e27d..647a13a 100644
+--- a/installer/core_install.py
++++ b/installer/core_install.py
+@@ -748,21 +748,7 @@ class CoreInstall(object):
+             return [x for x in data.split(',') if x]
+ 
+     def load_distros(self):
+-        if self.mode == MODE_INSTALLER:
+-            distros_dat_file = os.path.join('installer', 'distros.dat')
+-
+-        elif self.mode == MODE_CREATE_DOCS:
+-            distros_dat_file = os.path.join(
+-                '..', '..', 'installer', 'distros.dat')
+-
+-        else:  # MODE_CHECK
+-            distros_dat_file = os.path.join(
+-                prop.home_dir, 'installer', 'distros.dat')
+-
+-            if not os.path.exists(distros_dat_file):
+-                log.debug(
+-                    "DAT file not found at %s. Using local relative path..." % distros_dat_file)
+-                distros_dat_file = os.path.join('installer', 'distros.dat')
++        distros_dat_file = '/usr/share/hplip/installer/distros.dat'
+ 
+         distros_dat = ConfigBase(distros_dat_file)
+         distros_list = self.__fixup_data(
