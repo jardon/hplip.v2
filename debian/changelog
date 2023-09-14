@@ -1,3 +1,10 @@
+hplip (3.22.10+dfsg0-3) unstable; urgency=medium
+
+  * debian/control: replace policykit-1 by pkexec, polkitd
+                    (Closes: #1025574)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Thu, 14 Sep 2023 22:39:02 +0200
+
 hplip (3.22.10+dfsg0-2) unstable; urgency=medium
 
   * rework patch that uses distro module (0075 at the moment)
