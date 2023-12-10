@@ -1,3 +1,12 @@
+hplip (3.22.10+dfsg0-4) unstable; urgency=medium
+
+  * libsane-hpaio: move 56-hpmud.rules to /usr.
+    Includes protective diversion against m-a: same file loss on upgrades.
+    Diversion can be removed in forky+1. (Closes: #1056724)
+    (thanks a lot to Christian Hofstaedtler for the patch)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Sun, 10 Dec 2023 10:39:02 +0100
+
 hplip (3.22.10+dfsg0-3) unstable; urgency=medium
 
   * debian/control: replace policykit-1 by pkexec, polkitd
