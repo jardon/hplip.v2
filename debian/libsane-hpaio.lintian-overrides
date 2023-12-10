@@ -1,0 +1,4 @@
+# begin-remove-after: released:forky
+# protective diversion for upgrades of files moved from / to /usr
+libsane-hpaio: diversion-for-unknown-file lib/udev/rules.d/56-hpmud.rules [preinst:*]
+# end-remove-after

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:forky
+# protective diversion of files moved from / to /usr, to avoid file loss.
+# Only for upgrades.
+if [ "$1" = "upgrade" ]; then
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/rules.d/56-hpmud.rules.usr-is-merged \
+        --add /lib/udev/rules.d/56-hpmud.rules
+fi
+# end-remove-after
+
+#DEBHELPER#
+
