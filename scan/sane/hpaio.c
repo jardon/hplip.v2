@@ -51,6 +51,7 @@
 #include "escl.h"
 #include "io.h"
 #include "orblitei.h"
+#include "orblite.h"
 
 
 #define DEBUG_DECLARE_ONLY
