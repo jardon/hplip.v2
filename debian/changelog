@@ -1,3 +1,9 @@
+hplip (3.22.10+dfsg0-5) unstable; urgency=medium
+
+  * take care of implicit function declarations (Closes: #1066348)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Fri, 26 Apr 2024 23:39:02 +0200
+
 hplip (3.22.10+dfsg0-4) unstable; urgency=medium
 
   * libsane-hpaio: move 56-hpmud.rules to /usr.
