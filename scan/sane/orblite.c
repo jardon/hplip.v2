@@ -22,6 +22,7 @@
 #include <math.h>
 #include "utils.h"
 #include "io.h"
+#include <dlfcn.h>
 
 #ifdef __cplusplus
  }
@@ -195,7 +196,7 @@ bugout:
 
 static int bb_unload(SANE_THandle ps)
 {
-   _DBG("Calling orblite bb_unload: \n");
+   //_DBG("Calling orblite bb_unload: \n");
    if (ps->bb_handle)
    {
       dlclose(ps->bb_handle);
