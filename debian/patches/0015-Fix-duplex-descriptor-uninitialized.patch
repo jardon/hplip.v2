@@ -1,0 +1,43 @@
+From: Matej Vela <vela@debian.org>
+Date: Fri, 22 Jul 2016 09:33:02 +0200
+Subject: Fix "duplex descriptor uninitialized"
+
+Closes: #583273
+---
+ scan/sane/sclpml.c | 21 +++++++++------------
+ 1 file changed, 9 insertions(+), 12 deletions(-)
+
+diff --git a/scan/sane/sclpml.c b/scan/sane/sclpml.c
+index 9a5975f..61500da 100644
+--- a/scan/sane/sclpml.c
++++ b/scan/sane/sclpml.c
+@@ -1084,20 +1084,17 @@ static void init_options( hpaioScanner_t hpaio )
+     hpaio->option[OPTION_ADF_MODE].constraint_type = SANE_CONSTRAINT_STRING_LIST;
+     hpaio->option[OPTION_ADF_MODE].constraint.string_list = hpaio->adfModeList;
+ 
+-    // Duplex scanning is supported
+-    if (hpaio->supportsDuplex  == 1)
+-    {
+-       hpaio->option[OPTION_DUPLEX].name = STR_NAME_DUPLEX;
+-       hpaio->option[OPTION_DUPLEX].title = STR_TITLE_DUPLEX;
+-       hpaio->option[OPTION_DUPLEX].desc = STR_DESC_DUPLEX;
+-       hpaio->option[OPTION_DUPLEX].type = SANE_TYPE_BOOL;
+-       hpaio->option[OPTION_DUPLEX].unit = SANE_UNIT_NONE;
+-       hpaio->option[OPTION_DUPLEX].size = sizeof( SANE_Bool );
+-       hpaio->option[OPTION_DUPLEX].cap = SANE_CAP_SOFT_SELECT |
++    hpaio->option[OPTION_DUPLEX].name = STR_NAME_DUPLEX;
++    hpaio->option[OPTION_DUPLEX].title = STR_TITLE_DUPLEX;
++    hpaio->option[OPTION_DUPLEX].desc = STR_DESC_DUPLEX;
++    hpaio->option[OPTION_DUPLEX].type = SANE_TYPE_BOOL;
++    hpaio->option[OPTION_DUPLEX].unit = SANE_UNIT_NONE;
++    hpaio->option[OPTION_DUPLEX].size = sizeof( SANE_Bool );
++    hpaio->option[OPTION_DUPLEX].cap = SANE_CAP_SOFT_SELECT |
+                                        SANE_CAP_SOFT_DETECT |
+                                        SANE_CAP_ADVANCED;
+-       hpaio->option[OPTION_DUPLEX].constraint_type = SANE_CONSTRAINT_NONE;
+-    }
++    hpaio->option[OPTION_DUPLEX].constraint_type = SANE_CONSTRAINT_NONE;
++
+     hpaio->option[GROUP_GEOMETRY].title = STR_TITLE_GEOMETRY;
+     hpaio->option[GROUP_GEOMETRY].type = SANE_TYPE_GROUP;
+     hpaio->option[GROUP_GEOMETRY].cap = SANE_CAP_ADVANCED;

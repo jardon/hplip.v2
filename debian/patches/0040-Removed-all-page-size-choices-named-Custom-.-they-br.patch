@@ -1,0 +1,69 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Fri, 4 Dec 2020 13:26:24 +0100
+Subject: Removed all page size choices named "Custom". they break with CUPS
+ and are also identical with US Legal
+
+See CUPS upstream issue #5639
+
+Made with:
+	sed -e '/CustomMedia.*"Custom.*612 1008/,+1d' -i prnt/drv/*drv.in.template
+---
+ prnt/drv/hpcups.drv.in.template | 8 --------
+ prnt/drv/hpijs.drv.in.template  | 4 ----
+ 2 files changed, 12 deletions(-)
+
+diff --git a/prnt/drv/hpcups.drv.in.template b/prnt/drv/hpcups.drv.in.template
+index 425a833..e3f0100 100644
+--- a/prnt/drv/hpcups.drv.in.template
++++ b/prnt/drv/hpcups.drv.in.template
+@@ -4130,8 +4130,6 @@ Manufacturer "HP"
+ 	  CustomMedia "JB5.FB/JB5 Borderless 182x257mm" 515.90 728.50 0 0 0 0 "<</cupsInteger0 45/PageSize[515.90 728.50]/ImagingBBox null>>setpagedevice"
+          "<</cupsInteger0 45/PageSize [515.90 728.50]/ImagingBBox null>>setpagedevice"
+ 		 
+-      CustomMedia "Custom1/Custom 1" 612 1008 8.4 8.4 8.4 8.4 "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-         "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+ 		 
+       CustomMedia "Env10/#10 Envelope 4.125x9.5in" 297 684 8.4 8.4 8.4 8.4 "<</cupsInteger0 81/PageSize[297 684]/ImagingBBox null>>setpagedevice"
+              "<</cupsInteger0 81/PageSize[297 684]/ImagingBBox null>>setpagedevice"
+@@ -10470,10 +10468,6 @@ Manufacturer "HP"
+          "<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+       CustomMedia "JB5.FB/Borderless JB5" 515.76 728.4 0 0 0 0 "<</cupsInteger0 45/PageSize [515.76 728.4]/ImagingBBox null>>setpagedevice"
+          "<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+-      CustomMedia "Custom1/Custom 1" 612 1008 8.4 8.4 8.4 8.4 "<</cupsInteger0 101/PageSize [612 1008]/ImagingBBox null>>setpagedevice"
+-         "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-      CustomMedia "Custom1.FB/Borderless Custom" 612 1008 0 0 0 0 "<</cupsInteger0 101/PageSize [612 1008]/ImagingBBox null>>setpagedevice"
+-         "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+       CustomMedia "Envelope#10/Envelope #10" 296.88 684 8.4 8.4 8.4 8.4 "<</cupsInteger0 81/PageSize [296.88 684]/ImagingBBox null>>setpagedevice"
+          "<</cupsInteger0 81/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+       CustomMedia "EnvelopeA2/Envelope A2" 314.88 414 8.4 8.4 8.4 8.4 "<</cupsInteger0 109/PageSize [314.88 414]/ImagingBBox null>>setpagedevice"
+@@ -12528,8 +12522,6 @@ Manufacturer "HP"
+          "<</cupsInteger0 2/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+       CustomMedia "Statement/Statement " 396 612 8.4 8.4 8.4 8.4 "<</cupsInteger0 15/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+          "<</cupsInteger0 15/PageSize[396 612]/ImagingBBox null>>setpagedevice"
+-      CustomMedia "Custom1/Custom 1" 612 1008 8.4 8.4 8.4 8.4 "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-         "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+       CustomMedia "Tabloid/Tabloid " 792 1224 8.4 8.4 8.4 8.4 "<</cupsInteger0 6/PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+          "<</cupsInteger0 6/PageSize[792 1224]/ImagingBBox null>>setpagedevice"  
+       CustomMedia "Tabloid.FB/Tabloid Borderless " 792 1224 0 0 0 0 "<</cupsInteger0 6/PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+diff --git a/prnt/drv/hpijs.drv.in.template b/prnt/drv/hpijs.drv.in.template
+index e7fa6ff..1dc396f 100644
+--- a/prnt/drv/hpijs.drv.in.template
++++ b/prnt/drv/hpijs.drv.in.template
+@@ -7726,8 +7726,6 @@ lity:PenSet=2,Quality:FullBleed=1"
+ 	"<</cupsInteger0 65/PageSize[498.72 708.48]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "B5/B5 182x257" 515.76 728.4 8.4 8.4 8.4 36 "<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+ 	"<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+-	CustomMedia "Custom/Custom1" 612 1008 8.4 8.4 8.4 36 "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-	"<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "Env10/#10 Envelope 4.1x9.5in" 296.88 684 8.4 8.4 8.4 36 "<</cupsInteger0 81/PageSize[296.88 684]/ImagingBBox null>>setpagedevice"
+ 	"<</cupsInteger0 81/PageSize[296.88 684]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "EnvA2/A2 Envelope 111x146in" 314.88 414 8.4 8.4 8.4 36 "<</cupsInteger0 109/PageSize[314.88 414]/ImagingBBox null>>setpagedevice"
+@@ -7896,8 +7894,6 @@ lity:PenSet=2,Quality:FullBleed=1"
+ 	"<</cupsInteger0 65/PageSize[498.72 708.48]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "B5/B5 182x257" 515.76 728.4 8.4 8.4 8.4 36 "<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+ 	"<</cupsInteger0 45/PageSize[515.76 728.4]/ImagingBBox null>>setpagedevice"
+-	CustomMedia "Custom/Custom1" 612 1008 8.4 8.4 8.4 36 "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+-	"<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "Env10/#10 Envelope 4.1x9.5in" 296.88 684 8.4 8.4 8.4 36 "<</cupsInteger0 81/PageSize[296.88 684]/ImagingBBox null>>setpagedevice"
+ 	"<</cupsInteger0 81/PageSize[296.88 684]/ImagingBBox null>>setpagedevice"
+ 	CustomMedia "EnvA2/A2 Envelope 111x146in" 314.88 414 8.4 8.4 8.4 36 "<</cupsInteger0 109/PageSize[314.88 414]/ImagingBBox null>>setpagedevice"

@@ -1,0 +1,22 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:17:05 +0100
+Subject: hp-firmware:NameError: name 'INTERACTIVE_MODE4' is not defined
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-typo.patch
+---
+ firmware.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/firmware.py b/firmware.py
+index 33e044d..2dad8cf 100755
+--- a/firmware.py
++++ b/firmware.py
+@@ -99,7 +99,7 @@ try:
+     if mode == GUI_MODE and (ui_toolkit == 'qt4' or ui_toolkit == 'qt5'):
+         if not utils.canEnterGUIMode4():
+             log.error("%s -u/--gui requires Qt4/Qt5 GUI support. Entering interactive mode." % __mod__)
+-            mode = INTERACTIVE_MODE4
++            mode = INTERACTIVE_MODE
+ 
+     elif mode == GUI_MODE and ui_toolkit == 'qt3':
+        if not utils.canEnterGUIMode():
