@@ -64,28 +64,28 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_SCAN_TL_X, SANE_TITLE_SCAN_TL_X, SANE_DESC_SCAN_TL_X,  // name, title, desc
 		SANE_TYPE_FIXED, SANE_UNIT_MM, sizeof(SANE_Fixed),// type, unit, size
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_RANGE, (SANE_Char**)&SANE_rangeLeft  // constraint_type, constraint
+		SANE_CONSTRAINT_RANGE, (const SANE_Char**)&SANE_rangeLeft  // constraint_type, constraint
 	},
 
 	{
 		SANE_NAME_SCAN_TL_Y, SANE_TITLE_SCAN_TL_Y, SANE_DESC_SCAN_TL_Y,  // name, title, desc
 		SANE_TYPE_FIXED, SANE_UNIT_MM, sizeof(SANE_Fixed),// type, unit, size
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_RANGE, (SANE_Char**)&SANE_rangeTop  // constraint_type, constraint
+		SANE_CONSTRAINT_RANGE, (const SANE_Char**)&SANE_rangeTop  // constraint_type, constraint
 	},
   
 	{
 		SANE_NAME_SCAN_BR_X, SANE_TITLE_SCAN_BR_X, SANE_DESC_SCAN_BR_X,  // name, title, desc
 		SANE_TYPE_FIXED, SANE_UNIT_MM, sizeof(SANE_Fixed),// type, unit, size
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_RANGE, (SANE_Char**)&SANE_rangeRight  // constraint_type, constraint
+		SANE_CONSTRAINT_RANGE, (const SANE_Char**)&SANE_rangeRight  // constraint_type, constraint
 	},
 
 	{
 		SANE_NAME_SCAN_BR_Y, SANE_TITLE_SCAN_BR_Y, SANE_DESC_SCAN_BR_Y,  // name, title, desc
 		SANE_TYPE_FIXED, SANE_UNIT_MM, sizeof(SANE_Fixed),// type, unit, size
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_RANGE, (SANE_Char**)&SANE_rangeBottom  // constraint_type, constraint
+		SANE_CONSTRAINT_RANGE, (const SANE_Char**)&SANE_rangeBottom  // constraint_type, constraint
 	},
    
 	// optResolution,                                       // resolution group  
@@ -93,7 +93,7 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_SCAN_RESOLUTION, SANE_TITLE_SCAN_RESOLUTION, SANE_DESC_SCAN_RESOLUTION, // name, title, desc
 		SANE_TYPE_INT, SANE_UNIT_DPI, sizeof(SANE_Word),  // type, unit, size,
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_WORD_LIST, (SANE_Char**)SANE_resolutions // constraint type, constraint
+		SANE_CONSTRAINT_WORD_LIST, (const SANE_Char**)SANE_resolutions // constraint type, constraint
 	},
 
 	// optMode,                                            // color/depth group
@@ -101,7 +101,7 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_SCAN_MODE, SANE_TITLE_SCAN_MODE, SANE_DESC_SCAN_MODE, // name, title, desc
 		SANE_TYPE_STRING, SANE_UNIT_NONE, 256,  // type, unit, size,
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_STRING_LIST, (SANE_Char**)SANE_modes   // constraint type, constraint
+		SANE_CONSTRAINT_STRING_LIST, (const SANE_Char**)SANE_modes   // constraint type, constraint
 	},
  
 	// optSource, 
@@ -109,7 +109,7 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_SCAN_SOURCE, SANE_TITLE_SCAN_SOURCE, SANE_DESC_SCAN_SOURCE, // name, title, desc
 		SANE_TYPE_STRING, SANE_UNIT_NONE, 256,  // type, unit, size,
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_STRING_LIST, (SANE_Char**)SANE_sources   // constraint type, constraint
+		SANE_CONSTRAINT_STRING_LIST, (const SANE_Char**)SANE_sources   // constraint type, constraint
 	},
  
 	// optPaperSize, 
@@ -117,7 +117,7 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_PAPER_SIZE, SANE_TITLE_PAPER_SIZE, SANE_DESC_PAPER_SIZE, // name, title, desc
 		SANE_TYPE_STRING, SANE_UNIT_NONE, 256,  // type, unit, size,
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_STRING_LIST, (SANE_Char**)SANE_paper_sizes   // constraint type, constraint
+		SANE_CONSTRAINT_STRING_LIST, (const SANE_Char**)SANE_paper_sizes   // constraint type, constraint
 	},
  
 	// optPaperSize, 
@@ -125,7 +125,7 @@ SANE_Option_Descriptor	DefaultOrbOptions[] = {
 		SANE_NAME_PAPER_SIZE, SANE_TITLE_PAPER_SIZE, SANE_DESC_PAPER_SIZE, // name, title, desc
 		SANE_TYPE_INT, SANE_UNIT_DPI, sizeof(SANE_Word),  // type, unit, size,
 		SANE_CAP_SOFT_SELECT | SANE_CAP_SOFT_DETECT,      // cap(ability)
-		SANE_CONSTRAINT_WORD_LIST, (SANE_Char**)SANE_resolutions // constraint type, constraint
+		SANE_CONSTRAINT_WORD_LIST, (const SANE_Char**)SANE_resolutions // constraint type, constraint
 	},
 #ifdef NOTDEF
 // default template
@@ -305,7 +305,7 @@ orblite_open (SANE_String_Const devicename, SANE_Handle * handle)
 	if (stat != SANE_STATUS_GOOD)
 		return stat;
 
-	stat = g_handle->bb_orblite_open(devicename, &g_handle);
+	stat = g_handle->bb_orblite_open(devicename, (void**)&g_handle);
 	if (stat == SANE_STATUS_GOOD)
 		*handle = g_handle;
 
