@@ -379,7 +379,7 @@ extern SANE_Status sane_hpaio_get_devices(const SANE_Device ***deviceList, SANE_
    ResetDeviceList(&DeviceList);
    DevDiscovery(localOnly);
    *deviceList = (const SANE_Device **)DeviceList;
-   SANE_Device*** devList;
+   const SANE_Device*** devList;
    orblite_get_devices(devList, localOnly);
 
    return SANE_STATUS_GOOD;
