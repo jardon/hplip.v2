@@ -1,0 +1,62 @@
+From: Tim Waugh <twaugh@redhat.com>
+Date: Fri, 31 Jan 2020 13:01:56 +0100
+Subject: Fixed uses of strncpy throughout
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-strncpy.patch
+---
+ prnt/hpcups/HPCupsFilter.cpp | 7 ++++---
+ prnt/hpijs/hpijs.cpp         | 2 +-
+ prnt/hpijs/hpijsfax.cpp      | 2 +-
+ 3 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/prnt/hpcups/HPCupsFilter.cpp b/prnt/hpcups/HPCupsFilter.cpp
+index 322bdaa..f0ad0eb 100644
+--- a/prnt/hpcups/HPCupsFilter.cpp
++++ b/prnt/hpcups/HPCupsFilter.cpp
+@@ -211,6 +211,7 @@ HPCupsFilter::HPCupsFilter() : m_pPrinterBuffer(NULL)
+     adj_k_width = 0;
+     black_raster = NULL;
+     color_raster = NULL;
++    memset (&m_JA, 0, sizeof (m_JA));
+ }
+ 
+ HPCupsFilter::~HPCupsFilter()
+@@ -428,9 +429,9 @@ DRIVER_ERROR HPCupsFilter::startPage (cups_page_header2_t *cups_header)
+         m_JA.media_attributes.physical_height = cups_header->PageSize[1];
+         m_JA.media_attributes.printable_width = ((cups_header->ImagingBoundingBox[2]-cups_header->ImagingBoundingBox[0]) * horz_res) / 72;
+         m_JA.media_attributes.printable_height = ((cups_header->ImagingBoundingBox[3]-cups_header->ImagingBoundingBox[1]) * vert_res) / 72;
+-        strncpy(m_JA.media_attributes.PageSizeName, &cups_header->cupsString[0][0], sizeof(m_JA.media_attributes.PageSizeName));
+-        strncpy(m_JA.media_attributes.MediaTypeName, cups_header->MediaType, sizeof(m_JA.media_attributes.MediaTypeName));
+-        strncpy(m_JA.quality_attributes.hbpl1_print_quality, cups_header->OutputType, sizeof(m_JA.quality_attributes.hbpl1_print_quality));
++        strncpy(m_JA.media_attributes.PageSizeName, &cups_header->cupsString[0][0], sizeof(m_JA.media_attributes.PageSizeName)-1);
++        strncpy(m_JA.media_attributes.MediaTypeName, cups_header->MediaType, sizeof(m_JA.media_attributes.MediaTypeName)-1);
++        strncpy(m_JA.quality_attributes.hbpl1_print_quality, cups_header->OutputType, sizeof(m_JA.quality_attributes.hbpl1_print_quality)-1);
+         m_JA.color_mode = cups_header->cupsRowStep;
+     }
+     else {
+diff --git a/prnt/hpijs/hpijs.cpp b/prnt/hpijs/hpijs.cpp
+index 8ad7cf2..9c7f7a2 100644
+--- a/prnt/hpijs/hpijs.cpp
++++ b/prnt/hpijs/hpijs.cpp
+@@ -605,7 +605,7 @@ int main (int argc, char *argv[], char *evenp[])
+    }
+ 
+    if (argc > 2)
+-        strncpy(user_name, argv[2], sizeof(user_name));
++        strncpy(user_name, argv[2], sizeof(user_name) - 1);
+ 
+ #ifdef HAVE_LIBHPIP
+    char *pDev;
+diff --git a/prnt/hpijs/hpijsfax.cpp b/prnt/hpijs/hpijsfax.cpp
+index d986d97..2e6f96c 100644
+--- a/prnt/hpijs/hpijsfax.cpp
++++ b/prnt/hpijs/hpijsfax.cpp
+@@ -282,7 +282,7 @@ int hpijsFaxServer (int argc, char **argv)
+ 	char user_name[32]={0,};
+ 
+    if (argc > 2)
+-        strncpy(user_name, argv[2], sizeof(user_name));
++        strncpy(user_name, argv[2], sizeof(user_name) - 1);
+ 
+     snprintf(hpFileName,sizeof(hpFileName),"%s/hp_%s_ijsfax_Log_XXXXXX",CUPS_TMP_DIR, user_name);
+ 

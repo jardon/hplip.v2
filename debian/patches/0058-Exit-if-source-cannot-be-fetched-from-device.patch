@@ -1,0 +1,21 @@
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Fri, 31 Jan 2020 13:12:46 +0100
+Subject: Exit if source cannot be fetched from device
+
+Origin: https://src.fedoraproject.org/rpms/hplip/blob/master/f/hplip-3165-sourceoption.patch
+---
+ scan.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/scan.py b/scan.py
+index 90cb6aa..bf9837c 100755
+--- a/scan.py
++++ b/scan.py
+@@ -966,6 +966,7 @@ try:
+                 sys.exit(1)
+         except:
+             log.error("Failed to get the source from device.")
++            sys.exit(1)
+ 
+         #check if device has only ADF
+         if len(source_option) == 1 and 'ADF' in source_option:

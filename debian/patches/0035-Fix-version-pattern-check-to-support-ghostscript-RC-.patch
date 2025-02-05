@@ -1,0 +1,26 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Wed, 18 Sep 2019 21:01:21 +0200
+Subject: Fix version pattern check to support ghostscript RC versions
+
+$ gs -v
+GPL Ghostscript RELEASE CANDIDATE 2 9.28 (2019-09-05)
+Copyright (C) 2019 Artifex Software, Inc.  All rights reserved.
+
+Without the escaped dot, the version will match as "2 9".
+---
+ installer/dcheck.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/installer/dcheck.py b/installer/dcheck.py
+index d684c10..4d684e1 100644
+--- a/installer/dcheck.py
++++ b/installer/dcheck.py
+@@ -34,7 +34,7 @@ from base import utils, services
+ from base.sixext import to_bytes_utf8
+ 
+ ver1_pat = re.compile("""(\d+\.\d+\.\d+)""", re.IGNORECASE)
+-ver_pat = re.compile("""(\d+.\d+)""", re.IGNORECASE)
++ver_pat = re.compile("""(\d+\.\d+)""", re.IGNORECASE)
+ PID = 0
+ CMDLINE = 1
+ 

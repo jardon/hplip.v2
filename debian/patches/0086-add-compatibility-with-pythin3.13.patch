@@ -1,0 +1,21 @@
+From: Thorsten Alteholz <debian@alteholz.de>
+Date: Wed, 5 Feb 2025 19:05:47 +0000
+Subject: add compatibility with pythin3.13
+
+---
+ base/g.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/base/g.py b/base/g.py
+index 15e67fc..52380a8 100644
+--- a/base/g.py
++++ b/base/g.py
+@@ -128,7 +128,7 @@ class ConfigBase(object):
+             try:
+                 fp = open(self.filename, "r")
+                 try:
+-                    self.conf.readfp(fp)
++                    self.conf.read_file(fp)
+                 except configparser.MissingSectionHeaderError:
+                     print("")
+                     log.error("Found No Section in %s. Please set the http proxy for root and try again." % self.filename)
