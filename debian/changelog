@@ -1,3 +1,14 @@
+hplip (3.22.10+dfsg0-6) unstable; urgency=medium
+
+  * fix FTBFS with gcc14 (Closes: #1075069)
+  * add compatibility with python3.13 (Closes: #1093485)
+    (Closes: #1094348)
+    (Closes: #1030095)
+    (thanks a lot to Petter Reinholdtsen and Damyan Ivanov
+     for the patches and the merge request)
+
+ -- Thorsten Alteholz <debian@alteholz.de>  Wed, 05 Feb 2025 18:39:02 +0100
+
 hplip (3.22.10+dfsg0-5) unstable; urgency=medium
 
   * take care of implicit function declarations (Closes: #1066348)
