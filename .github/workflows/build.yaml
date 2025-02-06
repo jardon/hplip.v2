@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/vanilla-os/pico:main
+      volumes:
+        - /proc:/proc
+        - /:/run/host
+      options: --privileged -it
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install needed packages
+      run: |
+        DEBIAN_FRONTEND=noninteractive apt update
+        DEBIAN_FRONTEND=noninteractive apt install -y \
+          dpkg-dev \
+          build-essential \
+          debhelper-compat \
+          devscripts \
+          wget \
+          git
+        apt-get build-dep -y .
+  
+    - name: Build debian package
+      id: build-deb
+      run: |
+        dpkg-buildpackage -b -rfakeroot -us -uc
+        sha256sum /__w/${{ github.event.repository.name }}/hplip_$(dpkg-parsechangelog -S version)_$(dpkg-architecture -qDEB_BUILD_ARCH).deb >> checksums.txt
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}
+        path: '/__w/${{ github.event.repository.name }}/*.deb'
