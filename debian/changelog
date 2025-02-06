@@ -1,3 +1,10 @@
+hplip (3.22.10+dfsg0-6) vanilla; urgency=medium
+
+  * Python 3.13 fixes
+  * gcc 14 compatibility rebuild
+
+ -- jardon <jarred.wilson12@gmail.com>  Thu, 06 Feb 2025 17:14:31 -0600
+
 hplip (3.22.10+dfsg0-5) unstable; urgency=medium
 
   * take care of implicit function declarations (Closes: #1066348)
